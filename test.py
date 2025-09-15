@@ -6,8 +6,8 @@ def main():
 
     # Example account (replace with a valid Solana account address)
     account = "BJBgjyDZx5FSsyJf6bFKVXuJV7DZY9PCSMSi5d9tcEVh"
-    account_info = client.get_account_info(account)
-    balance_info = client.get_balance(account)
+    account_info = client.getAccountInfo(account)
+    balance_info = client.getBalance(account)
     print("Account Info:", account_info)
     print("Balance Info:", balance_info)
 
