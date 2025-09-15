@@ -1,15 +1,12 @@
-from CryptoDevTools.solana import SolanaClient
+from CryptoDevTools.solana import SolanaDataClient
 
 def main():
-    rpc_url = "https://api.mainnet-beta.solana.com"
-    client = SolanaClient(rpc_url)
+    data_client = SolanaDataClient()
 
-    # Example account (replace with a valid Solana account address)
-    account = "BJBgjyDZx5FSsyJf6bFKVXuJV7DZY9PCSMSi5d9tcEVh"
-    account_info = client.getAccountInfo(account)
-    balance_info = client.getBalance(account)
-    print("Account Info:", account_info)
-    print("Balance Info:", balance_info)
+    # Example token address (replace with a valid Solana token address)
+    token_address = "F9Lw3ki3hJ7PF9HQXsBzoY8GyE6sPoEZZdXJBsTTD2rk"
+    metadata = data_client.getTokenMetadata(token_address)
+    print("Token Metadata:", metadata)
 
 if __name__ == "__main__":
     main()
