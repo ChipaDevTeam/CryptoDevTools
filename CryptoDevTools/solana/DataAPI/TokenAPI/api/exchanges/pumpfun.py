@@ -1,4 +1,7 @@
+import json
 import requests
+
+from CryptoDevTools.constants import GlobalConstants
 
 class PumpFunAPI:
     def __init__(self):
@@ -67,3 +70,34 @@ class PumpFunAPI:
             raise requests.exceptions.RequestException(f"Request failed: {e}")
         except Exception as e:
             raise Exception(f"Unexpected error occurred while fetching runners: {e}")
+    def get_graduated(self, sortBy=GlobalConstants.GRADUATED_DEFAULT_SORT):
+        """
+        Fetches graduated token data from the PumpFun API.
+        
+        Returns:
+            dict: JSON response containing graduated token data
+        """
+
+        if sortBy not in GlobalConstants.SORT_BY_OPTIONS:
+            raise ValueError(f"Invalid sortBy value. Must be one of {GlobalConstants.SORT_BY_OPTIONS}")
+
+        url = f'https://advanced-api-v2.pump.fun/coins/graduated?sortBy={sortBy}'
+
+        try:
+            # Make the GET request
+            response = requests.get(url, headers=self.headers)
+
+            # The 'If-None-Match' header may result in a 304 Not Modified status
+            # if the content on the server hasn't changed.
+            if response.status_code == 200:
+                return response.json()
+            if response.status_code == 304:
+                return (f"Status Code: {response.status_code} (Not Modified)")
+            else:
+                # Raise an HTTPError for other bad status codes (4xx or 5xx)
+                return response.raise_for_status()
+
+        except requests.exceptions.RequestException as e:
+            return (f"An error occurred: {e}")
+        except json.JSONDecodeError:
+            return (f"Failed to decode JSON from response.")

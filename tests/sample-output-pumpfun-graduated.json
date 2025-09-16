@@ -1,0 +1,2798 @@
+{
+  "coins": [
+    {
+      "coinMint": "2J9s2smP25dU3pYbuSudmtnQXWcjsMBshcrqd3uVpump",
+      "dev": "7QNZXhqYcUzChs32xCHiZsU2azEh5oigy1SfUZSgwAhs",
+      "name": "Live in Bathroom until 10M",
+      "ticker": "BATHROOM",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeibrffdi7bn5zxqtcpjrtwzo3wez4m47am7qt6c7ojzippv3eutize",
+      "creationTime": 1758045496030,
+      "numHolders": 487,
+      "marketCap": 104107.981565,
+      "volume": 1012.5065,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 35,
+      "graduationDate": 1758045895800,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 29087485.371405,
+          "isSniper": false,
+          "ownedPercentage": 2.9087485371405,
+          "holderId": "G5XbLyf51sSdXChzhvECZjDds3AwpxcwL5JPJXFopvMc"
+        },
+        {
+          "totalTokenAmountHeld": 27517969.083405,
+          "isSniper": false,
+          "ownedPercentage": 2.7517969083405,
+          "holderId": "5B52w1ZW9tuwUduueP5J7HXz5AcGfruGoX6YoAudvyxG"
+        },
+        {
+          "totalTokenAmountHeld": 22507171.065139,
+          "isSniper": false,
+          "ownedPercentage": 2.2507171065139,
+          "holderId": "ANAUcDCU3Jfao3mtxBdttjEH7F3Ja7SyjGBKUa9Cruc5"
+        },
+        {
+          "totalTokenAmountHeld": 19296660.992922,
+          "isSniper": false,
+          "ownedPercentage": 1.9296660992922001,
+          "holderId": "BQKc38V75o6uYcX8DJcyNALBYDtoNjnAbEFD1gUkUm6b"
+        },
+        {
+          "totalTokenAmountHeld": 17973013.924553,
+          "isSniper": false,
+          "ownedPercentage": 1.7973013924552999,
+          "holderId": "Hrp1TU99y1LJ2NfSApPEYsxSJA4dAEujXqn77AADrQs3"
+        },
+        {
+          "totalTokenAmountHeld": 16316697.956562,
+          "isSniper": false,
+          "ownedPercentage": 1.6316697956561999,
+          "holderId": "Fm5iTDeMKzsehWrXDPzhBnjj3iFqrzGafPfGLQSyiEoM"
+        },
+        {
+          "totalTokenAmountHeld": 15619073.81621,
+          "isSniper": false,
+          "ownedPercentage": 1.561907381621,
+          "holderId": "CCAPGYJP6UuKFK5X6ZsMnhm1Ghnhbd2SF4zoFcNQxXCJ"
+        },
+        {
+          "totalTokenAmountHeld": 15538209.958109,
+          "isSniper": false,
+          "ownedPercentage": 1.5538209958109,
+          "holderId": "G2j9xPk5wfuotEKPjidzGYn3GQDqSAcu3mWkRouzECVu"
+        },
+        {
+          "totalTokenAmountHeld": 15101351.53285,
+          "isSniper": false,
+          "ownedPercentage": 1.5101351532849998,
+          "holderId": "J2GPsS8JTnzxVAhoRwWYnhAwx8mKZBvgQ7LX6n1FVwJJ"
+        },
+        {
+          "totalTokenAmountHeld": 14914611.654961,
+          "isSniper": false,
+          "ownedPercentage": 1.4914611654960999,
+          "holderId": "CcFV3hnBfbQbFibheoihcE3zAwFiwKY8UtN6qZrdXaDs"
+        }
+      ],
+      "allTimeHighMarketCap": 108583.421521,
+      "poolAddress": "Hrda7hgSPjRF9oKYGTyt9vR6nJ9k7wxt5gD9cAjV4X2q",
+      "twitter": "https://x.com/BathroomPump/status/1968003739073278163",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0.0353134762944,
+      "buyTransactions": 1232,
+      "sellTransactions": 974,
+      "transactions": 2206,
+      "sniperOwnedPercentage": 0.069639320454,
+      "topHoldersPercentage": 19.3872245356
+    },
+    {
+      "coinMint": "2j779XCa1H5L8JGiF7d8KqigoZX9Rck34c4VV75Mpump",
+      "dev": "DHdTbBG6oDNKRSwZWBLeKHRpyN4ESC9ud4YrACDL27cP",
+      "name": "daddylongneck",
+      "ticker": "longneck",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeifjfaomgpqklq6su5ugb5rmubvjms7u5e4c2ptydilddifok5coiy",
+      "creationTime": 1758044609322,
+      "numHolders": 301,
+      "marketCap": 30483.542028,
+      "volume": 1261.7889,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 2,
+      "graduationDate": 1758045477869,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 29898569.999772,
+          "isSniper": false,
+          "ownedPercentage": 2.9898569999772002,
+          "holderId": "3vfneKRD2Qo8YgLKL1yw5aNKsZbn3P8CT18j18tFa8HJ"
+        },
+        {
+          "totalTokenAmountHeld": 26881288.659116,
+          "isSniper": false,
+          "ownedPercentage": 2.6881288659116,
+          "holderId": "6D22nLTeWTyRQ4p7mJYsXp64HE5EHNXeRmQ3zw7pvRtx"
+        },
+        {
+          "totalTokenAmountHeld": 26731167.129496,
+          "isSniper": false,
+          "ownedPercentage": 2.6731167129496,
+          "holderId": "F2tMWnPhXej6HbuKdtUbMhbciGMAC6YZfP161gQNxFoG"
+        },
+        {
+          "totalTokenAmountHeld": 23781948.475476,
+          "isSniper": false,
+          "ownedPercentage": 2.3781948475476002,
+          "holderId": "7EEQLUrVqdsAsm3Bwrx21ngxit8Y9CcJAMWv5ernoEE7"
+        },
+        {
+          "totalTokenAmountHeld": 20367423.659907,
+          "isSniper": false,
+          "ownedPercentage": 2.0367423659907,
+          "holderId": "DJtGYqJ8NyhUJ7Xojx9QAffz7M1iMdC4qPqCiPFGrS6j"
+        },
+        {
+          "totalTokenAmountHeld": 16988443.763744,
+          "isSniper": false,
+          "ownedPercentage": 1.6988443763744001,
+          "holderId": "FSX5gayVsWN8YXrU3ogyMm2XjTffptmgBMuAiQYWLszZ"
+        },
+        {
+          "totalTokenAmountHeld": 16159022.547936,
+          "isSniper": false,
+          "ownedPercentage": 1.6159022547936002,
+          "holderId": "BWCCM5Z2jYKWCDhGUHBP6eRvwUYmrbEsqZP1DQbHi944"
+        },
+        {
+          "totalTokenAmountHeld": 15261921.299046,
+          "isSniper": false,
+          "ownedPercentage": 1.5261921299046002,
+          "holderId": "EVaEa8SqtcoJwqT1MRYGUdpEUrY4sugKsQLEw2sx6VHZ"
+        },
+        {
+          "totalTokenAmountHeld": 14454814.638157,
+          "isSniper": false,
+          "ownedPercentage": 1.4454814638157,
+          "holderId": "48KdDz6hXpoDfYVdP36tn3cp82e2D4gWPXSuJnSKE5Fa"
+        },
+        {
+          "totalTokenAmountHeld": 14000000,
+          "isSniper": false,
+          "ownedPercentage": 1.4,
+          "holderId": "DYnWWW3qWa4fS1NDbfJ9aZTC2a4MVufZh5eaR6bohRv1"
+        }
+      ],
+      "allTimeHighMarketCap": 104963.557477,
+      "poolAddress": "2artTdCVBBDHwZBXzhaZKeYShKocvi4fCKgEJsHxn1zP",
+      "twitter": null,
+      "telegram": null,
+      "website": "https://www.tiktok.com/@longneck?_t=ZN-8zmKOs2emLW&_r=1",
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0.17633525044,
+      "buyTransactions": 1643,
+      "sellTransactions": 1631,
+      "transactions": 3274,
+      "sniperOwnedPercentage": 0.0017633525044,
+      "topHoldersPercentage": 20.452460017299998
+    },
+    {
+      "coinMint": "7AebNQCrzT8qyNuevRVGZHng9KPkaVj6G7h4yRvopump",
+      "dev": "GgdJ8KnXMbTgKUP5SStW7wgnyyiyZCN3R1sERWAcX9cU",
+      "name": "Solana The Dog",
+      "ticker": "SOLANA",
+      "imageUrl": "https://ipfs.io/ipfs/QmfLPBS9MvrnqqGgnUgEGpE5zLFCPQgqfHwp53ToG9ppeF",
+      "creationTime": 1758043629492,
+      "numHolders": 308,
+      "marketCap": 47488.0148781,
+      "volume": 1272.8599,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 19,
+      "graduationDate": 1758044260432,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 30050542.461559,
+          "isSniper": false,
+          "ownedPercentage": 3.0050542461559,
+          "holderId": "DQu6RDQpMCBn4ZZLL5Wdmn2FqjTu7d2yBTaA22K3xLdv"
+        },
+        {
+          "totalTokenAmountHeld": 25483522.146603,
+          "isSniper": false,
+          "ownedPercentage": 2.5483522146602997,
+          "holderId": "GgbCFRHHAPv5i1fqt1D1buf8FPNA31oKrkZvXDyZymsT"
+        },
+        {
+          "totalTokenAmountHeld": 22175156.553313,
+          "isSniper": false,
+          "ownedPercentage": 2.2175156553312996,
+          "holderId": "7a4Tga5eGvKb7En5mydx558AFAseF5jfXhdqCZddRkgS"
+        },
+        {
+          "totalTokenAmountHeld": 20371276.726801,
+          "isSniper": false,
+          "ownedPercentage": 2.0371276726801,
+          "holderId": "DBY5LLCzrJdevHTWMokkdzzofYjfLD36VJcZjxm2bZ4q"
+        },
+        {
+          "totalTokenAmountHeld": 18900404.297791,
+          "isSniper": false,
+          "ownedPercentage": 1.8900404297791,
+          "holderId": "GbT96Zo87Qx5vRJE4ecLgRvd5HcwMeV9Tf6xvp1p5MqJ"
+        },
+        {
+          "totalTokenAmountHeld": 16381913.054866,
+          "isSniper": false,
+          "ownedPercentage": 1.6381913054866,
+          "holderId": "14kTRWwctsCz519j4VsqMwPBKh7cbWWyJC1QnwSqyDYH"
+        },
+        {
+          "totalTokenAmountHeld": 15861941.016782,
+          "isSniper": false,
+          "ownedPercentage": 1.5861941016782,
+          "holderId": "A1eNosR8JZkWoTwo5nb65shRZaQx9NWjaVyPwGaaWhJS"
+        },
+        {
+          "totalTokenAmountHeld": 15128291.955999,
+          "isSniper": false,
+          "ownedPercentage": 1.5128291955999,
+          "holderId": "HKQwz9vYPCrFbPAYZLmGVedS2L9ZLxiEBGZ2Z5qkeT7i"
+        },
+        {
+          "totalTokenAmountHeld": 13628120.350303,
+          "isSniper": false,
+          "ownedPercentage": 1.3628120350303,
+          "holderId": "CXbL8qQJM8Nb2ezce17jCBYQxwaBD6qXNkTfZNpV4GCZ"
+        },
+        {
+          "totalTokenAmountHeld": 13015289.595513,
+          "isSniper": false,
+          "ownedPercentage": 1.3015289595512998,
+          "holderId": "FKbg6r84D5sopgwnRDUMEywTXmiUv4jxaSALG2fEufRa"
+        }
+      ],
+      "allTimeHighMarketCap": 100415.870568,
+      "poolAddress": "7rmeoHdPo9xXWrtfiBXzrQ3R78DaYAonU41BKKxW1HgC",
+      "twitter": "https://x.com/solanathedogg?t=3FrABgUYJkR-NtGN5KkZEQ&s=09",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 1.22530957375,
+      "buyTransactions": 1486,
+      "sellTransactions": 1075,
+      "transactions": 2561,
+      "sniperOwnedPercentage": 0.0122530957375,
+      "topHoldersPercentage": 19.099645816
+    },
+    {
+      "coinMint": "DQFeUkKMVtE5TtxDmhE5f6diDobaPknE3HcRMPLYpump",
+      "dev": "FaYFX88M2Rrvmv2YXkDEmWz5WuGDZMrMRVh2KTEwQUBt",
+      "name": "Soka",
+      "ticker": "SOKA",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreih3kppgbt52ad3pxv2qejdtrrueqeru57jmugdrlv25m5b4u5sbjq",
+      "creationTime": 1758043465352,
+      "numHolders": 202,
+      "marketCap": 52690.0330814,
+      "volume": 882.1958,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 3,
+      "graduationDate": 1758043786865,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 66285714.255007,
+          "isSniper": true,
+          "ownedPercentage": 6.6285714255006996,
+          "holderId": "FaYFX88M2Rrvmv2YXkDEmWz5WuGDZMrMRVh2KTEwQUBt"
+        },
+        {
+          "totalTokenAmountHeld": 56206544.684038,
+          "isSniper": false,
+          "ownedPercentage": 5.6206544684038,
+          "holderId": "AyfNFFWTsL6oiCBjtgUGLkNZjpecHcJsZU8p9S7eT3R5"
+        },
+        {
+          "totalTokenAmountHeld": 40359679.09156,
+          "isSniper": false,
+          "ownedPercentage": 4.035967909156,
+          "holderId": "GzbQg5eXQmyEoerrcFphg4vnqPutHo5Qkww2UEWwF5A5"
+        },
+        {
+          "totalTokenAmountHeld": 34361753.507246,
+          "isSniper": false,
+          "ownedPercentage": 3.4361753507246005,
+          "holderId": "GKMmVmoqZdJ5A6X7uCbC5dvX8PGWfefaHqNa6Jsmucn7"
+        },
+        {
+          "totalTokenAmountHeld": 32105048.554093,
+          "isSniper": false,
+          "ownedPercentage": 3.2105048554092996,
+          "holderId": "7iXPQZgKS4qxdFuTuPtg8A3gCAZSL7CSKKJD7FxCjRLz"
+        },
+        {
+          "totalTokenAmountHeld": 29500043.228995,
+          "isSniper": false,
+          "ownedPercentage": 2.9500043228995,
+          "holderId": "GDCdbw9Xg8RzL7XG2YdxNAxH1BVYQs6k9wUvt84PvYAb"
+        },
+        {
+          "totalTokenAmountHeld": 29211378.137021,
+          "isSniper": false,
+          "ownedPercentage": 2.9211378137021002,
+          "holderId": "GWHyb3tUbYyJeS136hTdzDbuw753pLviGFrKSqUyq5BH"
+        },
+        {
+          "totalTokenAmountHeld": 27719414.585521,
+          "isSniper": false,
+          "ownedPercentage": 2.7719414585521003,
+          "holderId": "9fMQjxN7noBNRxTCMpSDBm1w4vTrZwQtCvJupoqzVNLV"
+        },
+        {
+          "totalTokenAmountHeld": 24208497.010653,
+          "isSniper": false,
+          "ownedPercentage": 2.4208497010653,
+          "holderId": "H29sjdY6fK4DgUCJHJCTi1WwrEtjerUuv3cDqCvPV6hy"
+        },
+        {
+          "totalTokenAmountHeld": 23483778.28652,
+          "isSniper": false,
+          "ownedPercentage": 2.348377828652,
+          "holderId": "3bBeKmzRWngdND9NYtqSokSjQRkdaedt3eEG22NvXtGc"
+        }
+      ],
+      "allTimeHighMarketCap": 101557.305626,
+      "poolAddress": "FXVrvgdaXrjaSM2nWY43dbvvBM27eQS37rviPnbmxGCK",
+      "twitter": "https://x.com/Soka_Data",
+      "telegram": "https://t.me/SokaBananaZone",
+      "website": "https://x.com/Soka_Data",
+      "hasTwitter": true,
+      "hasTelegram": true,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 6.6285714255,
+      "buyTransactions": 1095,
+      "sellTransactions": 921,
+      "transactions": 2016,
+      "sniperOwnedPercentage": 0.066285714255,
+      "topHoldersPercentage": 36.3441851341
+    },
+    {
+      "coinMint": "2ZeTQcru54AtcM7yaT4Z4rxZ2WRTSAh8G9NUeEnDpump",
+      "dev": "FXTc3geaJqtcjcDGFUEyztU9SmBWLXgMSQ7Tc5s8LrLK",
+      "name": "ELLY",
+      "ticker": "ELLY",
+      "imageUrl": "https://imagedelivery.net/WL1JOIJiM_NAChp6rtB6Cw/coin-image/2ZeTQcru54AtcM7yaT4Z4rxZ2WRTSAh8G9NUeEnDpump",
+      "creationTime": 1758043376336,
+      "numHolders": 74,
+      "marketCap": 5377.96881816,
+      "volume": 1801.9189,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 19,
+      "graduationDate": 1758043413762,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 28871354.878818,
+          "isSniper": false,
+          "ownedPercentage": 2.8871354878818,
+          "holderId": "9HNFpuKDR3Qix5rJBHFWuqP9nZJzayyT94gu7ADcbZ1A"
+        },
+        {
+          "totalTokenAmountHeld": 18091081.223564,
+          "isSniper": false,
+          "ownedPercentage": 1.8091081223564,
+          "holderId": "4DzFQ7sBD9EkvSdWLr4Ms8wYTZKbe2TwQCDXTXBUoMwi"
+        },
+        {
+          "totalTokenAmountHeld": 17218527.213058,
+          "isSniper": false,
+          "ownedPercentage": 1.7218527213058,
+          "holderId": "5CBJGdW1FQSc2hVD7LHqykhkmyWo3yz5E4dnKoAq3kWP"
+        },
+        {
+          "totalTokenAmountHeld": 16815351.893157,
+          "isSniper": false,
+          "ownedPercentage": 1.6815351893157,
+          "holderId": "Fzx7NWc4hTtrxN2Ukp8rSpqsiwnJgBZ2aCVzMddLRapM"
+        },
+        {
+          "totalTokenAmountHeld": 14642007.16513,
+          "isSniper": false,
+          "ownedPercentage": 1.464200716513,
+          "holderId": "BViVJUs9o8ushbXx2pDH43BDmquUVLnMuU6xD75Qvgbi"
+        },
+        {
+          "totalTokenAmountHeld": 11248279.314845,
+          "isSniper": false,
+          "ownedPercentage": 1.1248279314845,
+          "holderId": "HsqdALponSsUTxdaCtWQyd7aE2oRZXGCYDeAxz6qoupZ"
+        },
+        {
+          "totalTokenAmountHeld": 8409326.464223,
+          "isSniper": false,
+          "ownedPercentage": 0.8409326464223,
+          "holderId": "9GFTJzV2spvtPseCyv2p4UabKjaEm2V5RaSwiaLZ1FdE"
+        },
+        {
+          "totalTokenAmountHeld": 7108871.781892,
+          "isSniper": false,
+          "ownedPercentage": 0.7108871781891999,
+          "holderId": "fd9sGyLQ2E7xdXnX8jPp2iFJU6PvTiHNcVgoNDnVovY"
+        },
+        {
+          "totalTokenAmountHeld": 4696793.881197,
+          "isSniper": false,
+          "ownedPercentage": 0.4696793881197,
+          "holderId": "8XVs2HcGjwZEd5MUNRzspqcaXYHhwegFHnnu8oCigBrR"
+        },
+        {
+          "totalTokenAmountHeld": 4356683.729325,
+          "isSniper": false,
+          "ownedPercentage": 0.4356683729325,
+          "holderId": "DRh6J3DDqT7ayeHHkGocUR5fCTPipQoKWSGLaWKZQrGp"
+        }
+      ],
+      "allTimeHighMarketCap": 156528.028308,
+      "poolAddress": "9F8DjMbKf54e6bmVbEAdvWKmiV9KHACzTBFm9hgj9Y3V",
+      "twitter": "https://x.com/deer007d31/status/1968002570628247941",
+      "telegram": null,
+      "website": "https://x.com/i/broadcasts/1mnxeNDEkwoKX",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 1550,
+      "sellTransactions": 1462,
+      "transactions": 3012,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 13.1458277545
+    },
+    {
+      "coinMint": "Hjd3H5yFU4YLqEBTiCLmCWyKyCYRkAeNk1WW4ETepump",
+      "dev": "4vyLu7fa4cXUe7QsLkzvZuYzsvdw6qFus8QErPobX26N",
+      "name": "Jake Gagain",
+      "ticker": "JAKE",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreic6kxgvbfux67c5yo6xy62za3xsx7l3wmbaalwlzw2ses2ifdybaa",
+      "creationTime": 1758043108854,
+      "numHolders": 24,
+      "marketCap": 4336.15834251,
+      "volume": 346.9976,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 23,
+      "graduationDate": 1758043190578,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 9127786.132237,
+          "isSniper": false,
+          "ownedPercentage": 0.9127786132237,
+          "holderId": "2NuAgVk3hcb7s4YvP4GjV5fD8eDvZQv5wuN6ZC8igRfV"
+        },
+        {
+          "totalTokenAmountHeld": 1820131.714175,
+          "isSniper": false,
+          "ownedPercentage": 0.1820131714175,
+          "holderId": "3v4WA7BqzQtxhcpML8AgHyk96Ufd43ZsAQAcF9pEExFj"
+        },
+        {
+          "totalTokenAmountHeld": 978563.906297,
+          "isSniper": false,
+          "ownedPercentage": 0.0978563906297,
+          "holderId": "HeXo9TnhXCDybds87TqGYaS6iLMgWSZKtdGCCJNZYuZh"
+        },
+        {
+          "totalTokenAmountHeld": 960415.686665,
+          "isSniper": false,
+          "ownedPercentage": 0.0960415686665,
+          "holderId": "5rxp1ifW21HKuBpcnsbSxpzrDX9RaN1Ht7UrZFi9JVfN"
+        },
+        {
+          "totalTokenAmountHeld": 793361.549111,
+          "isSniper": false,
+          "ownedPercentage": 0.07933615491110001,
+          "holderId": "3GYH5HasrSVr8FXx6tJsoykgGMgBNazxV9JNQ9LTBpHM"
+        },
+        {
+          "totalTokenAmountHeld": 701969.262116,
+          "isSniper": false,
+          "ownedPercentage": 0.07019692621160001,
+          "holderId": "9Cha452eSLnrLqBeR6KaSAp81aGBdE119fwp34TUHYVK"
+        },
+        {
+          "totalTokenAmountHeld": 506929.027905,
+          "isSniper": false,
+          "ownedPercentage": 0.0506929027905,
+          "holderId": "5K6nDnBHtK4orinHQ7JYeXMoamSSVKtJaYykzcXyrPYe"
+        },
+        {
+          "totalTokenAmountHeld": 468102.467261,
+          "isSniper": false,
+          "ownedPercentage": 0.0468102467261,
+          "holderId": "CtVDi1E8SuK6Dv8NtXPkRVq3wmFwSSu15s2TFtPb2t9v"
+        },
+        {
+          "totalTokenAmountHeld": 172404.98541,
+          "isSniper": false,
+          "ownedPercentage": 0.017240498541,
+          "holderId": "HsX4ckqZEEbFTs1FLEfmJ2PXsFCYVWWfv5A5FuvZwoKq"
+        },
+        {
+          "totalTokenAmountHeld": 114718.783886,
+          "isSniper": false,
+          "ownedPercentage": 0.0114718783886,
+          "holderId": "6abFN5xLitiQR3gTtYkbovawD8VQSuZqvQ92RWj6JxgF"
+        }
+      ],
+      "allTimeHighMarketCap": 103723.834542,
+      "poolAddress": "8x16WzoJvGZbY3wvXD7mjUz6wRNaEiXsTgqeEpsNMHu",
+      "twitter": "https://x.com/JakeGagain",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 336,
+      "sellTransactions": 567,
+      "transactions": 903,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 1.56443835151
+    },
+    {
+      "coinMint": "9dNALpzUXwKVoN3bahxvwJcKTzgtKCRweEnA2MCopump",
+      "dev": "3NhoXyjniTggsKVh5HvvhyjeHnS8Hz67VVmyQGgDWwLM",
+      "name": "ELLY",
+      "ticker": "ELLY",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreiapuzrlllsmd37o7fwmqqgvwnoh5fei6axuzwjs3mfxy5roab7bxm",
+      "creationTime": 1758042900343,
+      "numHolders": 1117,
+      "marketCap": 315473.879796,
+      "volume": 12187.3389,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 13,
+      "graduationDate": 1758043020577,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 29042008.300246,
+          "isSniper": false,
+          "ownedPercentage": 2.9042008300246,
+          "holderId": "2mGNGKYNGCNNz4EXrxz4TPckwGkiyGRNe447HncebYRg"
+        },
+        {
+          "totalTokenAmountHeld": 28549708.199561,
+          "isSniper": false,
+          "ownedPercentage": 2.8549708199561,
+          "holderId": "HYWo71Wk9PNDe5sBaRKazPnVyGnQDiwgXCFKvgAQ1ENp"
+        },
+        {
+          "totalTokenAmountHeld": 26401586.938364,
+          "isSniper": false,
+          "ownedPercentage": 2.6401586938364,
+          "holderId": "2w7gMWrB5iTN41wQjBF55kbZjvxKd2aiL4SeKwjHKJgK"
+        },
+        {
+          "totalTokenAmountHeld": 22684316.988504,
+          "isSniper": false,
+          "ownedPercentage": 2.2684316988504,
+          "holderId": "9uTsZT18WPvb5aMRTWt3xBuPDWEEiU7KgCbde6UfjqZH"
+        },
+        {
+          "totalTokenAmountHeld": 22575179.024253,
+          "isSniper": false,
+          "ownedPercentage": 2.2575179024253003,
+          "holderId": "8ib5tHda45oUZZMJJBwKFK6oW5sTyKedY1LFaa8hRbrV"
+        },
+        {
+          "totalTokenAmountHeld": 16596296.341799,
+          "isSniper": false,
+          "ownedPercentage": 1.6596296341799,
+          "holderId": "3uA3gr3MrZARUrnxPDyhiZ62e7As6jnHMJPSDgZqHyVF"
+        },
+        {
+          "totalTokenAmountHeld": 14823782.956369,
+          "isSniper": false,
+          "ownedPercentage": 1.4823782956369,
+          "holderId": "4ceopHPgw9wATNvAMnDdekQoLtRxs4ELvq4FAdMA8UQq"
+        },
+        {
+          "totalTokenAmountHeld": 13374615.206275,
+          "isSniper": false,
+          "ownedPercentage": 1.3374615206274998,
+          "holderId": "SAALE2x3sn51EyahJyqD6913L3GqHZdZo3egUdMayQp"
+        },
+        {
+          "totalTokenAmountHeld": 13272618.570196,
+          "isSniper": false,
+          "ownedPercentage": 1.3272618570196002,
+          "holderId": "G3K9kWBDUmtnxypFZSzZDdMS9d8GWnZUrbsvobSJkwVG"
+        },
+        {
+          "totalTokenAmountHeld": 12214840.270958,
+          "isSniper": false,
+          "ownedPercentage": 1.2214840270958,
+          "holderId": "HpbVP4Gx8uR2GiYdkA8EnpVK9mEyJMLEQneXs8UDb33B"
+        }
+      ],
+      "allTimeHighMarketCap": 1000064.98354,
+      "poolAddress": "5tPm6bULxcpKrnS3jcsNqQR8NF55He92FgxJveVpXq7J",
+      "twitter": "https://x.com/gmaneplays/status/1968000314596004020",
+      "telegram": null,
+      "website": "https://x.com/i/broadcasts/1mnxeNDEkwoKX",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0.701780620725,
+      "buyTransactions": 9421,
+      "sellTransactions": 8333,
+      "transactions": 17754,
+      "sniperOwnedPercentage": 0.00728855881598,
+      "topHoldersPercentage": 19.9534952797
+    },
+    {
+      "coinMint": "Cnf7GZhoZcLKAwGdsLD6LTxxaFYEM814vMhoWcdGpump",
+      "dev": "8NgGEQ8pYX58HX6hZKXWdBPQWjstjVEQa54ksHSLwPQp",
+      "name": "Lord Buddha Free School",
+      "ticker": "KarmaKids",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreih2jubz6j2qpxy4j2krktdwfyh3dzgonnr2qmlwfhr7gu65t4sjve",
+      "creationTime": 1758042141439,
+      "numHolders": 66,
+      "marketCap": 11680.7427806,
+      "volume": 949.364,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 27,
+      "graduationDate": 1758042549478,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 66285714.255007,
+          "isSniper": true,
+          "ownedPercentage": 6.6285714255006996,
+          "holderId": "8NgGEQ8pYX58HX6hZKXWdBPQWjstjVEQa54ksHSLwPQp"
+        },
+        {
+          "totalTokenAmountHeld": 35784292.718119,
+          "isSniper": false,
+          "ownedPercentage": 3.5784292718119,
+          "holderId": "BtDaZUqHr2mKH5EYQCztuerHBuBEfQNYdquTDtEZp2Ym"
+        },
+        {
+          "totalTokenAmountHeld": 31395207.77662,
+          "isSniper": false,
+          "ownedPercentage": 3.139520777662,
+          "holderId": "6pFD9UZ8k8ydH4dShkJWJsBqMcfpxNCY6kxdWd6J9Bc8"
+        },
+        {
+          "totalTokenAmountHeld": 29000044.769473,
+          "isSniper": false,
+          "ownedPercentage": 2.9000044769473,
+          "holderId": "3F3d7FNyP3pQkRaHLLPqNXfiXXz7TwitjLoSP63RDfoU"
+        },
+        {
+          "totalTokenAmountHeld": 28953319.441093,
+          "isSniper": false,
+          "ownedPercentage": 2.8953319441093,
+          "holderId": "7aG9cWRz24j8Co39v6WzCFo4a2L9To4wAXdFMVF1zgZZ"
+        },
+        {
+          "totalTokenAmountHeld": 26818254.111294,
+          "isSniper": false,
+          "ownedPercentage": 2.6818254111294,
+          "holderId": "95nrZPWVi7iSH6HA3us6UzpvaPUBuGo5T1NDDG49Shun"
+        },
+        {
+          "totalTokenAmountHeld": 26518242.485987,
+          "isSniper": false,
+          "ownedPercentage": 2.6518242485987003,
+          "holderId": "APKSDUJTtMmpkNirdyJZCPxKqxGqnPypWpj7FtFhtyT9"
+        },
+        {
+          "totalTokenAmountHeld": 22690187.527036,
+          "isSniper": false,
+          "ownedPercentage": 2.2690187527036,
+          "holderId": "HUmFqPwGfNY6ZN8apX6hn5J8sEvEquNLSLkkjquZ3yy7"
+        },
+        {
+          "totalTokenAmountHeld": 20745838.430755,
+          "isSniper": false,
+          "ownedPercentage": 2.0745838430755,
+          "holderId": "2LBL1jKEeFKvWXwAv34ULzerQmGZZWcRWjKTixhgGjjy"
+        },
+        {
+          "totalTokenAmountHeld": 19499424.292952,
+          "isSniper": false,
+          "ownedPercentage": 1.9499424292952001,
+          "holderId": "Bu6AtsYrhGoNqinDMo2uQDTjwofBWEbftxQ1anxsKXCT"
+        }
+      ],
+      "allTimeHighMarketCap": 138575.196311,
+      "poolAddress": "VFp9stdsfhX93K5tKLrwBttGoS1RtyTcxCbrZRmQD8o",
+      "twitter": "https://x.com/tonycatoff",
+      "telegram": "https://t.me/official_bad_community",
+      "website": "https://share.google/Vsn7k43naH7uhujMQ",
+      "hasTwitter": true,
+      "hasTelegram": true,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 6.6285714255,
+      "buyTransactions": 797,
+      "sellTransactions": 909,
+      "transactions": 1706,
+      "sniperOwnedPercentage": 0.0667801358109,
+      "topHoldersPercentage": 30.769052580800004
+    },
+    {
+      "coinMint": "5i5ZKGSNrEtQZjfWCGoV8EH24zTQWM5efbitShVzpump",
+      "dev": "3yCqEBAvxs8jza7mVEb3p3sz2Ub71mvRdh2icA9MpzK7",
+      "name": "JON SOLANA",
+      "ticker": "JON",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreict7fxqoubenizyvwuzhfpmvhxfoih2dnxrxwgsioqlabomujnyli",
+      "creationTime": 1758035150769,
+      "numHolders": 103,
+      "marketCap": 98061.3938487,
+      "volume": 152.4995,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 5,
+      "graduationDate": 1758042518411,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 245646409.173728,
+          "isSniper": true,
+          "ownedPercentage": 24.5646409173728,
+          "holderId": "3yCqEBAvxs8jza7mVEb3p3sz2Ub71mvRdh2icA9MpzK7"
+        },
+        {
+          "totalTokenAmountHeld": 104862388.183887,
+          "isSniper": false,
+          "ownedPercentage": 10.486238818388701,
+          "holderId": "28x7oBcGvgNutqkWaxyKra4SGrdEMRPsLZySjpct2arM"
+        },
+        {
+          "totalTokenAmountHeld": 91742902.165426,
+          "isSniper": false,
+          "ownedPercentage": 9.1742902165426,
+          "holderId": "94bzsvNpRmuFr4oZGaZe7XiBAGiDFZ9rgaYjNxdmFZTW"
+        },
+        {
+          "totalTokenAmountHeld": 79773969.232841,
+          "isSniper": false,
+          "ownedPercentage": 7.9773969232840996,
+          "holderId": "G7ppsGonHFqHmy63vQECBzWgTKswTNqJLUmiepddb5g6"
+        },
+        {
+          "totalTokenAmountHeld": 33653208.903722,
+          "isSniper": false,
+          "ownedPercentage": 3.3653208903722005,
+          "holderId": "2CS2zJWShXvyWUxkZWv4rpfJeMw2hSUuesUjcvTM7o3M"
+        },
+        {
+          "totalTokenAmountHeld": 24625411.70845,
+          "isSniper": false,
+          "ownedPercentage": 2.4625411708450002,
+          "holderId": "9ZkXcfjXeGyS5jPk6H26HhtShr66Fh9RVrxq17tMkNZh"
+        },
+        {
+          "totalTokenAmountHeld": 19627192.940021,
+          "isSniper": false,
+          "ownedPercentage": 1.9627192940021,
+          "holderId": "37GHfVF91qoWYYh1NyTKT8zM1Bq5xockGaZHvmqZoebV"
+        },
+        {
+          "totalTokenAmountHeld": 18233206.142278,
+          "isSniper": false,
+          "ownedPercentage": 1.8233206142278002,
+          "holderId": "5b1uEaGWNwZjx7WKncjCwdWa17amC8GzRHj43nWcvwgc"
+        },
+        {
+          "totalTokenAmountHeld": 16410828.639304,
+          "isSniper": false,
+          "ownedPercentage": 1.6410828639304,
+          "holderId": "EFDpZe6kEWdvi5RWufH5rovqbMazEHJnV9J3qVg1tocH"
+        },
+        {
+          "totalTokenAmountHeld": 15121969.932694,
+          "isSniper": false,
+          "ownedPercentage": 1.5121969932694,
+          "holderId": "FwhhVmvG6ULrRg5UPc6F4jXSvooTa9a9wYWVnC4E3a6X"
+        }
+      ],
+      "allTimeHighMarketCap": 123471.915123,
+      "poolAddress": "RKuSocDv4hMEaA1SKyLVH1y9PUwNdcxj8LovutxBeNr",
+      "twitter": "https://x.com/JonsolanaX?t=YNBn1xjeKIyxab8FG9XA3A&s=09",
+      "telegram": "https://t.me/jonsolanaX",
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": true,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 24.5646409174,
+      "buyTransactions": 220,
+      "sellTransactions": 115,
+      "transactions": 335,
+      "sniperOwnedPercentage": 0.24565082132100002,
+      "topHoldersPercentage": 64.9697487022
+    },
+    {
+      "coinMint": "4xobQBtd2wpYh6dCGTbAJKb9yBuiexUs3FGA95QVpump",
+      "dev": "TL1xFfh374HgEVYXvTJbgv5gN1bVeiymu8KQ7jh7mMz",
+      "name": "TECHLEAD",
+      "ticker": "TECHLEAD",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeiayp4n2bq4mmdmtdzbiwvyydlmyhqj2rbw7pwrefqvfhfioqoemku",
+      "creationTime": 1758041251361,
+      "numHolders": 917,
+      "marketCap": 101754.348857,
+      "volume": 10217.1619,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 2,
+      "graduationDate": 1758042094780,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 100093283.579548,
+          "isSniper": false,
+          "ownedPercentage": 10.0093283579548,
+          "holderId": "3YXtreuKWyoiWiJyj3kyB8TbVMQLmz8hB5YQp6pNzyRy"
+        },
+        {
+          "totalTokenAmountHeld": 27554482.695521,
+          "isSniper": false,
+          "ownedPercentage": 2.7554482695521,
+          "holderId": "CosAeAmq48u3mzHtMZdLpTrztCqgSLK7CAAFUBAMsXdz"
+        },
+        {
+          "totalTokenAmountHeld": 19131622.287359,
+          "isSniper": false,
+          "ownedPercentage": 1.9131622287359,
+          "holderId": "J1dwFN9KNYcdSJywTf3XDsZZZxJYwifQE2TAtFpBsSx5"
+        },
+        {
+          "totalTokenAmountHeld": 18354907.162298,
+          "isSniper": false,
+          "ownedPercentage": 1.8354907162298002,
+          "holderId": "9tQ4s5HnMu7eg9WPTPm3v2xHma6AnzZcYFdYM1gjztWF"
+        },
+        {
+          "totalTokenAmountHeld": 16782242.282079,
+          "isSniper": false,
+          "ownedPercentage": 1.6782242282079,
+          "holderId": "EMy3sVHBXFEfpNP81cDZAkX2yx1hknPW4CoaQR2FsPJ1"
+        },
+        {
+          "totalTokenAmountHeld": 14670325.552982,
+          "isSniper": false,
+          "ownedPercentage": 1.4670325552982002,
+          "holderId": "45H9MEfwcVPEbngHyw1P7bp2AuhysoycHMvAdSmJ59SC"
+        },
+        {
+          "totalTokenAmountHeld": 13688118.477231,
+          "isSniper": false,
+          "ownedPercentage": 1.3688118477231,
+          "holderId": "3yBUuaoNaJykAiAyaW917S7uCDQnE4ntaZHWZmRtZtqW"
+        },
+        {
+          "totalTokenAmountHeld": 13279334.066609,
+          "isSniper": false,
+          "ownedPercentage": 1.3279334066609,
+          "holderId": "BgtnVJBHEKW1ykzd9jB4QqNjoj5jGjvS6pGZYMgk9wcy"
+        },
+        {
+          "totalTokenAmountHeld": 12075216.794486,
+          "isSniper": false,
+          "ownedPercentage": 1.2075216794486,
+          "holderId": "B5EyEnr3NzhZhpd9wAMsvRFZoK5YmQJY3rww6oozbUVW"
+        },
+        {
+          "totalTokenAmountHeld": 11890653.360537,
+          "isSniper": false,
+          "ownedPercentage": 1.1890653360537,
+          "holderId": "A5ZsbsyALvNBKHGQG6xwFS2Zrnxv5fNWccu6G65vKWg9"
+        }
+      ],
+      "allTimeHighMarketCap": 429118.927655,
+      "poolAddress": "583UwvDP2tehJ2tyoLDkpq2FRsSM2x37CiQXC8YHGHcz",
+      "twitter": "https://x.com/techleadhd",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 8691,
+      "sellTransactions": 7369,
+      "transactions": 16060,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 24.7520186259
+    },
+    {
+      "coinMint": "2wazobi4VHHzJKdAZ4sm9MZ2EWHWBnoRDg1wLhX9pump",
+      "dev": "6hZt2RNp9Dwmwt91mVnCfedD4p8B94Qh1UrGaT7h5ZXE",
+      "name": "Nelk",
+      "ticker": "SENDY",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreidonbrdud5rw7ns4z3hjckwgc3qfbu2mqqhe23doixhthzaiyfd5e",
+      "creationTime": 1758041984573,
+      "numHolders": 37,
+      "marketCap": 4440.56946273,
+      "volume": 883.7935,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 138,
+      "graduationDate": 1758041990674,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 8610657.467593,
+          "isSniper": false,
+          "ownedPercentage": 0.8610657467593,
+          "holderId": "2NuAgVk3hcb7s4YvP4GjV5fD8eDvZQv5wuN6ZC8igRfV"
+        },
+        {
+          "totalTokenAmountHeld": 4449554.860942,
+          "isSniper": false,
+          "ownedPercentage": 0.44495548609419994,
+          "holderId": "Bw9sMj6j16b2hv1FC1w7otKSkrC1umbdWTj6uf42hkxW"
+        },
+        {
+          "totalTokenAmountHeld": 3326098.454016,
+          "isSniper": false,
+          "ownedPercentage": 0.3326098454016,
+          "holderId": "aYB4YHjYG1k9YT5iWkP7KWMXkuJzZeSjNYZgxyGUffH"
+        },
+        {
+          "totalTokenAmountHeld": 2392802.9701,
+          "isSniper": false,
+          "ownedPercentage": 0.23928029701,
+          "holderId": "FcmHua1Tr8iEBopni4DSfkA41yDMqeNiT3rbHU44Hgz7"
+        },
+        {
+          "totalTokenAmountHeld": 1960201.875965,
+          "isSniper": false,
+          "ownedPercentage": 0.19602018759649997,
+          "holderId": "3v4WA7BqzQtxhcpML8AgHyk96Ufd43ZsAQAcF9pEExFj"
+        },
+        {
+          "totalTokenAmountHeld": 993684.17474,
+          "isSniper": false,
+          "ownedPercentage": 0.099368417474,
+          "holderId": "5rxp1ifW21HKuBpcnsbSxpzrDX9RaN1Ht7UrZFi9JVfN"
+        },
+        {
+          "totalTokenAmountHeld": 808594.714525,
+          "isSniper": false,
+          "ownedPercentage": 0.0808594714525,
+          "holderId": "3GYH5HasrSVr8FXx6tJsoykgGMgBNazxV9JNQ9LTBpHM"
+        },
+        {
+          "totalTokenAmountHeld": 710436.672639,
+          "isSniper": false,
+          "ownedPercentage": 0.07104366726389999,
+          "holderId": "9Cha452eSLnrLqBeR6KaSAp81aGBdE119fwp34TUHYVK"
+        },
+        {
+          "totalTokenAmountHeld": 608952.569814,
+          "isSniper": false,
+          "ownedPercentage": 0.060895256981400005,
+          "holderId": "6bHFm1AUhcaPqVoopDxVVmhJpTZiDR9i5YohQrD5KK5i"
+        },
+        {
+          "totalTokenAmountHeld": 473673.517585,
+          "isSniper": false,
+          "ownedPercentage": 0.0473673517585,
+          "holderId": "Dxt8BXj4wQpq1uyJ5KBydNdsiTVAP9vdjcoaeLMipo4m"
+        }
+      ],
+      "allTimeHighMarketCap": 140596.677739,
+      "poolAddress": "78R5LQhyDiGvC2EEeBLCeoURTB715CJJLHGPoTWbSGtK",
+      "twitter": "https://x.com/nelkboys",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 615,
+      "sellTransactions": 799,
+      "transactions": 1414,
+      "sniperOwnedPercentage": 4.3452434161999995e-05,
+      "topHoldersPercentage": 2.43346572779
+    },
+    {
+      "coinMint": "G2oXvj4ouby3SVbPBHcah7B79rWHrPgCv1hs5SUvpump",
+      "dev": "7CSVaxARFtJy2jeMZ7bx7VkKDeXwrKqtkKLvbRXBu3oe",
+      "name": "The guy at the back meme",
+      "ticker": "guy",
+      "imageUrl": "https://ipfs.io/ipfs/QmZE5jq7geURBq3Hmzb7Lt1BKSKYtay7M1is78xp2vAAFQ",
+      "creationTime": 1758039409303,
+      "numHolders": 348,
+      "marketCap": 44202.3691676,
+      "volume": 1892.8159,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 28,
+      "graduationDate": 1758041928428,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 35855217.447379,
+          "isSniper": false,
+          "ownedPercentage": 3.5855217447379,
+          "holderId": "54xrJ798DGwH1UA2H35QtAzKT55t8pL8bjBs9Arz3eoP"
+        },
+        {
+          "totalTokenAmountHeld": 34562818.997741,
+          "isSniper": false,
+          "ownedPercentage": 3.4562818997741,
+          "holderId": "AEHz5qSSZsezG94prGuhyvvDnro8wzNXd9eDYNVir2fW"
+        },
+        {
+          "totalTokenAmountHeld": 26550058.140047,
+          "isSniper": false,
+          "ownedPercentage": 2.6550058140046997,
+          "holderId": "H84Wda2aSgKV1daCVV9ozWrSurjVnoSLY5GAymYArGPg"
+        },
+        {
+          "totalTokenAmountHeld": 25669049.951643,
+          "isSniper": false,
+          "ownedPercentage": 2.5669049951643,
+          "holderId": "GSzBUftVp9n28236EzCESxp23tCSKG3MuAEdjGe5Gi3F"
+        },
+        {
+          "totalTokenAmountHeld": 24529813.526235,
+          "isSniper": false,
+          "ownedPercentage": 2.4529813526235,
+          "holderId": "7LBCqMzbdvwMEevvSAidu8SAGGjCz2fpvpsKdfLuQgun"
+        },
+        {
+          "totalTokenAmountHeld": 22946755.076846,
+          "isSniper": false,
+          "ownedPercentage": 2.2946755076846,
+          "holderId": "M9zithUetHT3DmEvPj5e8R9zGSmWtmmjZPceU8efwoJ"
+        },
+        {
+          "totalTokenAmountHeld": 20629702.20615,
+          "isSniper": false,
+          "ownedPercentage": 2.062970220615,
+          "holderId": "G48f3kzTCf83ZQYyVSjCBzz9dJp5Zw5GyUECTDgZdx41"
+        },
+        {
+          "totalTokenAmountHeld": 19438062.425803,
+          "isSniper": false,
+          "ownedPercentage": 1.9438062425802998,
+          "holderId": "2ARWvkz44yv81B1E5MdgAafVFH8JnuE7wRZNw1yqF4Up"
+        },
+        {
+          "totalTokenAmountHeld": 18818670.402966,
+          "isSniper": false,
+          "ownedPercentage": 1.8818670402966,
+          "holderId": "6QoFz5Pq6TBqTjEEQqkgtUXAbjuPcFmq52nWvBYZ9smc"
+        },
+        {
+          "totalTokenAmountHeld": 17506659.749417,
+          "isSniper": false,
+          "ownedPercentage": 1.7506659749417,
+          "holderId": "78y7pfJ4eJ9N6aL8h7dvUcfYk3Gw8hDe9G93QQHmiSiz"
+        }
+      ],
+      "allTimeHighMarketCap": 101714.132153,
+      "poolAddress": "B6T3oNYxaPmcLZAh4xDAqiGA4QczfDb6Q8hcCQ9bf4hv",
+      "twitter": "https://x.com/haloboyken/status/1967985082997805482?s=46",
+      "telegram": null,
+      "website": "https://vt.tiktok.com/ZSDko7Fna/",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 2832,
+      "sellTransactions": 2076,
+      "transactions": 4908,
+      "sniperOwnedPercentage": 0.0178340479155,
+      "topHoldersPercentage": 24.6506807924
+    },
+    {
+      "coinMint": "Dpv6yMpa6QzjFmeUWTyBbQNXx7HprFf2uzn4HyJkpump",
+      "dev": "D2RUd2SNFiYsFgpFsTJkhy46T4RFNsZbvpYRooxUB6ze",
+      "name": "The Buckingham Show",
+      "ticker": "BUCKINGHAM",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreiba3lksegw7mflcsel2zno3yhyhmj3ujbtn27bhm37gxebxlf6ssm",
+      "creationTime": 1758041664716,
+      "numHolders": 41,
+      "marketCap": 4518.65900945,
+      "volume": 1173.5737,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 46,
+      "graduationDate": 1758041724869,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 17364404.576526,
+          "isSniper": false,
+          "ownedPercentage": 1.7364404576526,
+          "holderId": "EyCwBbR9NQSpnevQjcTuJiyEFzGyzcMULw7bF1jspDbe"
+        },
+        {
+          "totalTokenAmountHeld": 3634982.667788,
+          "isSniper": false,
+          "ownedPercentage": 0.3634982667788,
+          "holderId": "EX82RuUaX4TGfSk4WSam5fW4hHHmQtUTtdQdx81STTaZ"
+        },
+        {
+          "totalTokenAmountHeld": 1941490.831452,
+          "isSniper": false,
+          "ownedPercentage": 0.1941490831452,
+          "holderId": "3v4WA7BqzQtxhcpML8AgHyk96Ufd43ZsAQAcF9pEExFj"
+        },
+        {
+          "totalTokenAmountHeld": 1918241.778296,
+          "isSniper": false,
+          "ownedPercentage": 0.1918241778296,
+          "holderId": "95i9a9NvpMXJEFegcoExKSuyEMcBWuroM976iqDay2Hx"
+        },
+        {
+          "totalTokenAmountHeld": 1432064.181336,
+          "isSniper": false,
+          "ownedPercentage": 0.1432064181336,
+          "holderId": "8HRRiejFcvzWfAKzhm5AVg9qpM3HKgEGcjjCHVdf8qvy"
+        },
+        {
+          "totalTokenAmountHeld": 1007619.801522,
+          "isSniper": false,
+          "ownedPercentage": 0.1007619801522,
+          "holderId": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC"
+        },
+        {
+          "totalTokenAmountHeld": 993412.148765,
+          "isSniper": false,
+          "ownedPercentage": 0.09934121487650001,
+          "holderId": "5rxp1ifW21HKuBpcnsbSxpzrDX9RaN1Ht7UrZFi9JVfN"
+        },
+        {
+          "totalTokenAmountHeld": 867012.780035,
+          "isSniper": false,
+          "ownedPercentage": 0.0867012780035,
+          "holderId": "vsX84bWvTEYHbxUSu1Jd6JY5V2VLhjTVeHkVmHAv15T"
+        },
+        {
+          "totalTokenAmountHeld": 847278.443135,
+          "isSniper": false,
+          "ownedPercentage": 0.0847278443135,
+          "holderId": "3GYH5HasrSVr8FXx6tJsoykgGMgBNazxV9JNQ9LTBpHM"
+        },
+        {
+          "totalTokenAmountHeld": 741444.631175,
+          "isSniper": false,
+          "ownedPercentage": 0.07414446311749999,
+          "holderId": "7XKBy8V5Yg9jXCUg7RkZCnuqYotui7Wus7uZDYaqkbRZ"
+        }
+      ],
+      "allTimeHighMarketCap": 132272.676796,
+      "poolAddress": "7nCw2Cg2S424Wxxn9r8LNyadViVEomuuNkce2WQSpbBe",
+      "twitter": "https://x.com/Buckingham_Show",
+      "telegram": null,
+      "website": "https://www.youtube.com/@BrandonBuckingham",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 989,
+      "sellTransactions": 1113,
+      "transactions": 2102,
+      "sniperOwnedPercentage": 0.00013715243546800002,
+      "topHoldersPercentage": 3.074795184
+    },
+    {
+      "coinMint": "9mKkxt1F2Zf53VixHFhej8WNZEmi6DDeH6CzHhsYpump",
+      "dev": "8LmVr5zaXVc4rYmJdwAXLy1srxrYWKWYNPaNbmBTtPV9",
+      "name": "SPX Trump Grok Doge INU",
+      "ticker": "ETHEREUM",
+      "imageUrl": "https://ipfs.io/ipfs/QmWGQomkrE8x7aGijdzm7KmS6YMyRr76p9YieReDBMLCYv",
+      "creationTime": 1758041550533,
+      "numHolders": 170,
+      "marketCap": 168590.186005,
+      "volume": 223.3546,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 6.44,
+      "sniperCount": 41,
+      "graduationDate": 1758041550971,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 13911067,
+          "isSniper": false,
+          "ownedPercentage": 1.3911067,
+          "holderId": "DRnSzBjWtEzhcBxnUCazP6gXqi7fgXVM7QAnuqNTy92o"
+        },
+        {
+          "totalTokenAmountHeld": 13838886,
+          "isSniper": false,
+          "ownedPercentage": 1.3838886,
+          "holderId": "8akgAC3vEdDeZ2qN1P71nUiABMSCLug22qVggvJ9Jbcf"
+        },
+        {
+          "totalTokenAmountHeld": 13801651,
+          "isSniper": false,
+          "ownedPercentage": 1.3801651,
+          "holderId": "C69L5bwZzK1hUiYYsQLwKsWu3BVruNZrxy863KJ3D6cB"
+        },
+        {
+          "totalTokenAmountHeld": 13575847,
+          "isSniper": false,
+          "ownedPercentage": 1.3575847,
+          "holderId": "2udWgeVXFWc2P4XDXiSDUBMvjsHyJAFPytP3LWE8jLKu"
+        },
+        {
+          "totalTokenAmountHeld": 13494742,
+          "isSniper": false,
+          "ownedPercentage": 1.3494742,
+          "holderId": "9kJQQ3ETeX3qCKDWoE8t6w7Rrxk6QsFNbU1ZBiniSj87"
+        },
+        {
+          "totalTokenAmountHeld": 13401999,
+          "isSniper": false,
+          "ownedPercentage": 1.3401999,
+          "holderId": "9tVLYKDxNHM3q7MeFbY9LRHZNRiwzUuFaueprgHqiy4m"
+        },
+        {
+          "totalTokenAmountHeld": 13378690,
+          "isSniper": false,
+          "ownedPercentage": 1.337869,
+          "holderId": "3siVEM8BvG86iUg1J4n8zGDnM84rhzwqZB912EraHhVb"
+        },
+        {
+          "totalTokenAmountHeld": 13372210,
+          "isSniper": false,
+          "ownedPercentage": 1.337221,
+          "holderId": "AhiZW5pKDuJo1Q4PB6vLV9XVfgMk4pvfqeHd4tuuzBAo"
+        },
+        {
+          "totalTokenAmountHeld": 13314115,
+          "isSniper": false,
+          "ownedPercentage": 1.3314115,
+          "holderId": "2AAmqUSdURA4x3zvU8ANww1D7v15ebUHXLRavtnFScJ5"
+        },
+        {
+          "totalTokenAmountHeld": 13264412,
+          "isSniper": false,
+          "ownedPercentage": 1.3264412,
+          "holderId": "AkP7mUoyboFqFkCmkJrTGVgpX2b1gL4KrAQeEekfoeZb"
+        }
+      ],
+      "allTimeHighMarketCap": 178445.997027,
+      "poolAddress": "6tZMcxE5QvXY6uNqDekdEwTwoMunxDCG9WhkdKKKdShy",
+      "twitter": "https://x.com/stgdieth",
+      "telegram": "https://t.me/STGDIeth",
+      "website": "https://stgdi.xyz/",
+      "hasTwitter": true,
+      "hasTelegram": true,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 278,
+      "sellTransactions": 202,
+      "transactions": 480,
+      "sniperOwnedPercentage": 0.019050088841699998,
+      "topHoldersPercentage": 13.5353619
+    },
+    {
+      "coinMint": "EDP8kyymBsykhedK1eGWb6sNtaCx9GtTj2NiTtCpump",
+      "dev": "D5jn1j9DWCJj8FUxiuEs8rDupKkDVUjc6X5a1Ewr9XsR",
+      "name": "Kitus ",
+      "ticker": "KITUS",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeicretohicocfw4i7twcrlc2ja775kar3vwboase7nhlcjx5i3lqmy",
+      "creationTime": 1758041445359,
+      "numHolders": 449,
+      "marketCap": 69994.2771987,
+      "volume": 3742.7807,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 8,
+      "graduationDate": 1758041527665,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 176989690.698556,
+          "isSniper": false,
+          "ownedPercentage": 17.698969069855604,
+          "holderId": "7kmuX5ZqMLBeBPDsAFj125GmH52HGpqd4XCt6CNgVnKW"
+        },
+        {
+          "totalTokenAmountHeld": 35341087.147541,
+          "isSniper": false,
+          "ownedPercentage": 3.5341087147541,
+          "holderId": "DS6gVT7mFbyT2fZc63NiAsKkGZBjtHS6xkvM5gXUbv5r"
+        },
+        {
+          "totalTokenAmountHeld": 23990993.125389,
+          "isSniper": false,
+          "ownedPercentage": 2.3990993125388997,
+          "holderId": "6bjmKoszAMLvnaf96W9Fov7Tbj6aRt6r84DrtHdQFSxr"
+        },
+        {
+          "totalTokenAmountHeld": 20749335.089871,
+          "isSniper": false,
+          "ownedPercentage": 2.0749335089871,
+          "holderId": "J5zSdZKfkvJ6wcV165wPFKzKJ6yvs3Qi7L8fr2R89MYq"
+        },
+        {
+          "totalTokenAmountHeld": 19205748.117203,
+          "isSniper": false,
+          "ownedPercentage": 1.9205748117203,
+          "holderId": "HPn2Rrjsj2mBmDhwkpnsYc4ESNZFG7NZTxPuk29HkJEq"
+        },
+        {
+          "totalTokenAmountHeld": 17978344.244388,
+          "isSniper": false,
+          "ownedPercentage": 1.7978344244387998,
+          "holderId": "CuvK1oYsPiTQ33Kp2LBwvdQkX8LrqGcfgF7QUEfzdnva"
+        },
+        {
+          "totalTokenAmountHeld": 16608099.415756,
+          "isSniper": false,
+          "ownedPercentage": 1.6608099415756,
+          "holderId": "2SMckop8rNpuQP8Zv98zqKaMhyqLdLzga89aDKDHEgqQ"
+        },
+        {
+          "totalTokenAmountHeld": 16321939.150042,
+          "isSniper": false,
+          "ownedPercentage": 1.6321939150042,
+          "holderId": "8n9bsTDhAmdbsVFPr1choooErNxkrH6eVv15gPeuVnA"
+        },
+        {
+          "totalTokenAmountHeld": 16206242.878414,
+          "isSniper": false,
+          "ownedPercentage": 1.6206242878414,
+          "holderId": "7mim5VQNTpX6jGjHzFKS5U4Jue6Q5RAA6bApZpZUSLbJ"
+        },
+        {
+          "totalTokenAmountHeld": 15873576.645711,
+          "isSniper": false,
+          "ownedPercentage": 1.5873576645711,
+          "holderId": "9B1c1NGhPoG6rY4dzRjDihYQKNsVUJCuwhVE6e3JmL61"
+        }
+      ],
+      "allTimeHighMarketCap": 386199.818827,
+      "poolAddress": "GmaWFp5RWz8zKxYgDXkLtQc3xHuBChjC8NLhnQisk9ra",
+      "twitter": null,
+      "telegram": null,
+      "website": null,
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": false,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 3483,
+      "sellTransactions": 2815,
+      "transactions": 6298,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 35.926505651300005
+    },
+    {
+      "coinMint": "9R7HBEoFv9g98dPt23NjAkuBQSrMz3La1nb4axcWpump",
+      "dev": "7PHMEpuLaMTifntrg3BcwdsVjfqMahybyZUJcKHxzMV5",
+      "name": "Who Wants to be a Millionaire",
+      "ticker": "Million",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeibshbve4uqoc6x4mofdjczblosoy35gfhxviijx6rzxrbgcnomima",
+      "creationTime": 1758041042391,
+      "numHolders": 221,
+      "marketCap": 6947.07825274,
+      "volume": 2783.6535,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 6,
+      "graduationDate": 1758041328384,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 41664330.568058,
+          "isSniper": false,
+          "ownedPercentage": 4.1664330568058,
+          "holderId": "HwGqFnPY6H2sGFoDUMYqr63geoR6Tb8yrfnKGLMnARzj"
+        },
+        {
+          "totalTokenAmountHeld": 28786293.136619,
+          "isSniper": false,
+          "ownedPercentage": 2.8786293136619,
+          "holderId": "DjMxdiXkvxnfNQMfQXUKDThzhLaZ4Yy3BcpV9YY9VDA6"
+        },
+        {
+          "totalTokenAmountHeld": 23225178.301019,
+          "isSniper": false,
+          "ownedPercentage": 2.3225178301019,
+          "holderId": "GHqPQLbHjJcxyZasSEsZNxEW6PbqyocDMTxq6kv1j1pA"
+        },
+        {
+          "totalTokenAmountHeld": 12895585.095055,
+          "isSniper": false,
+          "ownedPercentage": 1.2895585095055,
+          "holderId": "FuqdJpLZJmUdUwTTY5puE4Cp86Qo3A78UkvW2dZwjbaK"
+        },
+        {
+          "totalTokenAmountHeld": 12878922.98882,
+          "isSniper": false,
+          "ownedPercentage": 1.287892298882,
+          "holderId": "DJDNfeyJxQN3J4P326aqj48yUeQSBc4ZLfbjSNSceWb8"
+        },
+        {
+          "totalTokenAmountHeld": 11895290.852707,
+          "isSniper": false,
+          "ownedPercentage": 1.1895290852707,
+          "holderId": "4tS3jes9EaDxwWDakKBrmWg5LhEFeadfXLEGsAxVbYrT"
+        },
+        {
+          "totalTokenAmountHeld": 11633242.189551,
+          "isSniper": false,
+          "ownedPercentage": 1.1633242189551,
+          "holderId": "2NuAgVk3hcb7s4YvP4GjV5fD8eDvZQv5wuN6ZC8igRfV"
+        },
+        {
+          "totalTokenAmountHeld": 9105679.923278,
+          "isSniper": false,
+          "ownedPercentage": 0.9105679923278001,
+          "holderId": "8zkgFGVZrDLieViwqiXFCydSX6WL5hsxmUu55yBdsNsZ"
+        },
+        {
+          "totalTokenAmountHeld": 8855880.878864,
+          "isSniper": false,
+          "ownedPercentage": 0.8855880878864,
+          "holderId": "7BNaxx6KdUYrjACNQZ9He26NBFoFxujQMAfNLnArLGH5"
+        },
+        {
+          "totalTokenAmountHeld": 8576076.104578,
+          "isSniper": false,
+          "ownedPercentage": 0.8576076104577999,
+          "holderId": "Gbnyp3og4hZiF67wdTiqAE7ieiNgM4FjLWAM9UmoRRzS"
+        }
+      ],
+      "allTimeHighMarketCap": 155108.959204,
+      "poolAddress": "DRJ5DwqnC1KtdDxrFJsx7oL2zhiv9JKzWK8U8kdDMSm5",
+      "twitter": null,
+      "telegram": null,
+      "website": "https://abc.com/show/1e948ce7-a412-4255-86f3-9e0dcac79045",
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 3680,
+      "sellTransactions": 3338,
+      "transactions": 7018,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 16.9516480039
+    },
+    {
+      "coinMint": "8KbCZLzzeDhnuGPZcA31PYXfzxW9kkTpHuM83j5Npump",
+      "dev": "A4z2HHg92utXQreX28RKZfbg8fNSmy8RJAYT7GQtUWTC",
+      "name": "Dalton + Michael",
+      "ticker": "DNM",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreib5k2rqzyiqvv2s6t37vxuyqetd4qknmaa254wiomhq4jam5ppq2a",
+      "creationTime": 1758040890553,
+      "numHolders": 138,
+      "marketCap": 22480.8554001,
+      "volume": 3997.2498,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 9,
+      "graduationDate": 1758041243096,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 500000000,
+          "isSniper": false,
+          "ownedPercentage": 50,
+          "holderId": "GVLTQTRgF7bANEc7zdtCustjhhG3wUDYqcqoufnwswHq"
+        },
+        {
+          "totalTokenAmountHeld": 9270656.830032,
+          "isSniper": false,
+          "ownedPercentage": 0.9270656830032,
+          "holderId": "4HT4Ghzq4cJMqxJkiQACL3AKwdiFJHcdwikGjRnw8rps"
+        },
+        {
+          "totalTokenAmountHeld": 7029210.127641,
+          "isSniper": false,
+          "ownedPercentage": 0.7029210127640999,
+          "holderId": "m9Mn98cuvMNbMoFttGZm48Lnu7LpwiUBzt9uQuza1Qg"
+        },
+        {
+          "totalTokenAmountHeld": 3375605.187126,
+          "isSniper": false,
+          "ownedPercentage": 0.3375605187126,
+          "holderId": "GgenfgPvZhUswUkcncgbvBTR2xSiq3mSqpjMTcBoGz1D"
+        },
+        {
+          "totalTokenAmountHeld": 3230073.874525,
+          "isSniper": false,
+          "ownedPercentage": 0.32300738745249996,
+          "holderId": "HMsEd1sWX8DhkanDda5hQYW3Czr6TvgkLhj38V3hw98w"
+        },
+        {
+          "totalTokenAmountHeld": 2899835.905125,
+          "isSniper": false,
+          "ownedPercentage": 0.2899835905125,
+          "holderId": "GdSS3joJ1BaCAUjExFP4uhg2BZ4UkZSf8XXir1wGDiHZ"
+        },
+        {
+          "totalTokenAmountHeld": 2312017.820098,
+          "isSniper": false,
+          "ownedPercentage": 0.23120178200980002,
+          "holderId": "6ZiWWSHQu55phR2V6wVocjiCiFTKX6WFPPTr4ZqiY9LD"
+        },
+        {
+          "totalTokenAmountHeld": 2126290.961178,
+          "isSniper": false,
+          "ownedPercentage": 0.2126290961178,
+          "holderId": "4dmERaHiXZNqZ5y1xF4XNt1FkdkrMJvsKXqTU1D6toAA"
+        },
+        {
+          "totalTokenAmountHeld": 1846381.79373,
+          "isSniper": false,
+          "ownedPercentage": 0.184638179373,
+          "holderId": "6KwK5Pmm8HHbuGAmHtqVUL7o3RS1PdeR5pwTEoPovBzv"
+        },
+        {
+          "totalTokenAmountHeld": 1743171.078736,
+          "isSniper": false,
+          "ownedPercentage": 0.1743171078736,
+          "holderId": "9ThVqkvE6StH6FJs9ZTELxQRi3tKCArwcns5JiJtNGtR"
+        }
+      ],
+      "allTimeHighMarketCap": 606087.749111,
+      "poolAddress": "4utiRaEFdqnjoAYkZAuRfkHoobdErMtjLGaqpE2JTYeP",
+      "twitter": null,
+      "telegram": null,
+      "website": null,
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": false,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 2581,
+      "sellTransactions": 1973,
+      "transactions": 4554,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 53.38332435780001
+    },
+    {
+      "coinMint": "pUzRpj6tgsRzy5CyJnYtVgxnfXX6H3HiLbNRVTBpump",
+      "dev": "7vAMVY3bWxjgkjPorK5Pd6i85XxD8gNGJbSCNp7VDjGz",
+      "name": "BetBoom",
+      "ticker": "BetBoom",
+      "imageUrl": "https://ipfs.io/ipfs/QmdCnc7ymcU5KAWd6ziW6W7zPwgJSizizSPkU5sQ7PHZMC",
+      "creationTime": 1758040450085,
+      "numHolders": 53,
+      "marketCap": 5156.42911967,
+      "volume": 1172.0753,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 99.88,
+      "sniperCount": 3,
+      "graduationDate": 1758041039121,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 18231805.64717,
+          "isSniper": false,
+          "ownedPercentage": 1.823180564717,
+          "holderId": "7DbyKHo4dfGwpbf9TmKDfxPFzSfLFdigzjpSyvfJgSpp"
+        },
+        {
+          "totalTokenAmountHeld": 18196200.029648,
+          "isSniper": false,
+          "ownedPercentage": 1.8196200029648,
+          "holderId": "5RY3pF2sb3Dsf3hoyfuuXWFy2Ts11YSgS9sdZToB7DE2"
+        },
+        {
+          "totalTokenAmountHeld": 18047448.641574,
+          "isSniper": false,
+          "ownedPercentage": 1.8047448641574,
+          "holderId": "3DejXbjoWb2euGYyL5KYjtFshcFX2LcwiD5kj2mpPciu"
+        },
+        {
+          "totalTokenAmountHeld": 13591585.967645,
+          "isSniper": false,
+          "ownedPercentage": 1.3591585967645001,
+          "holderId": "7JcCwzBLfxE578cHRCPtD3HHhqBerYfgJBbi52EeBwg3"
+        },
+        {
+          "totalTokenAmountHeld": 13318588.888516,
+          "isSniper": false,
+          "ownedPercentage": 1.3318588888515999,
+          "holderId": "7mim5VQNTpX6jGjHzFKS5U4Jue6Q5RAA6bApZpZUSLbJ"
+        },
+        {
+          "totalTokenAmountHeld": 2030947.810228,
+          "isSniper": false,
+          "ownedPercentage": 0.2030947810228,
+          "holderId": "rp8ntGS7P2k3faTvsRSWxQLa3B68DetNbwe1GHLiTUK"
+        },
+        {
+          "totalTokenAmountHeld": 1937811.01711,
+          "isSniper": false,
+          "ownedPercentage": 0.193781101711,
+          "holderId": "964qN2aYsCU6DnRPeS5yvmRrRMML2nX6dLyam8VuufX6"
+        },
+        {
+          "totalTokenAmountHeld": 1729824.487688,
+          "isSniper": false,
+          "ownedPercentage": 0.1729824487688,
+          "holderId": "9nxXieL5xMJYjNgG7H8sgmfnDrqQEwnt2wqxQVMq2PJo"
+        },
+        {
+          "totalTokenAmountHeld": 1458582.908844,
+          "isSniper": false,
+          "ownedPercentage": 0.1458582908844,
+          "holderId": "2tg2rpgMz1aoMcoAUhVRbY531cxETkczsXignGy2MEsw"
+        },
+        {
+          "totalTokenAmountHeld": 1402583.435274,
+          "isSniper": false,
+          "ownedPercentage": 0.14025834352740002,
+          "holderId": "4D8DrQnajJ8xYCeabdH979vaMWTazLMv2cFxAPRuow3v"
+        }
+      ],
+      "allTimeHighMarketCap": 283171.435754,
+      "poolAddress": "dKjMY1pa9YK5nEWfsKjocgGJcYLmkNGs95cxmSaUGxA",
+      "twitter": null,
+      "telegram": null,
+      "website": null,
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": false,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 902,
+      "sellTransactions": 669,
+      "transactions": 1571,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 8.99453788337
+    },
+    {
+      "coinMint": "FJ6F38ahVXMnfFVRwaozVzaKiact73xP9Hgkq4Dupump",
+      "dev": "C2PX4cwjiWU9XoqSFJF6fXXVVWeqaBtFHJWzEReRrNKu",
+      "name": "BAGHUNT",
+      "ticker": "BAGHUNT",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreihx7flqf2cj2ue5mvwounlqwnrcr42zh6r6xbxq6wogdnryjydiiu",
+      "creationTime": 1758040908287,
+      "numHolders": 111,
+      "marketCap": 4625.55793285,
+      "volume": 2338.6377,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 89,
+      "graduationDate": 1758040934959,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 21882252.251968,
+          "isSniper": false,
+          "ownedPercentage": 2.1882252251968004,
+          "holderId": "37NaQDusi5dnMxzVFC7sni8pE4evFGk3RgoLa2nBbGyV"
+        },
+        {
+          "totalTokenAmountHeld": 3208329.315785,
+          "isSniper": false,
+          "ownedPercentage": 0.3208329315785,
+          "holderId": "6Cb7EwuY9yc9M17xisih4EJ4ZFUQp5B3kWhFdvq6cULe"
+        },
+        {
+          "totalTokenAmountHeld": 2487247.942606,
+          "isSniper": false,
+          "ownedPercentage": 0.24872479426060004,
+          "holderId": "GnU8m85femgq6hFfY2PH4YR3QXsYsQqd64kJGxdTdRwa"
+        },
+        {
+          "totalTokenAmountHeld": 2424339.879678,
+          "isSniper": false,
+          "ownedPercentage": 0.24243398796780002,
+          "holderId": "EnREW3NfvgBBHnQGqj4ujQRsQwejm5bMTFK9wp15u54m"
+        },
+        {
+          "totalTokenAmountHeld": 1926632.359286,
+          "isSniper": false,
+          "ownedPercentage": 0.19266323592860002,
+          "holderId": "3v4WA7BqzQtxhcpML8AgHyk96Ufd43ZsAQAcF9pEExFj"
+        },
+        {
+          "totalTokenAmountHeld": 1588663.966954,
+          "isSniper": false,
+          "ownedPercentage": 0.1588663966954,
+          "holderId": "7FPvXsYGPiekvdtxpDkKLLG29noeZNbJj3RGhkDioyi"
+        },
+        {
+          "totalTokenAmountHeld": 1382057.511497,
+          "isSniper": false,
+          "ownedPercentage": 0.1382057511497,
+          "holderId": "DB9a2QBqzXaqMtnLWeqWHTaaK6dCihUQgRVVKC2XtwF1"
+        },
+        {
+          "totalTokenAmountHeld": 1190024.613452,
+          "isSniper": false,
+          "ownedPercentage": 0.1190024613452,
+          "holderId": "FUC1kfdrhKSrL3aaiEacHy7eCdezHkAA5nYVKEedfdfs"
+        },
+        {
+          "totalTokenAmountHeld": 1177406.33217,
+          "isSniper": false,
+          "ownedPercentage": 0.11774063321700001,
+          "holderId": "J1LLKnzZLxbgPNmpDBBk3PczXW3m6K1uavDZRbWJ2nnt"
+        },
+        {
+          "totalTokenAmountHeld": 1016172.137006,
+          "isSniper": false,
+          "ownedPercentage": 0.10161721370059999,
+          "holderId": "5rxp1ifW21HKuBpcnsbSxpzrDX9RaN1Ht7UrZFi9JVfN"
+        }
+      ],
+      "allTimeHighMarketCap": 293591.002145,
+      "poolAddress": "32JyudVfL7GDn2FuR2YkaP3Rehd7J7Nd48DacAyZ4LKj",
+      "twitter": "https://x.com/BAGHUNTLIVE",
+      "telegram": null,
+      "website": "https://baghunt.xyz/",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 1842,
+      "sellTransactions": 2235,
+      "transactions": 4077,
+      "sniperOwnedPercentage": 0.000641820780995,
+      "topHoldersPercentage": 3.8283126310399997
+    },
+    {
+      "coinMint": "C3cdSpezKZgQhE6nLRoZAvuF67W4ATb8PwWv4j8rpump",
+      "dev": "AUYaTYWhzkUJagwXporbKUcE7thu9b83QasDRMg2XvWE",
+      "name": "World Record Royale",
+      "ticker": "WRR",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreihq7x4jy2g25eavnn4r5hueqw6mxqkrb3fyzchrveceeqar6kbi4u",
+      "creationTime": 1758040625416,
+      "numHolders": 840,
+      "marketCap": 169672.698924,
+      "volume": 4236.3815,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 20,
+      "graduationDate": 1758040728644,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 21798335.882796,
+          "isSniper": false,
+          "ownedPercentage": 2.1798335882796,
+          "holderId": "ERPKpv5xhAwjwiGJohKTCH77nRcitbhv9QgnLdeoNLYi"
+        },
+        {
+          "totalTokenAmountHeld": 21213049.906166,
+          "isSniper": false,
+          "ownedPercentage": 2.1213049906165997,
+          "holderId": "9FG9eGG11iAFX2gzaWkyWirmAhYE4Uvk8sozRxApqo1t"
+        },
+        {
+          "totalTokenAmountHeld": 20163592.808566,
+          "isSniper": false,
+          "ownedPercentage": 2.0163592808566,
+          "holderId": "DQwjLtYNfEHvV1aHnG4Joi6EoDuxPmaphSo2ejqRR76C"
+        },
+        {
+          "totalTokenAmountHeld": 19622054.585394,
+          "isSniper": true,
+          "ownedPercentage": 1.9622054585393998,
+          "holderId": "9qsuL7PgNjzpiBHraas4Yrgt59rrcPBE41bwMRK9eX5G"
+        },
+        {
+          "totalTokenAmountHeld": 18123374.200423,
+          "isSniper": false,
+          "ownedPercentage": 1.8123374200422997,
+          "holderId": "6cZ15EQ9gpAtAh3GRVBRzMBTpksszRomvWYUSqmzFcJr"
+        },
+        {
+          "totalTokenAmountHeld": 18031025,
+          "isSniper": false,
+          "ownedPercentage": 1.8031025,
+          "holderId": "8w6e1egk9MNZfmvFhdAUwZjQTpjhax5crzUpFxBZzSP"
+        },
+        {
+          "totalTokenAmountHeld": 18000000.653435,
+          "isSniper": true,
+          "ownedPercentage": 1.8000000653435,
+          "holderId": "7UjzjNCBdhVSKRjfxyuwjk3uDeyAd7df486aiWgAbS5n"
+        },
+        {
+          "totalTokenAmountHeld": 17607490.638008,
+          "isSniper": false,
+          "ownedPercentage": 1.7607490638007999,
+          "holderId": "8z42vfcWwC3sKKL6p1to5wc1fYwkFShe4iHZJxraxJsB"
+        },
+        {
+          "totalTokenAmountHeld": 17000000.538706,
+          "isSniper": true,
+          "ownedPercentage": 1.7000000538706,
+          "holderId": "DsyEH19iMhNTfg7zvNrML1jcTrZ4NkxowwdPb4Es2t9d"
+        },
+        {
+          "totalTokenAmountHeld": 16539731.593901,
+          "isSniper": false,
+          "ownedPercentage": 1.6539731593901,
+          "holderId": "DEhGWiQmztTy2ttx613BhgBsPoAdNMZXnR9gLFSNxDfj"
+        }
+      ],
+      "allTimeHighMarketCap": 271190.886449,
+      "poolAddress": "22KriTGRf4o23aFsZfV4t7kFhmdAo9V9fqsMUaL9jm8r",
+      "twitter": "https://x.com/FoxMan1x",
+      "telegram": null,
+      "website": "https://www.tiktok.com/@FoxMan1x",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0.0353134762944,
+      "buyTransactions": 4785,
+      "sellTransactions": 3809,
+      "transactions": 8594,
+      "sniperOwnedPercentage": 0.0810292616479,
+      "topHoldersPercentage": 18.809865580700002
+    },
+    {
+      "coinMint": "Hox5rUHhAZi3dJxhS7J957CYK66LXB5CwWyHXWUupump",
+      "dev": "GJCUz27p7ZAME5AwBdudThxDESRHFmF6K2bqoP3y4qRu",
+      "name": "GooseWayne TV",
+      "ticker": "GOOSEWAYNE",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeieyrz2ktyya2rm3eaogfrhbuyrzki76nchj7nhhosornobq3wfg7u",
+      "creationTime": 1758040312551,
+      "numHolders": 58,
+      "marketCap": 4653.50020229,
+      "volume": 1398.4388,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 45,
+      "graduationDate": 1758040481793,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 20887468.501332,
+          "isSniper": false,
+          "ownedPercentage": 2.0887468501332,
+          "holderId": "7B8pk4u4xNx3pJvJpXpnCCGrAXXmYQyg7LstLJyXSEj6"
+        },
+        {
+          "totalTokenAmountHeld": 7926528.166971,
+          "isSniper": false,
+          "ownedPercentage": 0.7926528166971001,
+          "holderId": "2m7v1htF8vpH5xz59qs7mWWXsjsL8AaWzegTYbV6a2Uo"
+        },
+        {
+          "totalTokenAmountHeld": 7277662.395567,
+          "isSniper": false,
+          "ownedPercentage": 0.7277662395567,
+          "holderId": "EqidMTAusgG5zToRhmzecAGbNCsW768KxfZkxwXP8js3"
+        },
+        {
+          "totalTokenAmountHeld": 6780079.012205,
+          "isSniper": false,
+          "ownedPercentage": 0.6780079012205,
+          "holderId": "B4jsNqyGK3SqstgHsVcyDhHmz6LwEsFE1o2HUQyQZnVF"
+        },
+        {
+          "totalTokenAmountHeld": 5239819.903668,
+          "isSniper": false,
+          "ownedPercentage": 0.5239819903668,
+          "holderId": "CXmQr7Xj8C1TPDZZaf3E7Rb3cNdMqv763iAksCSXPBE4"
+        },
+        {
+          "totalTokenAmountHeld": 2427545.466627,
+          "isSniper": false,
+          "ownedPercentage": 0.2427545466627,
+          "holderId": "9SFLMMGMeNqFTzYYWPjgX2nMr8H8z4orCJRz3RRUrfAW"
+        },
+        {
+          "totalTokenAmountHeld": 2094350.722379,
+          "isSniper": false,
+          "ownedPercentage": 0.20943507223789998,
+          "holderId": "88888sweMcedUjgvnVfgpCfhHeHoBmmJfXdw49RrkxDD"
+        },
+        {
+          "totalTokenAmountHeld": 2027655.122039,
+          "isSniper": false,
+          "ownedPercentage": 0.20276551220390002,
+          "holderId": "FqdfAUxN9YwBnjFsAMC593ifDjSBTtqZXNxkiKL1PDnm"
+        },
+        {
+          "totalTokenAmountHeld": 2017646.310914,
+          "isSniper": false,
+          "ownedPercentage": 0.2017646310914,
+          "holderId": "7cNeed4VxPUVUygVAge4EH9EPmG2raY3FNXvvmtsZKs6"
+        },
+        {
+          "totalTokenAmountHeld": 1901816.22522,
+          "isSniper": false,
+          "ownedPercentage": 0.190181622522,
+          "holderId": "3v4WA7BqzQtxhcpML8AgHyk96Ufd43ZsAQAcF9pEExFj"
+        }
+      ],
+      "allTimeHighMarketCap": 136815.15144,
+      "poolAddress": "CwXTubJa3ZHCrsbYHCCpvNJQ1R1o5gi3UTSJrRHbpYAA",
+      "twitter": null,
+      "telegram": null,
+      "website": "https://www.youtube.com/@GooseWayneTV/featured",
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 1335,
+      "sellTransactions": 1360,
+      "transactions": 2695,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 5.85805718269
+    },
+    {
+      "coinMint": "DwFfGMWBuSpFRcZLxuoW3sbj2kRSJ2bJahyvzgvSpump",
+      "dev": "3KFrUhDVnLQd5w5Z3WM5EH4NiQaW88tgxQbHZC3fbtNV",
+      "name": "JAKE",
+      "ticker": "JAKE",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreic6kxgvbfux67c5yo6xy62za3xsx7l3wmbaalwlzw2ses2ifdybaa",
+      "creationTime": 1758040186134,
+      "numHolders": 12,
+      "marketCap": 4364.0819841,
+      "volume": 365.0448,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 59,
+      "graduationDate": 1758040186713,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 7973122.213276,
+          "isSniper": false,
+          "ownedPercentage": 0.7973122213276,
+          "holderId": "5ip4iEBwFQy1cvtiagHUHwgLsZUgkZFiKfHPLMpjUa2b"
+        },
+        {
+          "totalTokenAmountHeld": 805733.798115,
+          "isSniper": false,
+          "ownedPercentage": 0.08057337981149999,
+          "holderId": "4365qrLBwv5E9sXnnknG5dR9M5ukUSpTge8PvdGmvoBs"
+        },
+        {
+          "totalTokenAmountHeld": 571467.064024,
+          "isSniper": false,
+          "ownedPercentage": 0.057146706402399994,
+          "holderId": "7C8X1TJVDs3YvRa7v19w9uw96A8vVt1sZW5Jnio2Gvo9"
+        },
+        {
+          "totalTokenAmountHeld": 491410.611213,
+          "isSniper": false,
+          "ownedPercentage": 0.049141061121300005,
+          "holderId": "2g2vpobZxmQTx6h7ML9zYkPM5Yj9xGzuXgc2pQFTDVSy"
+        },
+        {
+          "totalTokenAmountHeld": 483748.597024,
+          "isSniper": false,
+          "ownedPercentage": 0.0483748597024,
+          "holderId": "GEnTLe5Wg9LuepSf4fA8PgpBX62SJU4mPwzjbZZiTjWs"
+        },
+        {
+          "totalTokenAmountHeld": 250523.100324,
+          "isSniper": false,
+          "ownedPercentage": 0.0250523100324,
+          "holderId": "3Tqf5XeTFRRKSnj2gjCfbXR3NXmWCmCCnwqDcsCHws3N"
+        },
+        {
+          "totalTokenAmountHeld": 14667.070456,
+          "isSniper": false,
+          "ownedPercentage": 0.0014667070456,
+          "holderId": "3MEVyJh4xZK69gNbG8nkeDZXjhLMMYDwM5DrWLpCNJs8"
+        },
+        {
+          "totalTokenAmountHeld": 9877.467407,
+          "isSniper": false,
+          "ownedPercentage": 0.0009877467406999999,
+          "holderId": "cD4FntmnNDZ87VdFhiBhH4EqzxZjf4HqvB7s3joas94"
+        },
+        {
+          "totalTokenAmountHeld": 5033.464487,
+          "isSniper": false,
+          "ownedPercentage": 0.0005033464487,
+          "holderId": "DyVsFJSjrrpagQAEbjaANaC6zj1XTS6bD58NqrHgUNfL"
+        },
+        {
+          "totalTokenAmountHeld": 3634.551374,
+          "isSniper": false,
+          "ownedPercentage": 0.0003634551374,
+          "holderId": "4sjr3KtpgpFK3yhthLQAe99wJSYkdoh8gBHSjYLazx2f"
+        }
+      ],
+      "allTimeHighMarketCap": 246036.156626,
+      "poolAddress": "EtWjeRb48YCXntRhzmQLVYPFtm238RsAaSfbzgFxLooo",
+      "twitter": "https://x.com/JakeGagain",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 118,
+      "sellTransactions": 110,
+      "transactions": 228,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 1.06092179377
+    },
+    {
+      "coinMint": "7H6KkA6QFGmQFw6sd6AkphvucMMJsWrMgmfm5LGcpump",
+      "dev": "EbR7gcTsZsmKpiLeLKi41ryniwE4p5B8tJE9Z6T1UrmR",
+      "name": "Robotics",
+      "ticker": "ROBOTICS",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreialdlgwb3aelf5qcu5ky2xv5o4232xd5t3rg4yixq6yxdmbnqfroa",
+      "creationTime": 1758038776746,
+      "numHolders": 185,
+      "marketCap": 6495.7207189,
+      "volume": 3318.2803,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 15,
+      "graduationDate": 1758040060987,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 39085619.451997,
+          "isSniper": false,
+          "ownedPercentage": 3.9085619451997,
+          "holderId": "FyoGcnbGGSEkXMfzWokiRB7pBuDTFiSf4uNKaCBgtajF"
+        },
+        {
+          "totalTokenAmountHeld": 22210806.492006,
+          "isSniper": false,
+          "ownedPercentage": 2.2210806492006,
+          "holderId": "AaMw2VFHPio2xfKsjvJ4epGxx6Cu8oNc4YALJ8e3EpTr"
+        },
+        {
+          "totalTokenAmountHeld": 20812973.623213,
+          "isSniper": false,
+          "ownedPercentage": 2.0812973623213002,
+          "holderId": "9HNFpuKDR3Qix5rJBHFWuqP9nZJzayyT94gu7ADcbZ1A"
+        },
+        {
+          "totalTokenAmountHeld": 15173400.054194,
+          "isSniper": false,
+          "ownedPercentage": 1.5173400054194,
+          "holderId": "DJDNfeyJxQN3J4P326aqj48yUeQSBc4ZLfbjSNSceWb8"
+        },
+        {
+          "totalTokenAmountHeld": 14532566.909667,
+          "isSniper": false,
+          "ownedPercentage": 1.4532566909667002,
+          "holderId": "9v2uHJcY9GoLtthFiSqFeCy7tzCx6AqwbrKiDtnRdrYq"
+        },
+        {
+          "totalTokenAmountHeld": 11159659.105358,
+          "isSniper": false,
+          "ownedPercentage": 1.1159659105358,
+          "holderId": "BSbcQDAF4C4jDkAEUDmDjcxfp15Wu2puiLBSaeFDQ3Kx"
+        },
+        {
+          "totalTokenAmountHeld": 7840297.269326,
+          "isSniper": false,
+          "ownedPercentage": 0.7840297269325999,
+          "holderId": "5R3uqJ8Gs2tZRjvVpbyMrdpKRvcTXxCXQqVjURfpi42n"
+        },
+        {
+          "totalTokenAmountHeld": 7668725.963449,
+          "isSniper": true,
+          "ownedPercentage": 0.7668725963449,
+          "holderId": "A8wRBwqqUzrsW3kFDRgXsytTNMiC4HdAy9MxSDs1aDbP"
+        },
+        {
+          "totalTokenAmountHeld": 7410598.672972,
+          "isSniper": false,
+          "ownedPercentage": 0.7410598672972,
+          "holderId": "2NuAgVk3hcb7s4YvP4GjV5fD8eDvZQv5wuN6ZC8igRfV"
+        },
+        {
+          "totalTokenAmountHeld": 6042550.133744,
+          "isSniper": false,
+          "ownedPercentage": 0.6042550133744,
+          "holderId": "6uwqG7Uog6FVUHZp5rx6jkJ8VjWjNf7svcAzzcCJQh7Q"
+        }
+      ],
+      "allTimeHighMarketCap": 377402.769975,
+      "poolAddress": "8P7DZyLpS8C4PdjuNR8men4zoEQ8nMrT17bX1zd7byBX",
+      "twitter": null,
+      "telegram": null,
+      "website": null,
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": false,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0.0302898857889,
+      "buyTransactions": 2916,
+      "sellTransactions": 2630,
+      "transactions": 5546,
+      "sniperOwnedPercentage": 0.0116112940384,
+      "topHoldersPercentage": 15.193719767600001
+    },
+    {
+      "coinMint": "5LKDbHHYdcLN1VHBiW66iZRXhWC91Ddv1fCwhvsEpump",
+      "dev": "22Bxyb7dZfKb5MJoZ99Kdj2GmNfJ2oxfc6t1mJJjsHQz",
+      "name": "LIFE OF AB",
+      "ticker": "MOVIE",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeigwovxuye3vadvpnp6kttpaaxczm5m4zlz2k4bs3bflm2qvsiu7ni",
+      "creationTime": 1758038107310,
+      "numHolders": 416,
+      "marketCap": 183188.122997,
+      "volume": 5439.3407,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 7,
+      "graduationDate": 1758039524175,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 63880562.821684,
+          "isSniper": false,
+          "ownedPercentage": 6.3880562821683995,
+          "holderId": "Ar2PNmUDGFXt3BPuDPj97GodN415ZWR7T5aBU2WnWCAB"
+        },
+        {
+          "totalTokenAmountHeld": 33347726.77677,
+          "isSniper": false,
+          "ownedPercentage": 3.334772677677,
+          "holderId": "9eRGoERmxDqTNLSazLjKyXx7gqDPfY7bVayVvcVQjKcB"
+        },
+        {
+          "totalTokenAmountHeld": 21213873.607404,
+          "isSniper": false,
+          "ownedPercentage": 2.1213873607404,
+          "holderId": "CnJHZhcAqTqMuQmxmchw9C8xVzDrQ1q2MarRUKNeXcZd"
+        },
+        {
+          "totalTokenAmountHeld": 19837403.449972,
+          "isSniper": false,
+          "ownedPercentage": 1.9837403449972,
+          "holderId": "AwVR2fMjBY8ZVdKfQJZpchkuyqdc1pGWtvKQ3jKB52Nm"
+        },
+        {
+          "totalTokenAmountHeld": 12181378.291712,
+          "isSniper": false,
+          "ownedPercentage": 1.2181378291711997,
+          "holderId": "5MJhpid59j7KVyRMw7c8qZK4cXX5RubEq8n9AxHcLkoQ"
+        },
+        {
+          "totalTokenAmountHeld": 11620946.976945,
+          "isSniper": true,
+          "ownedPercentage": 1.1620946976945,
+          "holderId": "Aib22AetJSWDh2znQedBFNmLhVBWuAJhCbbmPU2VWzC1"
+        },
+        {
+          "totalTokenAmountHeld": 11477921.173612,
+          "isSniper": false,
+          "ownedPercentage": 1.1477921173612,
+          "holderId": "9DEHzYNjqNtm7GfNyNCHgpDywSrCumB5oVZb5Qx8ZGr6"
+        },
+        {
+          "totalTokenAmountHeld": 11457264.559725,
+          "isSniper": false,
+          "ownedPercentage": 1.1457264559724998,
+          "holderId": "EvBUrLsEGVio64kJKTsBy6uhYahi7iXhZPhyLPkf5Ke2"
+        },
+        {
+          "totalTokenAmountHeld": 10861290.959075,
+          "isSniper": false,
+          "ownedPercentage": 1.0861290959075,
+          "holderId": "Ey6ZjfDy1gGzvJNZYQ27eFiv1BduZRXCWGzrsgJFCwsM"
+        },
+        {
+          "totalTokenAmountHeld": 10855493.388698,
+          "isSniper": false,
+          "ownedPercentage": 1.0855493388698,
+          "holderId": "4n3sbDW8kWtXtjGrxeAhDubDL36FFUifkof6qDmbevLr"
+        }
+      ],
+      "allTimeHighMarketCap": 1663825.43025,
+      "poolAddress": "2sDBuuqkWa7tFgjrRgUb9nBaAd3UeanAuNZqRmKq1Pei",
+      "twitter": null,
+      "telegram": null,
+      "website": null,
+      "hasTwitter": false,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": false,
+      "twitterReuseCount": 0,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 3124,
+      "sellTransactions": 2600,
+      "transactions": 5724,
+      "sniperOwnedPercentage": 0.0128673479431,
+      "topHoldersPercentage": 20.673386200600003
+    },
+    {
+      "coinMint": "AgTr1Qp9dA89kyZpfqXdHdRsh7WfYM3jVLA4DDMKpump",
+      "dev": "EP4q6Jj3cq6Mk4bB2MrVLrUm3VK6CbJXcbFtUgR1uADL",
+      "name": "Solana Live",
+      "ticker": "SL",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreibkkqmbsjmgvgetzo2h2s4lamsl62jelcjphhd4ax5emfk3pi6xcu",
+      "creationTime": 1758038487208,
+      "numHolders": 198,
+      "marketCap": 5234.4964742,
+      "volume": 1718.1021,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 3,
+      "graduationDate": 1758039451136,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 33474236.266486,
+          "isSniper": false,
+          "ownedPercentage": 3.3474236266486,
+          "holderId": "BSbcQDAF4C4jDkAEUDmDjcxfp15Wu2puiLBSaeFDQ3Kx"
+        },
+        {
+          "totalTokenAmountHeld": 21262779.15305,
+          "isSniper": false,
+          "ownedPercentage": 2.126277915305,
+          "holderId": "2srk1JRJkrK66XSVM6vmpQVLkbF6ckNDTsjQWBquphFy"
+        },
+        {
+          "totalTokenAmountHeld": 11511479.495365,
+          "isSniper": false,
+          "ownedPercentage": 1.1511479495365,
+          "holderId": "C2iZjUa2Uf3P1xQTPuxRGTrNzVPn1PUspWeGUx1yfZjf"
+        },
+        {
+          "totalTokenAmountHeld": 4926048.084775,
+          "isSniper": false,
+          "ownedPercentage": 0.4926048084775,
+          "holderId": "7EFjikkRP6hg5hWw64fmcFdGBsNRmcHqxm9U5jqmWpDo"
+        },
+        {
+          "totalTokenAmountHeld": 4594806.45878,
+          "isSniper": false,
+          "ownedPercentage": 0.459480645878,
+          "holderId": "CfcugEGC8tnkmHgodP75NXXfAxLzjF97vNuFoMbwpD7m"
+        },
+        {
+          "totalTokenAmountHeld": 4443799.261843,
+          "isSniper": false,
+          "ownedPercentage": 0.44437992618429994,
+          "holderId": "2aMS6Bazj8XLGi1ZVk7yyQ2UDnTvDaqYs9o1ncwguMvC"
+        },
+        {
+          "totalTokenAmountHeld": 4325550.991994,
+          "isSniper": false,
+          "ownedPercentage": 0.4325550991994,
+          "holderId": "8dBWVkJ8UwAgQtPxPF5KQ1YuRicw49ZdUX47Lf76rypS"
+        },
+        {
+          "totalTokenAmountHeld": 4228765.204768,
+          "isSniper": false,
+          "ownedPercentage": 0.4228765204768,
+          "holderId": "Dz1LxRLWfPtnTFf7oshTyfFwhQenq2ACVynDbuZnmF6k"
+        },
+        {
+          "totalTokenAmountHeld": 4196400.603036,
+          "isSniper": false,
+          "ownedPercentage": 0.4196400603036,
+          "holderId": "2bRJn4NR84G1k79K8pSS81bv8NknTUjKpfRvNQ9tNEFx"
+        },
+        {
+          "totalTokenAmountHeld": 3926397.772683,
+          "isSniper": false,
+          "ownedPercentage": 0.3926397772683,
+          "holderId": "DHbau3cS9xJJaVjqhKZgrqCyiB8kZEqs4xJWNeRiKEcg"
+        }
+      ],
+      "allTimeHighMarketCap": 110104.333648,
+      "poolAddress": "2CUwjoLymKxq3m4YQ7V8gqs49XmeUcL9SGQR9YPbvowe",
+      "twitter": "https://x.com/i/broadcasts/1mnxeNDEkwoKX",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 3182,
+      "sellTransactions": 2437,
+      "transactions": 5619,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 9.689026329279999
+    },
+    {
+      "coinMint": "Bo6TtUyPJtjwutZeYC7RAdm3fKjLVxbyxPWFg8sBpump",
+      "dev": "EuRkYXbWsUf8AY1oscqJnFUUNGoJtGbCgHnubaKgsXLQ",
+      "name": "RUNWARDOTAPP",
+      "ticker": "RUNWAR",
+      "imageUrl": "https://ipfs.io/ipfs/bafkreih6uzjvfmxyn7zj6niougd7uqntfej6f2yfbx3ouix5b6wthf4tqy",
+      "creationTime": 1758038689320,
+      "numHolders": 134,
+      "marketCap": 7149.75694088,
+      "volume": 1457.3683,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 79,
+      "graduationDate": 1758038797443,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 40000000,
+          "isSniper": false,
+          "ownedPercentage": 4,
+          "holderId": "E2PtKEYVb7Lq7wb4MK3VDPCR6yStCG8vgAJtsPpP2zDZ"
+        },
+        {
+          "totalTokenAmountHeld": 34779149.9717,
+          "isSniper": false,
+          "ownedPercentage": 3.4779149971699996,
+          "holderId": "9HNFpuKDR3Qix5rJBHFWuqP9nZJzayyT94gu7ADcbZ1A"
+        },
+        {
+          "totalTokenAmountHeld": 16831853.594836,
+          "isSniper": false,
+          "ownedPercentage": 1.6831853594836002,
+          "holderId": "7zxR1uJNC1N6EXnnAtevpwiXrRc789hT3HE4Suo9kDe3"
+        },
+        {
+          "totalTokenAmountHeld": 14385023.795202,
+          "isSniper": true,
+          "ownedPercentage": 1.4385023795202,
+          "holderId": "55jKWP4sUmkAa34cNv5sxK9HAjhNgYh793xyjAqvhvbC"
+        },
+        {
+          "totalTokenAmountHeld": 12319364.211924,
+          "isSniper": false,
+          "ownedPercentage": 1.2319364211924,
+          "holderId": "J3DuaVWn93PtXpbcnUXXjwCJPVPY4SAqMD4JbQz15ocD"
+        },
+        {
+          "totalTokenAmountHeld": 12314657.714966,
+          "isSniper": false,
+          "ownedPercentage": 1.2314657714966,
+          "holderId": "4Rvto2aKQyPwQTg5XpjqoePGNu8ZWLVFdBMXotBCht3V"
+        },
+        {
+          "totalTokenAmountHeld": 11861502.498934,
+          "isSniper": true,
+          "ownedPercentage": 1.1861502498934002,
+          "holderId": "DZ2T83RQ6DFjo2YT3WctifaEe6V734nzQz3mZ5jVJj65"
+        },
+        {
+          "totalTokenAmountHeld": 9879351.814885,
+          "isSniper": false,
+          "ownedPercentage": 0.9879351814885,
+          "holderId": "yvFDZfmHkvMkEwYt57am95tSRxucf1hr9Yz7nBy7ggL"
+        },
+        {
+          "totalTokenAmountHeld": 8062494.204178,
+          "isSniper": false,
+          "ownedPercentage": 0.8062494204177999,
+          "holderId": "BwuY9bzAz78N5EuUVj71DLTCFehFWNjLDLRZwp6YmFv4"
+        },
+        {
+          "totalTokenAmountHeld": 7338792.490598,
+          "isSniper": true,
+          "ownedPercentage": 0.7338792490598,
+          "holderId": "EuRkYXbWsUf8AY1oscqJnFUUNGoJtGbCgHnubaKgsXLQ"
+        }
+      ],
+      "allTimeHighMarketCap": 113138.18439,
+      "poolAddress": "AmC76GvHjyMk1oqu1NhMfBrLfsxkDbZtX3xjP386JvyM",
+      "twitter": "https://x.com/i/communities/1967574195014885695",
+      "telegram": null,
+      "website": "https://runwar.app/",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0.73387924906,
+      "buyTransactions": 1439,
+      "sellTransactions": 1430,
+      "transactions": 2869,
+      "sniperOwnedPercentage": 0.0372177833919,
+      "topHoldersPercentage": 16.7772190297
+    },
+    {
+      "coinMint": "6HtPkVAzbkeoQV8ZyxKxxMiTUvcmuaSviCztS2y5pump",
+      "dev": "GSG6TDNnxWYQTFuKcSH6R4nPejDvCLLADKmVZE3PrrHQ",
+      "name": "SUJA",
+      "ticker": "SUJA",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeicztm4457xcoltdhgo73tdiejeiduqdoh6zqfqtrkka7zfjbnpjea",
+      "creationTime": 1758038442966,
+      "numHolders": 216,
+      "marketCap": 10685.802161,
+      "volume": 3925.6897,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 20,
+      "graduationDate": 1758038705454,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 54647398.837169,
+          "isSniper": false,
+          "ownedPercentage": 5.4647398837168994,
+          "holderId": "Az5cKUvZBmyU5qMKZ1YdBpitkmcFDFecLerRCrSYWC75"
+        },
+        {
+          "totalTokenAmountHeld": 36424122.137801,
+          "isSniper": false,
+          "ownedPercentage": 3.6424122137801,
+          "holderId": "4XDsU9vMLfYqRSUtE9Rm8vxpbPLAEQCDHV6P5yrZT3dm"
+        },
+        {
+          "totalTokenAmountHeld": 31612444.678849,
+          "isSniper": false,
+          "ownedPercentage": 3.1612444678849,
+          "holderId": "TimeAdRpWxqKXR5YPEwGBF48KC5V5TxB2g6mnyCp4VR"
+        },
+        {
+          "totalTokenAmountHeld": 30259301.414403,
+          "isSniper": false,
+          "ownedPercentage": 3.0259301414403,
+          "holderId": "DgmVC5bCgZs9eZMFejLyCx8JSbdE38BvyYordaMY63hC"
+        },
+        {
+          "totalTokenAmountHeld": 18947215.992963,
+          "isSniper": false,
+          "ownedPercentage": 1.8947215992963002,
+          "holderId": "GFWh4tPGTbahHRKuLJzWiiQbwBGFxDAteajKqKFNJwwe"
+        },
+        {
+          "totalTokenAmountHeld": 17178840.420687,
+          "isSniper": false,
+          "ownedPercentage": 1.7178840420687,
+          "holderId": "HzwdwGhHKkiz2W5dKCXVGq6FZ1Xt5KzdVU8cyUHojJa1"
+        },
+        {
+          "totalTokenAmountHeld": 15743502.578782,
+          "isSniper": false,
+          "ownedPercentage": 1.5743502578782,
+          "holderId": "4PnTrxdnWnJD31mi5DwFZeauaFoy2rnSge7T6PKbg2AS"
+        },
+        {
+          "totalTokenAmountHeld": 13899355.976602,
+          "isSniper": false,
+          "ownedPercentage": 1.3899355976602,
+          "holderId": "3Jci9NA3AdJdZDZETWBx7hN71QN9C5HcjQUeeWa48wEv"
+        },
+        {
+          "totalTokenAmountHeld": 13618824.031038,
+          "isSniper": false,
+          "ownedPercentage": 1.3618824031037997,
+          "holderId": "DqQvhz9ptPutDoLtdMfsqv8nJ9iAHqmQM2cxWbxtXwkW"
+        },
+        {
+          "totalTokenAmountHeld": 10203401.093855,
+          "isSniper": false,
+          "ownedPercentage": 1.0203401093855,
+          "holderId": "FACAiiD8MGC1G8KDmPEBuTiQZWqjfpfx5KVxQkhKrazP"
+        }
+      ],
+      "allTimeHighMarketCap": 321595.814415,
+      "poolAddress": "HtTAx56jsMAyhP5EVotn9hcXzf7ZoxD8yEQrwHcuq3X8",
+      "twitter": "https://x.com/suja_gg",
+      "telegram": null,
+      "website": "https://twitch.tv/suja",
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": true,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 3152,
+      "sellTransactions": 3134,
+      "transactions": 6286,
+      "sniperOwnedPercentage": 2.12005864e-07,
+      "topHoldersPercentage": 24.2534407162
+    },
+    {
+      "coinMint": "94Fn7rJ181SfZSvfjMdF3MeJXkoiHk5ReJzAkuispump",
+      "dev": "7cjQCEDz8so3XKcfWrUMkK5YZuKHqHSqRrJtES6KbZhf",
+      "name": "Tied to tree till 10M",
+      "ticker": "TTT",
+      "imageUrl": "https://ipfs.io/ipfs/QmdvuEfNC5LHFy9XgRJwWhyxf7zRkxBL7shcxQvkxZA7tB",
+      "creationTime": 1758038086431,
+      "numHolders": 172,
+      "marketCap": 4625.35181737,
+      "volume": 2093.2203,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 3,
+      "graduationDate": 1758038557524,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 4993789.197263,
+          "isSniper": false,
+          "ownedPercentage": 0.49937891972629994,
+          "holderId": "CfcugEGC8tnkmHgodP75NXXfAxLzjF97vNuFoMbwpD7m"
+        },
+        {
+          "totalTokenAmountHeld": 4654283.677474,
+          "isSniper": false,
+          "ownedPercentage": 0.46542836774739993,
+          "holderId": "BTaNXfsjSnTFDvf8Fi7FDKo18xQiq8aAcPwqKPoDqTxX"
+        },
+        {
+          "totalTokenAmountHeld": 3964927.301672,
+          "isSniper": false,
+          "ownedPercentage": 0.3964927301672,
+          "holderId": "DcUfmh19vEk1PJNAF4tStBRVN5Ag5rrxPpKYHBbHGyWk"
+        },
+        {
+          "totalTokenAmountHeld": 3667497.429098,
+          "isSniper": false,
+          "ownedPercentage": 0.3667497429098,
+          "holderId": "AGCC5SeibTDtuZFG8iSkFB6onkLaKPNMeByiYkeQvE5M"
+        },
+        {
+          "totalTokenAmountHeld": 3532572.029832,
+          "isSniper": false,
+          "ownedPercentage": 0.3532572029832,
+          "holderId": "Gbg3YBF8PudLGZuRqFoeB9Xp58MJXD6tTRtw9hbByRXz"
+        },
+        {
+          "totalTokenAmountHeld": 3452559.713581,
+          "isSniper": false,
+          "ownedPercentage": 0.3452559713581,
+          "holderId": "71q66FUziso4mYLjHrf5GZeFmxjNFHVnz6d7aMFHrr8B"
+        },
+        {
+          "totalTokenAmountHeld": 3090666.983586,
+          "isSniper": false,
+          "ownedPercentage": 0.30906669835859996,
+          "holderId": "BhkfFWNSYeKNPyUWWuyrFrNLfeRzcZxvVibN55kDHSad"
+        },
+        {
+          "totalTokenAmountHeld": 2782455.71837,
+          "isSniper": false,
+          "ownedPercentage": 0.278245571837,
+          "holderId": "FVm6HQAuAb41aiAFCrYn5uAoC1qi2YxwYH3cYwbkFGty"
+        },
+        {
+          "totalTokenAmountHeld": 2734215.346249,
+          "isSniper": false,
+          "ownedPercentage": 0.27342153462490004,
+          "holderId": "J464GYBZ9nDiy7AiX6u35zSmDayZeNtdmPKhdjZnaXfC"
+        },
+        {
+          "totalTokenAmountHeld": 2165962.136153,
+          "isSniper": false,
+          "ownedPercentage": 0.2165962136153,
+          "holderId": "2RCGiaZBiZAuxxdkYjaibLaZwYAAvH6PdtfWCpsakxsZ"
+        }
+      ],
+      "allTimeHighMarketCap": 159963.782193,
+      "poolAddress": "5mRZ3SizJLzjpgUYZd6npUDJnkmR2HtNwsEsdjCXvcf1",
+      "twitter": "https://x.com/torpedosports?s=21",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 0,
+      "buyTransactions": 2861,
+      "sellTransactions": 2679,
+      "transactions": 5540,
+      "sniperOwnedPercentage": 0,
+      "topHoldersPercentage": 3.50389295333
+    },
+    {
+      "coinMint": "4Nmoz1KHDHwyA1xvx4XLy6u6z7T3JEStrn2Mayf9pump",
+      "dev": "5AWz5ovF2zKpJi7fFfaANuVjDkAZwgvmtLHmSa85D9wP",
+      "name": "SHIROCHAN",
+      "ticker": "SHIRO",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeiey3vk6valijlvzj2t34r7dcypsjh4oir2xrkzvv3dfrd2tnioxe4",
+      "creationTime": 1758037592598,
+      "numHolders": 722,
+      "marketCap": 145274.371585,
+      "volume": 8011.607,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 10,
+      "graduationDate": 1758037921196,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 52216002.884045,
+          "isSniper": false,
+          "ownedPercentage": 5.2216002884045,
+          "holderId": "ASanWzeMiwV1YishccAQFgNwwzTBVraBW1xVZ1YuUDDf"
+        },
+        {
+          "totalTokenAmountHeld": 39141950.828163,
+          "isSniper": true,
+          "ownedPercentage": 3.9141950828163,
+          "holderId": "5AWz5ovF2zKpJi7fFfaANuVjDkAZwgvmtLHmSa85D9wP"
+        },
+        {
+          "totalTokenAmountHeld": 29200888.19475,
+          "isSniper": false,
+          "ownedPercentage": 2.920088819475,
+          "holderId": "5pQQPFdxhG3XKCjw8vM31dG6CMCLdEEjT8ZhBia1NaA4"
+        },
+        {
+          "totalTokenAmountHeld": 27617249.607126,
+          "isSniper": false,
+          "ownedPercentage": 2.7617249607126,
+          "holderId": "3WPSxuhFDxkFz4nmSWBTsDpHeeiay7sVC2M4TscVokMm"
+        },
+        {
+          "totalTokenAmountHeld": 23245744.283487,
+          "isSniper": false,
+          "ownedPercentage": 2.3245744283487,
+          "holderId": "2TuHRoJw2qqmt4Pd3NEixq5nxAjEf3M4hQ5y1E1EDF5U"
+        },
+        {
+          "totalTokenAmountHeld": 20667272.864964,
+          "isSniper": false,
+          "ownedPercentage": 2.0667272864964,
+          "holderId": "3i8PFCWfA8VK4YYfr5iaVqGyFrsnuuxtf2m76G4Rcapf"
+        },
+        {
+          "totalTokenAmountHeld": 20294288.364518,
+          "isSniper": false,
+          "ownedPercentage": 2.0294288364518,
+          "holderId": "EZhDBpoaoe8fycDGDix6f32ohGAufyHwMu8xdfiXc6ut"
+        },
+        {
+          "totalTokenAmountHeld": 17675252.750971,
+          "isSniper": false,
+          "ownedPercentage": 1.7675252750971,
+          "holderId": "FTuVz99N6FRj74KyuEdrb2rpwiM36KQWEx2cYffbViYT"
+        },
+        {
+          "totalTokenAmountHeld": 17646896.71741,
+          "isSniper": false,
+          "ownedPercentage": 1.7646896717409997,
+          "holderId": "7nwA6FwhG8No2Rx5BCHJxg87jaTnCRD7digBwkp3WZEk"
+        },
+        {
+          "totalTokenAmountHeld": 15631931.532555,
+          "isSniper": false,
+          "ownedPercentage": 1.5631931532555001,
+          "holderId": "oxajD4GFFxth6E5rqe35hrxe2KMUBo9v1XDUMc2HqQr"
+        }
+      ],
+      "allTimeHighMarketCap": 573512.496313,
+      "poolAddress": "AZdyKwDHKqK2ELA8AFHyZ7xJroNzV5fUn8wnKv5g5SbD",
+      "twitter": "https://x.com/shiro57102",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 3.9141950828199996,
+      "buyTransactions": 6717,
+      "sellTransactions": 6365,
+      "transactions": 13082,
+      "sniperOwnedPercentage": 0.039141950828199996,
+      "topHoldersPercentage": 26.333747802799998
+    },
+    {
+      "coinMint": "FUzp4KwVuMAE58F2FfNWbzxrqKZpF7Udfx2N154opump",
+      "dev": "4XYXi3JPPPMgyaad6dJUicRBy7ETByXs8KgqdPTPGcTb",
+      "name": "godo goblin",
+      "ticker": "godo",
+      "imageUrl": "https://ipfs.io/ipfs/bafybeibwmmxtevjxtvgd5nljzlldjraqtfpxhknukenftiqechapwvzcnm",
+      "creationTime": 1758004803311,
+      "numHolders": 366,
+      "marketCap": 13629.3799857,
+      "volume": 2915.7679,
+      "currentMarketPrice": 0,
+      "bondingCurveProgress": 100,
+      "sniperCount": 30,
+      "graduationDate": 1758037449226,
+      "holders": [
+        {
+          "totalTokenAmountHeld": 33189035.165796,
+          "isSniper": false,
+          "ownedPercentage": 3.3189035165795997,
+          "holderId": "H3Z6h7Y4ufiBbXMKL4Xi6JR1AGPNBFsnB6mLJrebYzwa"
+        },
+        {
+          "totalTokenAmountHeld": 30624684.783117,
+          "isSniper": false,
+          "ownedPercentage": 3.0624684783117,
+          "holderId": "6AQvAWpj435UAVJWmURURNpQ2P3ei2v6Lfz2JDNXVnjq"
+        },
+        {
+          "totalTokenAmountHeld": 22316754.388351,
+          "isSniper": false,
+          "ownedPercentage": 2.2316754388351003,
+          "holderId": "4Ftf4NGAqRTLnbest2396NrFMryW2xCWCXZvqEmpg6ZU"
+        },
+        {
+          "totalTokenAmountHeld": 21390794.273543,
+          "isSniper": false,
+          "ownedPercentage": 2.1390794273543,
+          "holderId": "FyNrn5ELHtimjCscVqRK11Q59VaH3knzahtcaPpcmSro"
+        },
+        {
+          "totalTokenAmountHeld": 17879881.89657,
+          "isSniper": true,
+          "ownedPercentage": 1.787988189657,
+          "holderId": "4XYXi3JPPPMgyaad6dJUicRBy7ETByXs8KgqdPTPGcTb"
+        },
+        {
+          "totalTokenAmountHeld": 17574406.192982,
+          "isSniper": false,
+          "ownedPercentage": 1.7574406192982,
+          "holderId": "33BUb4E5k8hJDvQY15xExEfdcpJLRRTJsNUtpU5JPiH9"
+        },
+        {
+          "totalTokenAmountHeld": 14180349.758769,
+          "isSniper": false,
+          "ownedPercentage": 1.4180349758769,
+          "holderId": "DdpFJgKsCGHanVw5mSUHCJyE5A1ypteBCSPTrocFnTvs"
+        },
+        {
+          "totalTokenAmountHeld": 13694254.000445,
+          "isSniper": false,
+          "ownedPercentage": 1.3694254000445,
+          "holderId": "2hjnFnbQVmxHzE6zJLoQVo4y2tznaVq5y2v3RPUYgNcQ"
+        },
+        {
+          "totalTokenAmountHeld": 13615679.74556,
+          "isSniper": false,
+          "ownedPercentage": 1.361567974556,
+          "holderId": "7nm6apUe7MKh2ctxxBogdY5rJHVpJWZLsCev2AvYXAgx"
+        },
+        {
+          "totalTokenAmountHeld": 12726391.393326,
+          "isSniper": false,
+          "ownedPercentage": 1.2726391393326,
+          "holderId": "7z1tMb6EQajSBwiVCyMyCnavYz2Vheyz49k4dgYaL6yb"
+        }
+      ],
+      "allTimeHighMarketCap": 179250.966502,
+      "poolAddress": "FmBczYVjhaQST9t2GMhp15XTsdXGhu629tp2J5Uc8kW",
+      "twitter": "https://x.com/godogoblin",
+      "telegram": null,
+      "website": null,
+      "hasTwitter": true,
+      "hasTelegram": false,
+      "hasWebsite": false,
+      "hasSocial": true,
+      "twitterReuseCount": 1,
+      "devHoldingsPercentage": 1.78798818966,
+      "buyTransactions": 3878,
+      "sellTransactions": 3012,
+      "transactions": 6890,
+      "sniperOwnedPercentage": 0.0178798818966,
+      "topHoldersPercentage": 19.7192231598
+    }
+  ],
+  "pagination": {
+    "lastScore": 30,
+    "hasMore": true
+  }
+}

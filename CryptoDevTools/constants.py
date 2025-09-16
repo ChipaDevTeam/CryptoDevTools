@@ -13,3 +13,5 @@ class GlobalConstants:
         "Content-Type": "application/json",
     }
     EXCHANGES = ["PumpFun", "Raydium", "Orca", "Jupiter"]  # List of supported exchanges for new token data
+    SORT_BY_OPTIONS = ["creationTime", "marketCap", "volume24h"]  # Options for sorting graduated tokens
+    GRADUATED_DEFAULT_SORT = "creationTime"
