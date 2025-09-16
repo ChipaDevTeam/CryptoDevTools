@@ -101,3 +101,32 @@ class PumpFunAPI:
             return (f"An error occurred: {e}")
         except json.JSONDecodeError:
             return (f"Failed to decode JSON from response.")
+    
+    def get_holders(self, token_address):
+        """
+        Fetches top holders and SOL balance for a specific token from the PumpFun API.
+
+        Args:
+            token_address (str): The Solana token address.
+        Returns:
+            dict: JSON response containing holders data
+        """
+        url = f'https://advanced-api-v2.pump.fun/coins/top-holders-and-sol-balance/{token_address}'
+
+        try:
+            # Make the GET request
+            response = requests.get(url, headers=self.headers)
+
+            # Check for a '304 Not Modified' status, which can result from the 'if-none-match' header
+            if response.status_code == 200:
+                return response.json()
+            if response.status_code == 304:
+                return (f"Status Code: {response.status_code} (Not Modified)")
+            else:
+                # For any other status, raise an error if it's a client or server error (4xx or 5xx)
+                return response.raise_for_status()
+
+        except requests.exceptions.RequestException as e:
+            return (f"A network error occurred: {e}")
+        except json.JSONDecodeError:
+            return (f"Failed to decode JSON from the response.")

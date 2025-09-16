@@ -15,3 +15,5 @@ class SolanaDataClient:
         if sortBy not in GlobalConstants.SORT_BY_OPTIONS:
             raise ValueError(f"Invalid sortBy value. Must be one of {GlobalConstants.SORT_BY_OPTIONS}")
         return self.token_api.get_graduated_tokens(sortBy=sortBy)
+    def getHoldersTokens(self, token_address):
+        return self.token_api.get_holders_tokens(token_address)
