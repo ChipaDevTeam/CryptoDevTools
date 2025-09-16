@@ -9,5 +9,5 @@ class TokenAPI:
     def get_token_metadata(self, token_address):
         return self.metadata_api.fetch_metadata(token_address)
 
-    def get_new_tokens(self):
-        return self.new_tokens_api.get_new_tokens()
+    def get_new_tokens(self, exchange_name="PumpFun"):
+        return self.new_tokens_api.get_new_tokens(exchange_name)
