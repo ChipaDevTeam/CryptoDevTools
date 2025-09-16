@@ -1,6 +1,7 @@
 from .DataAPI.TokenAPI.TokenApi import TokenAPI
 
 from CryptoDevTools.constants import GlobalConstants
+from CryptoDevTools.models.solana.token_data import HoldersData
 
 class SolanaDataClient:
     def __init__(self):
@@ -16,4 +17,9 @@ class SolanaDataClient:
             raise ValueError(f"Invalid sortBy value. Must be one of {GlobalConstants.SORT_BY_OPTIONS}")
         return self.token_api.get_graduated_tokens(sortBy=sortBy)
     def getHoldersTokens(self, token_address):
-        return self.token_api.get_holders_tokens(token_address)
+        data = self.token_api.get_holders_tokens(token_address)
+
+        return HoldersData(
+            total_holders=data.get("totalHolders"),
+            top_holders=data.get("topHolders", [])
+        )
