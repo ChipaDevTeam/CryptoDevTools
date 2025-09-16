@@ -5,3 +5,5 @@ class SolanaDataClient:
         self.token_api = TokenAPI()
     def getTokenMetadata(self, token_address):
         return self.token_api.get_token_metadata(token_address)
+    def getNewTokensByExchange(self):
+        return self.token_api.get_new_tokens()
