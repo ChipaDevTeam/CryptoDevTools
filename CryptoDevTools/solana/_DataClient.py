@@ -1,7 +1,7 @@
 from .DataAPI.TokenAPI.TokenApi import TokenAPI
 
 from CryptoDevTools.constants import GlobalConstants
-from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken
+from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken, GraduatedTokensResponse
 
 class SolanaDataClient:
     def __init__(self):
@@ -38,7 +38,8 @@ class SolanaDataClient:
     def getGraduatedTokens(self, sortBy=GlobalConstants.GRADUATED_DEFAULT_SORT):
         if sortBy not in GlobalConstants.SORT_BY_OPTIONS:
             raise ValueError(f"Invalid sortBy value. Must be one of {GlobalConstants.SORT_BY_OPTIONS}")
-        return self.token_api.get_graduated_tokens(sortBy=sortBy)
+        data = self.token_api.get_graduated_tokens(sortBy=sortBy)
+        return GraduatedTokensResponse.from_dict(data)
     def getHoldersTokens(self, token_address):
         data = self.token_api.get_holders_tokens(token_address)
 
