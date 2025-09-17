@@ -1,7 +1,7 @@
 from .DataAPI.TokenAPI.TokenApi import TokenAPI
 
 from CryptoDevTools.constants import GlobalConstants
-from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata
+from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken
 
 class SolanaDataClient:
     def __init__(self):
@@ -27,7 +27,14 @@ class SolanaDataClient:
     def getNewTokensByExchange(self, exchange_name="PumpFun"):
         if exchange_name not in GlobalConstants.EXCHANGES:
             raise ValueError(f"Exchange '{exchange_name}' is not supported.")
-        return self.token_api.get_new_tokens(exchange_name=exchange_name)
+        data = self.token_api.get_new_tokens(exchange_name=exchange_name)
+        
+        # Handle list of tokens from API
+        if isinstance(data, list):
+            return [PumpFunToken.from_dict(token_data) for token_data in data]
+        else:
+            # Handle single token response
+            return PumpFunToken.from_dict(data)
     def getGraduatedTokens(self, sortBy=GlobalConstants.GRADUATED_DEFAULT_SORT):
         if sortBy not in GlobalConstants.SORT_BY_OPTIONS:
             raise ValueError(f"Invalid sortBy value. Must be one of {GlobalConstants.SORT_BY_OPTIONS}")

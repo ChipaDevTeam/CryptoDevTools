@@ -10,7 +10,7 @@ def main():
     print(f"Retrieved {len(tokens)} tokens from PumpFun")
     print("\nFirst 3 tokens:")
     
-    for i, token in enumerate(tokens[:3]): # or just use `for i, token in tokens` for all tokens
+    for i, token in enumerate(tokens[:3]):
         print(f"\n--- Token {i+1} ---")
         print(f"Name: {token.coin.name}")
         print(f"Symbol: {token.coin.symbol}")
