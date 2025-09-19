@@ -130,3 +130,36 @@ class PumpFunAPI:
             return (f"A network error occurred: {e}")
         except json.JSONDecodeError:
             return (f"Failed to decode JSON from the response.")
+    def get_trades(self, token_address, limit=100, cursor=0, minSolAmount=0):
+        """
+        Fetches recent trades for a specific token from the PumpFun API.
+
+        Args:
+            token_address (str): The Solana token address.
+        Returns:
+            dict: JSON response containing trades data
+        """
+
+        # The target URL from the cURL command
+        url = f"https://swap-api.pump.fun/v2/coins/{token_address}/trades"
+
+        # The query parameters
+        params = {
+            'limit': limit,
+            'cursor': cursor,
+            'minSolAmount': minSolAmount
+        }
+
+        try:
+            # Make the GET request with the headers and parameters
+            response = requests.get(url, headers=self.headers, params=params)
+
+            # Raise an exception for bad status codes (4xx or 5xx)
+            response.raise_for_status()
+
+            return response.json()
+
+        except requests.exceptions.HTTPError as err:
+            return (f"❌ HTTP Error: {err}")
+        except requests.exceptions.RequestException as e:
+            return (f"❌ An error occurred: {e}")

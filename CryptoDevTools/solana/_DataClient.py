@@ -1,7 +1,7 @@
 from .DataAPI.TokenAPI.TokenApi import TokenAPI
 
 from CryptoDevTools.constants import GlobalConstants
-from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken, GraduatedTokensResponse
+from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken, GraduatedTokensResponse, TradesResponse
 
 class SolanaDataClient:
     def __init__(self):
@@ -47,3 +47,7 @@ class SolanaDataClient:
             total_holders=data.get("totalHolders"),
             top_holders=data.get("topHolders", [])
         )
+    def getTrades(self, token_address, limit=100, cursor=0, minSolAmount=0):
+        data = self.token_api.get_trades(token_address, limit, cursor, minSolAmount)
+        trades_response = TradesResponse.from_dict(data)
+        return trades_response

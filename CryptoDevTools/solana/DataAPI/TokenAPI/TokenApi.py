@@ -3,6 +3,7 @@ from .api.GetTokenMetadata import GetTokenMetadata
 from .api.GetNewTokensByExchange import GetNewTokensByExchange
 from .api.GetGraduatedTokensPumpFun import GetGraduatedTokensPumpFun
 from .api.GetHoldersTokensPumpFun import GetHoldersTokensPumpFun
+from .api.GetTradesPumpFun import GetTradesPumpFun
 
 class TokenAPI:
     def __init__(self):
@@ -21,3 +22,6 @@ class TokenAPI:
         return self.graduated_tokens_api.get_graduated_tokens(sortBy=sortBy)
     def get_holders_tokens(self, token_address):
         return self.holders_api.get_holders_tokens(token_address)
+    def get_trades(self, token_address, limit=100, cursor=0, minSolAmount=0):
+        trades_api = GetTradesPumpFun()
+        return trades_api.get_trades(token_address, limit, cursor, minSolAmount)

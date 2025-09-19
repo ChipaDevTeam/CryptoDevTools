@@ -2,6 +2,228 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 from decimal import Decimal
+from enum import Enum
+
+from dataclasses import dataclass
+from typing import List, Optional, Dict, Any
+from datetime import datetime
+from decimal import Decimal
+from enum import Enum
+
+class TradeType(Enum):
+    """Enumeration for trade types."""
+    BUY = "buy"
+    SELL = "sell"
+
+class TradingProgram(Enum):
+    """Enumeration for trading programs."""
+    PUMP_AMM = "pump_amm"
+    RAYDIUM = "raydium"
+    ORCA = "orca"
+    JUPITER = "jupiter"
+
+@dataclass
+class Trade:
+    """Represents a single trade transaction."""
+    slot_index_id: str
+    tx: str  # Transaction hash
+    timestamp: str  # ISO timestamp
+    user_address: str
+    trade_type: TradeType
+    program: TradingProgram
+    price_usd: Decimal
+    price_sol: Decimal
+    amount_usd: Decimal
+    amount_sol: Decimal
+    base_amount: Decimal
+    quote_amount: Decimal
+
+    @property
+    def timestamp_datetime(self) -> datetime:
+        """Convert ISO timestamp string to datetime object."""
+        return datetime.fromisoformat(self.timestamp.replace('Z', '+00:00'))
+
+    @property
+    def is_buy(self) -> bool:
+        """Check if this is a buy trade."""
+        return self.trade_type == TradeType.BUY
+
+    @property
+    def is_sell(self) -> bool:
+        """Check if this is a sell trade."""
+        return self.trade_type == TradeType.SELL
+
+    @property
+    def transaction_url(self) -> str:
+        """Get Solana explorer URL for this transaction."""
+        return f"https://solscan.io/tx/{self.tx}"
+
+    @property
+    def wallet_url(self) -> str:
+        """Get Solana explorer URL for the wallet."""
+        return f"https://solscan.io/account/{self.user_address}"
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'Trade':
+        """Create Trade instance from API response."""
+        return cls(
+            slot_index_id=data.get('slotIndexId', ''),
+            tx=data.get('tx', ''),
+            timestamp=data.get('timestamp', ''),
+            user_address=data.get('userAddress', ''),
+            trade_type=TradeType(data.get('type', 'buy')),
+            program=TradingProgram(data.get('program', 'pump_amm')),
+            price_usd=Decimal(str(data.get('priceUsd', '0'))),
+            price_sol=Decimal(str(data.get('priceSol', '0'))),
+            amount_usd=Decimal(str(data.get('amountUsd', '0'))),
+            amount_sol=Decimal(str(data.get('amountSol', '0'))),
+            base_amount=Decimal(str(data.get('baseAmount', '0'))),
+            quote_amount=Decimal(str(data.get('quoteAmount', '0')))
+        )
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert Trade to dictionary."""
+        return {
+            'slotIndexId': self.slot_index_id,
+            'tx': self.tx,
+            'timestamp': self.timestamp,
+            'userAddress': self.user_address,
+            'type': self.trade_type.value,
+            'program': self.program.value,
+            'priceUsd': str(self.price_usd),
+            'priceSol': str(self.price_sol),
+            'amountUsd': str(self.amount_usd),
+            'amountSol': str(self.amount_sol),
+            'baseAmount': str(self.base_amount),
+            'quoteAmount': str(self.quote_amount)
+        }
+
+@dataclass
+class TradePagination:
+    """Represents pagination information for trade responses."""
+    has_next_page: bool = False
+    cursor: Optional[str] = None
+    total_count: Optional[int] = None
+    page_size: Optional[int] = None
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'TradePagination':
+        """Create TradePagination instance from API response."""
+        return cls(
+            has_next_page=data.get('hasNextPage', False),
+            cursor=data.get('cursor'),
+            total_count=data.get('totalCount'),
+            page_size=data.get('pageSize')
+        )
+
+@dataclass
+class TradesResponse:
+    """Represents the complete response from the trades API."""
+    trades: List[Trade]
+    pagination: Optional[TradePagination] = None
+
+    @property
+    def trade_count(self) -> int:
+        """Get the total number of trades in this response."""
+        return len(self.trades)
+
+    @property
+    def buy_trades(self) -> List[Trade]:
+        """Get only buy trades."""
+        return [trade for trade in self.trades if trade.is_buy]
+
+    @property
+    def sell_trades(self) -> List[Trade]:
+        """Get only sell trades."""
+        return [trade for trade in self.trades if trade.is_sell]
+
+    @property
+    def total_volume_usd(self) -> Decimal:
+        """Calculate total volume in USD."""
+        return sum(trade.amount_usd for trade in self.trades)
+
+    @property
+    def total_volume_sol(self) -> Decimal:
+        """Calculate total volume in SOL."""
+        return sum(trade.amount_sol for trade in self.trades)
+
+    @property
+    def buy_volume_usd(self) -> Decimal:
+        """Calculate buy volume in USD."""
+        return sum(trade.amount_usd for trade in self.buy_trades)
+
+    @property
+    def sell_volume_usd(self) -> Decimal:
+        """Calculate sell volume in USD."""
+        return sum(trade.amount_usd for trade in self.sell_trades)
+
+    @property
+    def average_trade_size_usd(self) -> Decimal:
+        """Calculate average trade size in USD."""
+        if self.trade_count == 0:
+            return Decimal('0')
+        return self.total_volume_usd / self.trade_count
+
+    @property
+    def unique_traders(self) -> set:
+        """Get set of unique trader addresses."""
+        return {trade.user_address for trade in self.trades}
+
+    @property
+    def unique_trader_count(self) -> int:
+        """Get count of unique traders."""
+        return len(self.unique_traders)
+
+    @property
+    def buy_sell_ratio(self) -> float:
+        """Calculate buy to sell trade ratio."""
+        sell_count = len(self.sell_trades)
+        if sell_count == 0:
+            return float('inf') if len(self.buy_trades) > 0 else 0.0
+        return len(self.buy_trades) / sell_count
+
+    def get_trades_by_program(self, program: TradingProgram) -> List[Trade]:
+        """Get trades filtered by trading program."""
+        return [trade for trade in self.trades if trade.program == program]
+
+    def get_trades_by_user(self, user_address: str) -> List[Trade]:
+        """Get trades filtered by user address."""
+        return [trade for trade in self.trades if trade.user_address == user_address]
+
+    def get_trades_in_time_range(self, start_time: datetime, end_time: datetime) -> List[Trade]:
+        """Get trades within a specific time range."""
+        return [trade for trade in self.trades 
+                if start_time <= trade.timestamp_datetime <= end_time]
+
+    def get_large_trades(self, min_usd_amount: float) -> List[Trade]:
+        """Get trades above a certain USD amount."""
+        min_amount = Decimal(str(min_usd_amount))
+        return [trade for trade in self.trades if trade.amount_usd >= min_amount]
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'TradesResponse':
+        """Create TradesResponse instance from API response."""
+        trades_data = data.get('trades', [])
+        trades = [Trade.from_dict(trade) for trade in trades_data]
+        
+        pagination_data = data.get('pagination')
+        pagination = TradePagination.from_dict(pagination_data) if pagination_data else None
+        
+        return cls(trades=trades, pagination=pagination)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert TradesResponse to dictionary."""
+        result = {
+            'trades': [trade.to_dict() for trade in self.trades]
+        }
+        if self.pagination:
+            result['pagination'] = {
+                'hasNextPage': self.pagination.has_next_page,
+                'cursor': self.pagination.cursor,
+                'totalCount': self.pagination.total_count,
+                'pageSize': self.pagination.page_size
+            }
+        return result
 
 @dataclass
 class HoldersData:
