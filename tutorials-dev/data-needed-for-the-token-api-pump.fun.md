@@ -1,4 +1,4 @@
-curl example to get trades:
+curl example to get trades: - DONE
 
 ```
 curl ^"https://swap-api.pump.fun/v2/coins/HxmUkRirJuvoF8dEt74UyXUK7NAs6xtByxHLcSBipump/trades?limit=100^&cursor=0^&minSolAmount=0^" ^
