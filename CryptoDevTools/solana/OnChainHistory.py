@@ -238,6 +238,12 @@ class OnChainHistory:
                  
             else:
                  return None
+
+            # Filter out crazy outliers (e.g. initial liquidity adds with minimal SOL but huge Supply)
+            # Typical token price on pump.fun or similar is rarely > 1 SOL or < 1e-12 SOL.
+            # But let's just filter clearly broken math.
+            if price_per_token <= 0 or price_per_token > 1000: # Sanity check
+                return None
                  
             return {
                 "time": block_time,
@@ -259,7 +265,7 @@ class OnChainHistory:
         swaps.sort(key=lambda x: x["time"])
         
         candles = {}
-        last_close = swaps[0]["price"] # Correctly set initial previous close
+        # last_close = swaps[0]["price"] # Correctly set initial previous close
         
         # Fill time gaps if necessary, or just rely on sparse list. 
         # TV handles gaps, but ensuring continuity is better.
@@ -268,18 +274,25 @@ class OnChainHistory:
             # Bucket by time
             bucket_time = (swap["time"] // resolution) * resolution
             
+            # If we missed buckets entirely, we are NOT filling them here (sparse)
+            # But we need to handle "gap up/down" carefully.
+
             if bucket_time not in candles:
+                # Open at the FIRST trade of the bucket, not the close of the PREVIOUS bucket.
+                # Why? Because if there was a 10-hour gap, setting Open = Previous Close creates huge fake candle body.
+                # Standard practice for sparse data varies, but for crypto DEX, usually:
+                # Open = First Trade Price of this interval.
+                # Unless we fill zero-volume candles in between.
+                
+                # Let's use Open = First Trade Price.
                 candles[bucket_time] = {
                     "time": bucket_time * 1000, # MS for JS
-                    "open": last_close, # Open should be previous close theoretically, or first trade price
+                    "open": swap["price"], 
                     "high": swap["price"],
                     "low": swap["price"],
                     "close": swap["price"],
                     "volume": 0
                 }
-                # Fix for the VERY first candle if it's the start
-                if len(candles) == 1:
-                     candles[bucket_time]["open"] = swap["price"]
             
             c = candles[bucket_time]
             c["high"] = max(c["high"], swap["price"])
@@ -287,9 +300,12 @@ class OnChainHistory:
             c["close"] = swap["price"]
             c["volume"] += swap["sol_volume"]
             
-            last_close = c["close"]
-        
         # Convert dict to sorted list
+        # Optionally: Fill gaps with empty candles (copy close to next open/close/high/low, vol=0) if chart looks weird.
+        # But sparse is usually fine for TradingView.
+        # The issue user reported "starts dealing with a price that has nothing to do with rest" 
+        # suggests open/close mismatch or outlier.
+        
         sorted_candles = sorted(candles.values(), key=lambda x: x["time"])
         return sorted_candles
         
