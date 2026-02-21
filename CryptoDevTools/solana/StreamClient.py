@@ -18,6 +18,9 @@ class SolanaSwapListener:
         self.rpc_url = rpc_url
         self.ws_url = ws_url
         self.session: Optional[aiohttp.ClientSession] = None
+        self.semaphore = asyncio.Semaphore(5) # Limit concurrent RPC requests
+        self.last_request_time = 0.0
+        self.request_interval = 0.2 # Minimum time between requests (seconds)
 
     async def start(self, token_mint: str, callback: Callable[[Dict[str, Any]], Any]):
         """
@@ -57,17 +60,10 @@ class SolanaSwapListener:
                             value = data["params"]["result"]["value"]
                             signature = value.get("signature")
                             
+                            # Fire and forget (or rather, run in background) so we don't block the websocket loop
                             if signature:
-                                logger.debug(f"Received notification for signature: {signature}")
-                                # Fetch full transaction details to parse swap
-                                tx_details = await self.get_transaction_details(signature)
-                                if tx_details:
-                                    swap_data = self.parse_swap(tx_details, token_mint)
-                                    if swap_data:
-                                        if asyncio.iscoroutinefunction(callback):
-                                            await callback(swap_data)
-                                        else:
-                                            callback(swap_data)
+                                asyncio.create_task(self._process_signature(signature, token_mint, callback))
+
                     except json.JSONDecodeError:
                         logger.error("Failed to decode JSON message")
                     except Exception as e:
@@ -78,6 +74,19 @@ class SolanaSwapListener:
         finally:
             if self.session:
                 await self.session.close()
+
+    async def _process_signature(self, signature: str, token_mint: str, callback: Callable):
+        """Process a single signature with rate limiting."""
+        logger.debug(f"Received notification for signature: {signature}")
+        # Fetch full transaction details to parse swap
+        tx_details = await self.get_transaction_details(signature)
+        if tx_details:
+            swap_data = self.parse_swap(tx_details, token_mint)
+            if swap_data:
+                if asyncio.iscoroutinefunction(callback):
+                    await callback(swap_data)
+                else:
+                    callback(swap_data)
 
     async def get_transaction_details(self, signature: str) -> Optional[Dict]:
         """Fetches full transaction details using RPC."""
@@ -95,19 +104,37 @@ class SolanaSwapListener:
             ]
         }
         
-        try:
-            async with self.session.post(self.rpc_url, json=payload) as response:
-                if response.status != 200:
-                    logger.error(f"RPC Error: {response.status}")
-                    return None
-                result = await response.json()
-                if "error" in result:
-                    logger.error(f"RPC Error Response: {result['error']}")
-                    return None
-                return result.get("result")
-        except Exception as e:
-            logger.error(f"Error fetching transaction {signature}: {e}")
-            return None
+        async with self.semaphore:
+             # Rate limiting sleep
+            import time
+            now = time.time()
+            time_since_last = now - self.last_request_time
+            if time_since_last < self.request_interval:
+                await asyncio.sleep(self.request_interval - time_since_last)
+            self.last_request_time = time.time()
+
+            try:
+                async with self.session.post(self.rpc_url, json=payload) as response:
+                    if response.status == 429:
+                         logger.warning(f"Rate limited (429) for {signature}. Retrying in 2s...")
+                         await asyncio.sleep(2)
+                         # Recursive retry (simple)
+                         return await self.get_transaction_details(signature)
+
+                    if response.status != 200:
+                        logger.error(f"RPC Error: {response.status}")
+                        return None
+                    
+                    result = await response.json()
+                    
+                    if "error" in result:
+                        # Handle specific RPC errors if needed
+                        logger.error(f"RPC Error Response: {result['error']}")
+                        return None
+                    return result.get("result")
+            except Exception as e:
+                logger.error(f"Error fetching transaction {signature}: {e}")
+                return None
 
     def parse_swap(self, tx_data: Dict, token_mint: str) -> Optional[Dict]:
         """
