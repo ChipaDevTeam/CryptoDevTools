@@ -22,6 +22,38 @@ class SolanaSwapListener:
         self.last_request_time = 0.0
         self.request_interval = 0.2 # Minimum time between requests (seconds)
 
+    async def _get_liquidity_accounts(self, token_mint: str) -> list[str]:
+        """
+        Heuristic: The largest token holders are usually Liquidity Pools (Raydium, Orca, etc.)
+        or Bonding Curves (PumpFun).
+        Listening to these accounts is more reliable than listening to the Mint itself
+        because swap transactions always Write to the pool's Vault account.
+        """
+        payload = {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "method": "getTokenLargestAccounts",
+            "params": [
+                token_mint,
+                {"commitment": "confirmed"}
+            ]
+        }
+        try:
+            async with self.session.post(self.rpc_url, json=payload) as response:
+                result = await response.json()
+                if "error" in result:
+                    logger.warning(f"Could not fetch largest accounts: {result['error']}")
+                    return []
+                
+                value = result.get("result", {}).get("value", [])
+                # Return the top 5 largest accounts
+                accounts = [item["address"] for item in value[:5]]
+                logger.info(f"Identified potential pool accounts to monitor: {accounts}")
+                return accounts
+        except Exception as e:
+            logger.error(f"Error fetching largest accounts: {e}")
+            return []
+
     async def start(self, token_mint: str, callback: Callable[[Dict[str, Any]], Any]):
         """
         Starts listening for swap events for a specific token mint.
@@ -30,19 +62,50 @@ class SolanaSwapListener:
             token_mint (str): The Token Mint Address to listen for.
             callback (Callable): A function to call with the parsed swap data.
         """
-        self.session = aiohttp.ClientSession()
+        # Determine accounts to watch
+        # We need a session for _get_liquidity_accounts
+        if self.session is None or self.session.closed:
+             self.session = aiohttp.ClientSession()
+
+        try:
+            pool_accounts = await self._get_liquidity_accounts(token_mint)
+        except Exception as e:
+            logger.error(f"Failed to find pool accounts: {e}")
+            pool_accounts = []
+            
+        # Watch Mint + generic pool accounts to maximize chance involved in tx
+        accounts_to_watch = [token_mint]
+        # Subscribe to top 2 accounts (usually main LP + maybe bonding curve)
+        # Limit total mentions as RPCs often cap at 1-5
+        if pool_accounts:
+             accounts_to_watch.extend(pool_accounts[:2])
+
         try:
             logger.info(f"Connecting to WebSocket: {self.ws_url}")
-            async with websockets.connect(self.ws_url) as websocket:
+            # Add ping_interval to keep connection alive, or None if server handles it. 
+            # Some RPCs aggressive with ping. Using defaults usually OK but let's be explicit or catch errors.
+            async with websockets.connect(self.ws_url, ping_interval=20, ping_timeout=20) as websocket:
                 logger.info("Connected to WebSocket")
                 
-                # Subscribe to logs mentioning the token mint
+                # Subscribe to logs mentioning the token mint OR its pool accounts
+                # Note: logsSubscribe 'mentions' only supports ONE filter array which is OR logic?
+                # Actually, mentions is an array. A transaction matching ANY of these pubkeys is returned?
+                # Yes, "mentions" array functions as OR.
+                
+                # However, there is a limit on array size (usually 1 or small).
+                # If RPC fails with too many mentions, fall back to just the Mint + Top 1.
+                
+                # Try all first
+                try_params = accounts_to_watch if len(accounts_to_watch) <= 3 else accounts_to_watch[:3]
+                
+                logger.info(f"Subscribing to logs for: {try_params}")
+                
                 payload = {
                     "jsonrpc": "2.0",
                     "id": 1,
                     "method": "logsSubscribe",
                     "params": [
-                        {"mentions": [token_mint]},
+                        {"mentions": try_params},
                         {"commitment": "confirmed"}
                     ]
                 }
