@@ -156,37 +156,27 @@ class OnChainHistory:
                 
             signer_key = account_keys[0].get("pubkey") if isinstance(account_keys[0], dict) else account_keys[0]
 
-            # Calculate token change for the signer (or anyone, really - looking for the biggest change)
-            # Let's find the change for the mint we care about
-            
-            total_change = 0
+            # Calculate token change for the signer
+            # We look for the account owned by the signer that matches the mint
             
             for post in post_token_balances:
                 if post.get("mint") == token_mint:
                     owner = post.get("owner")
-                    # Retrieve pre-balance
-                    pre_bal = 0
-                    for pre in pre_token_balances:
-                        if pre.get("accountIndex") == post.get("accountIndex"):
-                            pre_bal = float(pre.get("uiTokenAmount", {}).get("uiAmount") or 0)
-                            break
                     
-                    post_bal = float(post.get("uiTokenAmount", {}).get("uiAmount") or 0)
-                    change = post_bal - pre_bal
-                    
-                    # We are looking for the Trader's change. 
-                    # If this is a pool, its change is opposite to the trader.
-                    # We assume the user's wallet is not a program.
-                    # Simple heuristic: If owner == signer, it's the user.
+                    # Heuristic: If owner == signer, this is likely the user's wallet
                     if owner == signer:
-                        token_change = change
-                    elif abs(change) > abs(token_change):
-                         # If we haven't found a signer match, take the largest change as the swap amount
-                         # But need to be careful about direction.
-                         # If pool gains tokens, user sold. Token change for user is negative.
-                         # We'll refine this later. For now, rely on signer match or assume user is the opposite of the pool.
-                         pass
-            
+                        # Retrieve pre-balance
+                        pre_bal = 0
+                        for pre in pre_token_balances:
+                            if pre.get("accountIndex") == post.get("accountIndex"):
+                                pre_bal = float(pre.get("uiTokenAmount", {}).get("uiAmount") or 0)
+                                break
+                        
+                        post_val = float(post.get("uiTokenAmount", {}).get("uiAmount") or 0)
+                        diff = post_val - pre_bal
+                        token_change = diff
+                        break # Found signer's token change, stop looking
+                    
             if abs(token_change) < 1e-9:
                 return None
 
