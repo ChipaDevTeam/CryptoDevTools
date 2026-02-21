@@ -327,6 +327,37 @@ class SolanaSwapListener:
                          signer = owner
                          token_change = diff
                          logger.debug(f"Found alternative signer/trader: {signer} with change {token_change}")
+                         
+                         # Need to update SOL balance change for this new signer too
+                         # This is tricky as we need to find the index of this account in meta.preBalances
+                         
+                         # Find index of this owner in accountKeys 
+                         # (Note: accountKeys format varies, handled in 'signer' extraction but here we need index)
+                         
+                         # Re-fetching account keys list logic
+                         try:
+                             all_account_keys = transaction.get("message", {}).get("accountKeys", [])
+                             owner_index = -1
+                             for idx, key in enumerate(all_account_keys):
+                                 # Key can be dict or str
+                                 k_str = key.get("pubkey") if isinstance(key, dict) else key
+                                 if k_str == signer:
+                                     owner_index = idx
+                                     break
+                            
+                             if owner_index != -1 and owner_index < len(pre_sol_balances) and owner_index < len(post_sol_balances):
+                                 sol_change_lamports = post_sol_balances[owner_index] - pre_sol_balances[owner_index]
+                                 sol_change = sol_change_lamports / 1e9
+                                 logger.debug(f"Updated SOL change for alternative signer: {sol_change}")
+                             else:
+                                 # Fallback: keep original SOL change or set to 0? 
+                                 # Keeping original might be fee payer (often user), 
+                                 # but if user separates fee payer from swapper it's wrong.
+                                 # Let's keep it but log warning.
+                                 logger.debug(f"Could not find SOL balance for alternative signer index {owner_index}")
+                         except Exception as e:
+                             logger.debug(f"Error updating SOL balance: {e}")
+
                          break
             
              if abs(token_change) < 1e-9:
