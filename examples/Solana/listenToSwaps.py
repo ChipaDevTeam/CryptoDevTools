@@ -23,7 +23,7 @@ async def main():
     
     # Replace with the Token Mint Address you want to monitor
     # Example: POPCAT
-    TOKEN_MINT = "G7GA3tSXkQwrNxppt5Hds6PB4FUvi1oudSZMGDGN7RJB" 
+    TOKEN_MINT = "8g1SENegf6vsKagGgvEBxZEsLrGooesdNnE3wsJvByft" 
 
     print(f"Initializing listener for {TOKEN_MINT}...")
     listener = SolanaSwapListener(RPC_URL, WSS_URL)
