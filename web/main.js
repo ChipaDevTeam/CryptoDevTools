@@ -53,12 +53,6 @@ const datafeed = {
         const { from, to, firstDataRequest } = periodParams;
         console.log('[getBars]: Method call', symbolInfo, resolution, from, to);
 
-        if (!firstDataRequest) {
-            // We already returned all available history in the first request
-            onHistoryCallback([], { noData: true });
-            return;
-        }
-
         try {
             // We only have one endpoint for history right now
             const response = await fetch('/api/history');
@@ -84,7 +78,7 @@ const datafeed = {
                 }
             }
 
-            if (bars.length > 0) {
+            if (firstDataRequest && bars.length > 0) {
                 lastBarsCache.set(symbolInfo.full_name, { ...bars[bars.length - 1] });
             }
 
@@ -141,3 +135,9 @@ window.addEventListener('DOMContentLoaded', () => {
         container: 'tv_chart_container',
         datafeed: datafeed,
         library_path: '/static/charting_library/',
+        locale: 'en',
+        theme: 'dark',
+        disabled_features: ['header_symbol_search', 'header_compare'],
+        enabled_features: ['study_templates'],
+    });
+});
