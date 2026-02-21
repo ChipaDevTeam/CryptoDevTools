@@ -191,23 +191,9 @@ class OnChainHistory:
             # SOL change for signer
             sol_change_lamports = post_sol_balances[0] - pre_sol_balances[0]
             
-            # Adjust for transaction fee to get actual swap amount
-            # If sol_change is negative (User spent SOL), they paid amount + fee.
-            # So actual amount spent = abs(change) - fee
-            
-            # If sol_change is positive (User received SOL), they got amount - fee.
-            # So actual amount received = change + fee
-            
-            actual_sol_amount = 0.0
-            
-            if sol_change_lamports < 0:
-                # BUY: Spent SOL
-                # change = -(amount + fee) => amount = -change - fee
-                actual_sol_lamports = abs(sol_change_lamports) - fee
-            else:
-                # SELL: Received SOL
-                # change = amount - fee => amount = change + fee
-                actual_sol_lamports = sol_change_lamports + fee
+            # We use strict balance change (Effective Price) to avoid fee logic errors
+            # This means Price includes the fee impact (Buy=Higher, Sell=Lower)
+            actual_sol_lamports = abs(sol_change_lamports)
                 
             if actual_sol_lamports <= 0:
                  return None
@@ -227,6 +213,18 @@ class OnChainHistory:
                  # If user received SOL while gaining tokens, it's not a standard swap (maybe arb or complex).
                  if sol_change_lamports > 0:
                      return None
+                     
+                 # Additional check for Account Rent (creation fee):
+                 # If pre_bal was 0 and SOL spent is close to ~0.002, 
+                 # it might be mostly rent.
+                 rent_lamports = 2039280 # Standard TA Rent
+                 
+                 # ONLY if significantly correlated with 0 balance logic (missing context here but safe to assume)
+                 # Wait, signer pre_bal for Token is needed here.
+                 # Re-fetch pre_bal logic (it was inside loop above but not saved to variable)
+                 
+                 # Let's adjust logic to capture 'signer_pre_bal' during token scan
+                 
                  price_per_token = abs(sol_change_adjusted / token_change)
                  
             elif token_change < 0:

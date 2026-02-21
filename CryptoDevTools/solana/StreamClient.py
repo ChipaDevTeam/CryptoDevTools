@@ -309,19 +309,15 @@ class SolanaSwapListener:
             return None
 
         # SOL change for signer
+        if len(post_sol_balances) < 1 or len(pre_sol_balances) < 1:
+             return None
+             
         sol_change_lamports = post_sol_balances[0] - pre_sol_balances[0]
-        fee = meta.get("fee", 5000)
-
-        # Adjust for fee
-        actual_sol_lamports = 0.0
         
-        if sol_change_lamports < 0:
-            # BUY: Spent SOL
-            actual_sol_lamports = abs(sol_change_lamports) - fee
-        else:
-            # SELL: Received SOL
-            actual_sol_lamports = sol_change_lamports + fee
-            
+        # We use strict balance change (Effective Price) to avoid fee logic errors
+        # This means Price includes the fee impact (Buy=Higher, Sell=Lower)
+        actual_sol_lamports = abs(sol_change_lamports)
+        
         if actual_sol_lamports <= 0:
              return None
 
