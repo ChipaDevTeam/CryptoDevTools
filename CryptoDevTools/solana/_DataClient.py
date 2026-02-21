@@ -1,5 +1,6 @@
 from .DataAPI.TokenAPI.TokenApi import TokenAPI
-
+from .OnChainHistory import OnChainHistory
+import asyncio
 from CryptoDevTools.constants import GlobalConstants
 from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken, GraduatedTokensResponse, TradesResponse
 
@@ -51,3 +52,29 @@ class SolanaDataClient:
         data = self.token_api.get_trades(token_address, limit, cursor, minSolAmount)
         trades_response = TradesResponse.from_dict(data)
         return trades_response
+
+    def get_latest_candles_onchain(self, token_mint, resolution=60, limit=100):
+        """
+        Fetches the latest candles directly from on-chain data.
+        """
+        analyzer = OnChainHistory(GlobalConstants.HELIUS_RPC)
+        try:
+            # Check for existing loop
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                 # Should not block a running loop, better to run in executor or just return awaitable if this was async
+                 # But this function is synchronous signature.
+                 # Creating task and waiting for result in threadsafe manner? No simple way without async def.
+                 # Assuming this is called from sync context.
+                 if not loop.is_running():
+                     return loop.run_until_complete(analyzer.get_latest_candles(token_mint, resolution, limit))
+                 
+                 # If loop IS running (e.g. uvicorn), we can't block it.
+                 # But Flask + threading usually means no loop.
+                 future = asyncio.run_coroutine_threadsafe(analyzer.get_latest_candles(token_mint, resolution, limit), loop)
+                 return future.result()
+            else:
+                 return loop.run_until_complete(analyzer.get_latest_candles(token_mint, resolution, limit))
+        except RuntimeError:
+            # No loop in current thread
+            return asyncio.run(analyzer.get_latest_candles(token_mint, resolution, limit))

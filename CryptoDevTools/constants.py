@@ -6,6 +6,7 @@ class DefaultData:
     HELIUS_RPC = "https://greer-651y13-fast-mainnet.helius-rpc.com/"
 
 class GlobalConstants:
+    HELIUS_RPC = DefaultData.HELIUS_RPC
     USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
     HEADERS = {
         "User-Agent": USER_AGENT,
