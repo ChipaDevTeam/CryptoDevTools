@@ -354,17 +354,31 @@ class SolanaSwapListener:
 
         if token_change > 0:
             # Token balance increased -> BUY
-            if sol_change_lamports > 0: return None # Invalid state
+            
+            # Sanity Check: If total SOL change is positive (Received SOL) while buying tokens?
+            # Unless it's an arbitrage, this is weird.
+            # However, for WSOL, wsol_change is negative. native is negative.
+            # total is negative.
+            # If total_sol_change > 0 (Received SOL), something is wrong for a standard Buy.
+            if total_sol_change > 0: 
+                 return None 
             
             swap_type = "buy"
             amount_out = token_change       # Tokens Received
             amount_in = sol_change_adjusted # SOL Spent
             
+            # Avoid division by zero
+            if amount_out == 0: return None
+            
             price_per_token = abs(amount_in / amount_out)
 
         elif token_change < 0:
             # Token balance decreased -> SELL
-            if sol_change_lamports < 0: return None # Invalid state
+            
+            # Sanity Check: If total SOL change is negative (Spent SOL) while selling tokens?
+            # That's paying to give away tokens.
+            if total_sol_change < 0:
+                 return None 
             
             swap_type = "sell"
             amount_in = abs(token_change)   # Tokens Sold
