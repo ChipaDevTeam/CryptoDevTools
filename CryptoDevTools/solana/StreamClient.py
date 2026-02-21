@@ -103,25 +103,27 @@ class SolanaSwapListener:
                 # However, there is a limit on array size (usually 1 or small).
                 # If RPC fails with too many mentions, fall back to just the Mint + Top 1.
                 
-                # Try all first
+                # Helius only supports 1 address per subscription.
+                # We can send multiple subscribe requests.
                 try_params = accounts_to_watch if len(accounts_to_watch) <= 3 else accounts_to_watch[:3]
                 
                 logger.info(f"Subscribing to logs for: {try_params}")
                 
-                payload = {
-                    "jsonrpc": "2.0",
-                    "id": 1,
-                    "method": "logsSubscribe",
-                    "params": [
-                        {"mentions": try_params},
-                        {"commitment": "confirmed"}
-                    ]
-                }
-                await websocket.send(json.dumps(payload))
-                
-                # Wait for subscription confirmation
-                response = await websocket.recv()
-                logger.info(f"Subscription response: {response}")
+                for i, account in enumerate(try_params):
+                    payload = {
+                        "jsonrpc": "2.0",
+                        "id": i + 1,
+                        "method": "logsSubscribe",
+                        "params": [
+                            {"mentions": [account]},
+                            {"commitment": "confirmed"}
+                        ]
+                    }
+                    await websocket.send(json.dumps(payload))
+                    
+                    # Wait for subscription confirmation
+                    response = await websocket.recv()
+                    logger.info(f"Subscription response for {account}: {response}")
 
                 async for message in websocket:
                     try:
