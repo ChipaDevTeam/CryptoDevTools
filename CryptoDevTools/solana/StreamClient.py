@@ -9,9 +9,17 @@ from typing import Dict, Optional, Callable, Any
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Constants for DEX Programs
-RAYDIUM_V4_PROGRAM_ID = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
-PUMP_FUN_PROGRAM_ID = "6EF8rrecthR5DkdfxkqCnDWWFkkKCk2dNRwCpwdRLuqt"
+class DexPrograms:
+    RAYDIUM_V4_PROGRAM_ID = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
+    PUMP_FUN_PROGRAM_ID = "6EF8rrecthR5DkdfxkqCnDWWFkkKCk2dNRwCpwdRLuqt"
+    RAYDIUM_AMM_V4 = "675kPXaZJ9UQCj3D9V6G3z1P7XpYj7945A8K5M42S28L"
+    RAYDIUM_CLMM = "CAMMCzo5YLgUDd1G51k5VfC1r4N2z977u4T4q5v51717"
+    RAYDIUM_CONCENTRATED_LIQUIDITY = "whirVjicr14JgS2fS2C3C91W6671A6y4qS3k45U6f2f"
+    ORCA_WHIRLPOOLS = "whirVjicr14JgS2fS2C3C91W6671A6y4qS3k45U6f2f"
+    ORCA_TOKEN_SWAP_V2 = "9W959DqjETzGZJ5C2Q3C91W6671A6y4qS3k45U6f2f"
+    METEORA_DLMM = "LBUZKhsJWnrJvPz36k3zT9Fq5s17596p9v7a8S9r3a7"
+    JUPITER_AGGREGATOR_V6 = "JUP6LKBh1qy2t34V462D6y4qS3k45U6f2f"
+    SERUM_LEGACY = "9xQeWvG816bUx94zG3z1P7XpYj7945A8K5M42S28L"
 
 class SolanaSwapListener:
     def __init__(self, rpc_url: str, ws_url: str):
@@ -327,12 +335,20 @@ class SolanaSwapListener:
         logs = meta.get("logMessages", [])
         log_str = " ".join(logs) if logs else ""
         
-        if RAYDIUM_V4_PROGRAM_ID in log_str:
+        if DexPrograms.RAYDIUM_V4_PROGRAM_ID in log_str or DexPrograms.RAYDIUM_AMM_V4 in log_str:
             dex = "raydium"
-        elif PUMP_FUN_PROGRAM_ID in log_str:
+        elif DexPrograms.RAYDIUM_CLMM in log_str or DexPrograms.RAYDIUM_CONCENTRATED_LIQUIDITY in log_str:
+            dex = "raydium_clmm"
+        elif DexPrograms.PUMP_FUN_PROGRAM_ID in log_str:
             dex = "pumpfun"
-        elif "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4" in log_str: # Jupiter
+        elif DexPrograms.ORCA_WHIRLPOOLS in log_str or DexPrograms.ORCA_TOKEN_SWAP_V2 in log_str:
+            dex = "orca"
+        elif DexPrograms.METEORA_DLMM in log_str:
+            dex = "meteora"
+        elif DexPrograms.JUPITER_AGGREGATOR_V6 in log_str:
             dex = "jupiter"
+        elif DexPrograms.SERUM_LEGACY in log_str:
+            dex = "serum"
 
         return {
             "signature": transaction.get("signatures", [""])[0],
