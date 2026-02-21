@@ -3,10 +3,11 @@ import asyncio
 import json
 import os
 import sys
+from datetime import datetime
 
 # Configure logging at the script level to ensure we see INFO/DEBUG logs
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.WARNING,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
@@ -14,6 +15,11 @@ logging.basicConfig(
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from CryptoDevTools.solana import SolanaSwapListener
+
+# ANSI Colors
+GREEN = '\033[92m'
+RED = '\033[91m'
+RESET = '\033[0m'
 
 async def main():
     # Helper constants
@@ -29,9 +35,30 @@ async def main():
     listener = SolanaSwapListener(RPC_URL, WSS_URL)
 
     async def on_swap(data):
-        print(f"\n--- Swap Detected ---")
-        print(json.dumps(data, indent=2))
-        print("---------------------")
+        ts = data.get("timestamp", 0)
+        dt = datetime.fromtimestamp(ts) if ts else datetime.now()
+        time_str = dt.strftime("%H:%M:%S")
+        
+        swap_type = data.get("type", "unknown")
+        signer = data.get("signer", "Unknown")
+        short_signer = f"{signer[:3]}...{signer[-3:]}" if len(signer) > 6 else signer
+        
+        if swap_type == "buy":
+            sol_amount = data.get("amount_in", 0.0)
+            color = GREEN
+            action_str = "(🟢 Buy )"
+            icon = "[ ✨ ]"
+            amount_str = f"+{sol_amount:.3f} sol"
+        else:
+            sol_amount = data.get("amount_out", 0.0)
+            color = RED
+            action_str = "(🔴 Sell)"
+            icon = "[  - ]"
+            amount_str = f"-{sol_amount:.3f} sol"
+            
+        # Format: 15:00:00 | [ ✨ ] (🟢 Buy ) | 46b...iY7 | Amount: +0.102 sol
+        formatted_msg = f"{color}{time_str} | {icon} {action_str} | {short_signer} | Amount: {amount_str}{RESET}"
+        print(formatted_msg)
 
     print(f"Listening for swaps... Press Ctrl+C to stop.")
     try:
