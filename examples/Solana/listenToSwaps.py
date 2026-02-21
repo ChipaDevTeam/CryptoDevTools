@@ -6,7 +6,7 @@ import sys
 
 # Configure logging at the script level to ensure we see INFO/DEBUG logs
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 

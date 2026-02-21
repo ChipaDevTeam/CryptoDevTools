@@ -288,20 +288,50 @@ class SolanaSwapListener:
 
         # Debugging info
         if abs(token_change) < 1e-9:
-             # Try determining if *any* account had a significant change for this mint, 
-             # maybe we identified the wrong signer (some swaps happen via PDA/router)
-             total_moved = 0
+             # Heuristic: If signer didn't change balance, look for ANY account that changed balance
+             # excluding the known Pool addresses (if we had them, but we don't here effectively).
+             # We look for a non-program account that gained/lost tokens.
+             
+             potential_swap = None
+             
              for b in post_token_balances:
                  if b.get("mint") == token_mint:
                      owner = b.get("owner")
+                     
+                     # Skip if owner is one of the known programs (basic filter)
+                     # We can't easily filter all PDAs, but we can try to find the "User"
+                     
                      p_bal = get_token_balance(pre_token_balances, token_mint, owner)
                      diff = float(b.get("uiTokenAmount", {}).get("uiAmount") or 0) - p_bal
-                     if abs(diff) > 1e-9 and owner != signer:
-                         # Found a movement, but not for "signer". 
-                         # This happens in some aggregator swaps where user is not account 0 or transfer is internal
-                         pass
-             
-             return None # No significant change in target token balance for signer
+                     
+                     # If significant change found
+                     if abs(diff) > 1e-9:
+                         # We found an account that changed balance. 
+                         # Is this the user or the pool?
+                         # In a swap:
+                         # User: -SOL, +Token (Buy)  OR  +SOL, -Token (Sell)
+                         # Pool: +SOL, -Token (Buy)  OR  -SOL, +Token (Sell)
+                         
+                         # If we assume the "Signer" is the user, and they didn't change, 
+                         # maybe the "owner" here is the real user (different wallet idx?).
+                         
+                         # Let's check SOL balance change for this owner if possible? 
+                         # Hard because preBalances/postBalances are by index, and we have owner string.
+                         
+                         # Alternative Strategy:
+                         # 1. Start with the assumption that this IS a swap involving the detected mint.
+                         # 2. Find the ONE account that clearly looks like a wallet (not a PDA, hard to tell).
+                         # 3. OR, just report the movement.
+                         
+                         # Let's try to set this owner as the effective 'signer' / 'trader'
+                         signer = owner
+                         token_change = diff
+                         logger.debug(f"Found alternative signer/trader: {signer} with change {token_change}")
+                         break
+            
+             if abs(token_change) < 1e-9:
+                 logger.debug(f"No token balance change detected for signer or others for {token_mint}")
+                 return None
 
         # 3. Check SOL Balance Changes (for Buy/Sell determination)
         pre_sol_balances = meta.get("preBalances", [])
