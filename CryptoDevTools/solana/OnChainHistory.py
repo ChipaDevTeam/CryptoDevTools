@@ -236,9 +236,9 @@ class OnChainHistory:
             # If token balance DECREASED, it's a SELL (Received SOL)
             
             if token_change > 0:
-                 # Buy: We expect user spent SOL. 
-                 # If user received SOL while gaining tokens, it's not a standard swap (maybe arb or complex).
-                 if sol_change_lamports > 0:
+                 # Buy: We expect user spent SOL. (Negative change)
+                 # We check total_sol_change (includes WSOL)
+                 if total_sol_change > 0: 
                      return None
                      
                  # Additional check for Account Rent (creation fee):
@@ -255,11 +255,11 @@ class OnChainHistory:
                  price_per_token = abs(sol_change_adjusted / token_change)
                  
             elif token_change < 0:
-                 # Sell: We expect user received SOL.
-                 # If user spent SOL while losing tokens, it's definitely not a sell (maybe LP add or fee).
-                 if sol_change_lamports < 0:
+                 # Sell: We expect user received SOL. (Positive change)
+                 if total_sol_change < 0:
                      return None
                  price_per_token = abs(sol_change_adjusted / token_change)
+
                  
             else:
                  return None
