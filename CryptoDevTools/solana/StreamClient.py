@@ -178,7 +178,7 @@ class SolanaSwapListener:
         else:
              logger.warning(f"Failed to fetch details for {signature}")
 
-    async def get_transaction_details(self, signature: str) -> Optional[Dict]:
+    async def get_transaction_details(self, signature: str, retries: int = 3) -> Optional[Dict]:
         """Fetches full transaction details using RPC."""
         # Check if session is active
         if self.session is None or self.session.closed:
@@ -203,28 +203,35 @@ class SolanaSwapListener:
                 await asyncio.sleep(self.request_interval - time_since_last)
             self.last_request_time = time.time()
 
-            try:
-                async with self.session.post(self.rpc_url, json=payload) as response:
-                    if response.status == 429:
-                         logger.warning(f"Rate limited (429) for {signature}. Retrying in 2s...")
-                         await asyncio.sleep(2)
-                         # Recursive retry (simple)
-                         return await self.get_transaction_details(signature)
+            for attempt in range(retries):
+                try:
+                    async with self.session.post(self.rpc_url, json=payload) as response:
+                        if response.status == 429:
+                             logger.warning(f"Rate limited (429) for {signature}. Retrying in 2s...")
+                             await asyncio.sleep(2)
+                             continue
 
-                    if response.status != 200:
-                        logger.error(f"RPC Error: {response.status}")
+                        if response.status != 200:
+                            logger.error(f"RPC Error: {response.status}")
+                            return None
+                        
+                        result = await response.json()
+                        
+                        if "error" in result:
+                            # Handle specific RPC errors if needed
+                            logger.error(f"RPC Error Response: {result['error']}")
+                            return None
+                        return result.get("result")
+                except aiohttp.ClientError as e:
+                    logger.error(f"Network error fetching transaction {signature} (attempt {attempt+1}/{retries}): {e}")
+                    if attempt < retries - 1:
+                        await asyncio.sleep(1)
+                    else:
                         return None
-                    
-                    result = await response.json()
-                    
-                    if "error" in result:
-                        # Handle specific RPC errors if needed
-                        logger.error(f"RPC Error Response: {result['error']}")
-                        return None
-                    return result.get("result")
-            except Exception as e:
-                logger.error(f"Error fetching transaction {signature}: {e}")
-                return None
+                except Exception as e:
+                    logger.error(f"Error fetching transaction {signature}: {e}")
+                    return None
+            return None
 
     def parse_swap(self, tx_data: Dict, token_mint: str) -> Optional[Dict]:
         """
