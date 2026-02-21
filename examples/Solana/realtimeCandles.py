@@ -29,7 +29,7 @@ async def main():
     WSS_URL = "wss://greer-651y13-fast-mainnet.helius-rpc.com"
     
     # Replace with the Token Mint Address you want to monitor
-    TOKEN_MINT = "4du67Lp42navoc7zvh42689yz1CRjzWycjp1qsRDpump" 
+    TOKEN_MINT = "Be1FLsZBPPkDi5yjtS9g9rLwPtWua4hrGuC9QyPNpump" 
 
     print(f"{CYAN}Initializing Real-Time On-Chain Candle Aggregator for {TOKEN_MINT}...{RESET}")
     listener = SolanaSwapListener(RPC_URL, WSS_URL)
