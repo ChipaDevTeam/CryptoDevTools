@@ -237,6 +237,10 @@ class OnChainHistory:
         swaps.sort(key=lambda x: x["time"])
         
         candles = {}
+        last_close = swaps[0]["price"] # Correctly set initial previous close
+        
+        # Fill time gaps if necessary, or just rely on sparse list. 
+        # TV handles gaps, but ensuring continuity is better.
         
         for swap in swaps:
             # Bucket by time
@@ -245,24 +249,27 @@ class OnChainHistory:
             if bucket_time not in candles:
                 candles[bucket_time] = {
                     "time": bucket_time * 1000, # MS for JS
-                    "open": swap["price"],
+                    "open": last_close, # Open should be previous close theoretically, or first trade price
                     "high": swap["price"],
                     "low": swap["price"],
                     "close": swap["price"],
                     "volume": 0
                 }
+                # Fix for the VERY first candle if it's the start
+                if len(candles) == 1:
+                     candles[bucket_time]["open"] = swap["price"]
             
             c = candles[bucket_time]
             c["high"] = max(c["high"], swap["price"])
             c["low"] = min(c["low"], swap["price"])
             c["close"] = swap["price"]
-            # Accumulate SOL volume as "volume" if that's the standard for this chart, or token.
-            # Usually crypto charts show Base Token volume, but user variable says "sol_volume".
-            # Let's verify what 'volume' means in the context of the app.
-            # In app.py: "sol_volume": item['volume']
-            # So let's store SOL volume in 'volume' field here to be consistent with my previous edit
-            # OR better, explicit fields.
-            c["volume"] += swap["sol_volume"] 
+            c["volume"] += swap["sol_volume"]
+            
+            last_close = c["close"]
+        
+        # Convert dict to sorted list
+        sorted_candles = sorted(candles.values(), key=lambda x: x["time"])
+        return sorted_candles
         
         # Convert dict to sorted list
         sorted_candles = sorted(candles.values(), key=lambda x: x["time"])
