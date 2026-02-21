@@ -5,7 +5,7 @@ def main():
     solana_client = SolanaDataClient()
     response_data = solana_client.getTrades("HxmUkRirJuvoF8dEt74UyXUK7NAs6xtByxHLcSBipump", limit=100)
     
-    print(f"Trades: {response_data.trades.trade_type}")
+    print(f"Trades: {response_data.trades}")
 
 if __name__ == "__main__":
     main()
