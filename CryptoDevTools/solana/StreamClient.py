@@ -262,7 +262,13 @@ class SolanaSwapListener:
                 signer = first_account # String format
 
         if not signer:
-            return None
+            # Fallback: account 0 is usually fee payer
+            if account_keys:
+                 signer = account_keys[0] if isinstance(account_keys[0], str) else account_keys[0].get("pubkey")
+
+        if not signer:
+             logger.debug("Could not identify signer")
+             return None
         
         # 2. Check Token Balance Changes (Pre vs Post)
         pre_token_balances = meta.get("preTokenBalances", [])
@@ -280,8 +286,22 @@ class SolanaSwapListener:
         post_bal = get_token_balance(post_token_balances, token_mint, signer)
         token_change = post_bal - pre_bal
 
+        # Debugging info
         if abs(token_change) < 1e-9:
-            return None # No significant change in target token balance for signer
+             # Try determining if *any* account had a significant change for this mint, 
+             # maybe we identified the wrong signer (some swaps happen via PDA/router)
+             total_moved = 0
+             for b in post_token_balances:
+                 if b.get("mint") == token_mint:
+                     owner = b.get("owner")
+                     p_bal = get_token_balance(pre_token_balances, token_mint, owner)
+                     diff = float(b.get("uiTokenAmount", {}).get("uiAmount") or 0) - p_bal
+                     if abs(diff) > 1e-9 and owner != signer:
+                         # Found a movement, but not for "signer". 
+                         # This happens in some aggregator swaps where user is not account 0 or transfer is internal
+                         pass
+             
+             return None # No significant change in target token balance for signer
 
         # 3. Check SOL Balance Changes (for Buy/Sell determination)
         pre_sol_balances = meta.get("preBalances", [])
