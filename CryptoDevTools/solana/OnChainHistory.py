@@ -193,28 +193,60 @@ class OnChainHistory:
             # Check SOL Balance Changes (for price calculation)
             pre_sol_balances = meta.get("preBalances", [])
             post_sol_balances = meta.get("postBalances", [])
+            fee = meta.get("fee", 5000) # Default fee if missing
             
             if not pre_sol_balances or not post_sol_balances:
                 return None
                 
             # SOL change for signer
             sol_change_lamports = post_sol_balances[0] - pre_sol_balances[0]
-            sol_change = sol_change_lamports / 1e9
+            
+            # Adjust for transaction fee to get actual swap amount
+            # If sol_change is negative (User spent SOL), they paid amount + fee.
+            # So actual amount spent = abs(change) - fee
+            
+            # If sol_change is positive (User received SOL), they got amount - fee.
+            # So actual amount received = change + fee
+            
+            actual_sol_amount = 0.0
+            
+            if sol_change_lamports < 0:
+                # BUY: Spent SOL
+                # change = -(amount + fee) => amount = -change - fee
+                actual_sol_lamports = abs(sol_change_lamports) - fee
+            else:
+                # SELL: Received SOL
+                # change = amount - fee => amount = change + fee
+                actual_sol_lamports = sol_change_lamports + fee
+                
+            if actual_sol_lamports <= 0:
+                 return None
+
+            sol_change_adjusted = actual_sol_lamports / 1e9
 
             # Determine Price
-            # If Token Change > 0 (Buy): Spent SOL (Sol change < 0)
-            # If Token Change < 0 (Sell): Gained SOL (Sol change > 0)
-            
             price_per_token = 0.0
-            sol_vol = abs(sol_change)
+            sol_vol = sol_change_adjusted
             
-            if token_change > 0 and sol_change < 0:
-                 price_per_token = abs(sol_change / token_change)
-            elif token_change < 0 and sol_change > 0:
-                 price_per_token = abs(sol_change / token_change)
+            # Simple heuristic:
+            # If token balance INCREASED, it's a BUY (Spent SOL)
+            # If token balance DECREASED, it's a SELL (Received SOL)
+            
+            if token_change > 0:
+                 # Buy: We expect user spent SOL. 
+                 # If user received SOL while gaining tokens, it's not a standard swap (maybe arb or complex).
+                 if sol_change_lamports > 0:
+                     return None
+                 price_per_token = abs(sol_change_adjusted / token_change)
+                 
+            elif token_change < 0:
+                 # Sell: We expect user received SOL.
+                 # If user spent SOL while losing tokens, it's definitely not a sell (maybe LP add or fee).
+                 if sol_change_lamports < 0:
+                     return None
+                 price_per_token = abs(sol_change_adjusted / token_change)
+                 
             else:
-                 # Complex swap or not a direct SOL pair (e.g. USDC)
-                 # Ignoring for simplified SOL-based candle chart
                  return None
                  
             return {
