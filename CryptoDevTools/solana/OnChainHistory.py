@@ -199,6 +199,8 @@ class OnChainHistory:
             # If Token Change < 0 (Sell): Gained SOL (Sol change > 0)
             
             price_per_token = 0.0
+            sol_vol = abs(sol_change)
+            
             if token_change > 0 and sol_change < 0:
                  price_per_token = abs(sol_change / token_change)
             elif token_change < 0 and sol_change > 0:
@@ -211,7 +213,8 @@ class OnChainHistory:
             return {
                 "time": block_time,
                 "price": price_per_token,
-                "volume": abs(token_change),
+                "token_volume": abs(token_change),
+                "sol_volume": sol_vol,
                 "side": "buy" if token_change > 0 else "sell"
             }
 
@@ -246,7 +249,13 @@ class OnChainHistory:
             c["high"] = max(c["high"], swap["price"])
             c["low"] = min(c["low"], swap["price"])
             c["close"] = swap["price"]
-            c["volume"] += swap["volume"]
+            # Accumulate SOL volume as "volume" if that's the standard for this chart, or token.
+            # Usually crypto charts show Base Token volume, but user variable says "sol_volume".
+            # Let's verify what 'volume' means in the context of the app.
+            # In app.py: "sol_volume": item['volume']
+            # So let's store SOL volume in 'volume' field here to be consistent with my previous edit
+            # OR better, explicit fields.
+            c["volume"] += swap["sol_volume"] 
         
         # Convert dict to sorted list
         sorted_candles = sorted(candles.values(), key=lambda x: x["time"])
