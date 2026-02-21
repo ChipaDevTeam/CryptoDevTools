@@ -29,6 +29,7 @@ class SolanaSwapListener:
         self.semaphore = asyncio.Semaphore(5) # Limit concurrent RPC requests
         self.last_request_time = 0.0
         self.request_interval = 0.2 # Minimum time between requests (seconds)
+        self.processed_signatures = set() # Cache to avoid processing duplicates
 
     async def _get_liquidity_accounts(self, token_mint: str) -> list[str]:
         """
@@ -163,6 +164,15 @@ class SolanaSwapListener:
 
     async def _process_signature(self, signature: str, token_mint: str, callback: Callable):
         """Process a single signature with rate limiting."""
+        if signature in self.processed_signatures:
+            return
+        self.processed_signatures.add(signature)
+        
+        # Keep cache size manageable
+        if len(self.processed_signatures) > 1000:
+            # Remove some old signatures (simple approach: clear half)
+            self.processed_signatures = set(list(self.processed_signatures)[-500:])
+            
         logger.debug(f"Processing signature: {signature}")
         # Fetch full transaction details to parse swap
         tx_details = await self.get_transaction_details(signature)
