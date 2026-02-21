@@ -1,7 +1,14 @@
+import logging
 import asyncio
 import json
 import os
 import sys
+
+# Configure logging at the script level to ensure we see INFO/DEBUG logs
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 # Add project root to sys.path to ensure imports work
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))

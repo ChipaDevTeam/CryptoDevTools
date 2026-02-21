@@ -55,8 +55,16 @@ class SolanaSwapListener:
                 async for message in websocket:
                     try:
                         data = json.loads(message)
+                        
+                        # Debug: Log type of message received (remove in production if too noisy)
+                        if "method" in data:
+                             logger.debug(f"Received method: {data.get('method')}")
+                        elif "result" in data:
+                             logger.debug(f"Received result: {data.get('result')}")
+                        else:
+                             logger.info(f"Received unknown message structure: {str(data)[:100]}...")
+
                         if "params" not in data:
-                             logger.debug(f"Received non-param message: {str(data)[:200]}")
                              continue
 
                         if "params" in data:
