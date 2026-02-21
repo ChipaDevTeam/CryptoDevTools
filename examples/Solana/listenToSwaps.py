@@ -11,8 +11,8 @@ from CryptoDevTools.solana import SolanaSwapListener
 async def main():
     # Helper constants
     # You should use a paid RPC for better reliability, especially for logsSubscribe
-    RPC_URL = "https://hardworking-magical-replica.arbitrum-mainnet.quiknode.pro"
-    WSS_URL = "wss://hardworking-magical-replica.arbitrum-mainnet.quiknode.pro"
+    RPC_URL = "https://radial-powerful-gas.solana-mainnet.quiknode.pro"
+    WSS_URL = "wss://radial-powerful-gas.solana-mainnet.quiknode.pro"
     
     # Replace with the Token Mint Address you want to monitor
     # Example: POPCAT
