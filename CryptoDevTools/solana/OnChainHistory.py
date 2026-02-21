@@ -14,14 +14,14 @@ class OnChainHistory:
     def __init__(self, rpc_url: str):
         self.rpc_url = rpc_url
 
-    async def get_latest_candles(self, token_mint: str, resolution: int = 60, limit: int = 100) -> List[Dict]:
+    async def get_latest_candles(self, token_mint: str, resolution: int = 60, limit: int = 1000) -> List[Dict]:
         """
         Fetches the latest candles for a given token mint by analyzing recent on-chain transactions.
         
         Args:
             token_mint (str): The mint address of the token.
             resolution (int): Candle resolution in seconds (default 60s).
-            limit (int): Number of transactions to analyze (default 100). Higher limits take longer.
+            limit (int): Number of transactions to analyze (default 1000). Higher limits take longer.
             
         Returns:
             List[Dict]: A list of candles in the format {time, open, high, low, close, volume}.
@@ -32,11 +32,16 @@ class OnChainHistory:
             if not pool_address:
                 logger.warning(f"Could not find liquidity pool for {token_mint}")
                 return []
+            
+            logger.info(f"Using liquidity pool address: {pool_address} for mint {token_mint}")
 
             # 2. Fetch the latest N signatures for the pool address
             signatures = await self._get_signatures(session, pool_address, limit)
             if not signatures:
+                logger.warning(f"No signatures found for pool {pool_address}")
                 return []
+            
+            logger.info(f"Found {len(signatures)} signatures. Fetching details...")
 
             # 3. Fetch transaction details in batches
             transactions = await self._get_transactions_batch(session, signatures)
@@ -49,6 +54,8 @@ class OnChainHistory:
                     if swap:
                         swaps.append(swap)
             
+            logger.info(f"Parsed {len(swaps)} swaps from transactions")
+
             # 5. Aggregate into candles
             candles = self._build_candles(swaps, resolution)
             return candles
