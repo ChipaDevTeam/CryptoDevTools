@@ -5,9 +5,10 @@ class CandleAggregator:
     """
     Aggregates real-time swap data into OHLCV candles.
     """
-    def __init__(self, timeframe_seconds: int, on_candle_close: Callable[[Dict], None]):
+    def __init__(self, timeframe_seconds: int, on_candle_close: Callable[[Dict], None], on_candle_update: Optional[Callable[[Dict], None]] = None):
         self.timeframe = timeframe_seconds
         self.on_candle_close = on_candle_close
+        self.on_candle_update = on_candle_update
         self.current_candle: Optional[Dict] = None
 
     def process_swap(self, swap_data: Dict):
@@ -54,6 +55,9 @@ class CandleAggregator:
                 self.current_candle["buy_volume"] += sol_volume
             else:
                 self.current_candle["sell_volume"] += sol_volume
+                
+        if self.on_candle_update and self.current_candle:
+            self.on_candle_update(self.current_candle)
 
     def _init_candle(self, start_time: int, price: float, sol_volume: float, token_volume: float, swap_type: str):
         self.current_candle = {
