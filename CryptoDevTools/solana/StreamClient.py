@@ -252,27 +252,19 @@ class SolanaSwapListener:
         if not transaction:
             return None
 
-        # 1. Identify the Signer (User) - typically the first account that signed
+        # 1. Identify the Signer (User)
         message = transaction.get("message", {})
         account_keys = message.get("accountKeys", [])
         
         signer = None
         if isinstance(account_keys, list):
             # Handle different formats of accountKeys
-            first_account = account_keys[0]
-            if isinstance(first_account, dict):
-                if first_account.get("signer"):
+            if len(account_keys) > 0:
+                first_account = account_keys[0]
+                if isinstance(first_account, dict):
                     signer = first_account.get("pubkey")
                 else:
-                    # Fallback: usually first account is fee payer/signer
-                    signer = first_account.get("pubkey")
-            else:
-                signer = first_account # String format
-
-        if not signer:
-            # Fallback: account 0 is usually fee payer
-            if account_keys:
-                 signer = account_keys[0] if isinstance(account_keys[0], str) else account_keys[0].get("pubkey")
+                    signer = first_account # String format
 
         if not signer:
              logger.debug("Could not identify signer")
@@ -282,22 +274,103 @@ class SolanaSwapListener:
         pre_token_balances = meta.get("preTokenBalances", [])
         post_token_balances = meta.get("postTokenBalances", [])
 
-        # Helper to find balance for an account index and mint
-        def get_token_balance(balances, mint, owner):
-            for b in balances:
-                if b.get("mint") == mint and b.get("owner") == owner:
-                    amount_info = b.get("uiTokenAmount", {})
-                    return float(amount_info.get("uiAmount") or 0)
-            return 0.0
+        token_change = 0.0
+        
+        # Consistent Logic from OnChainHistory.py:
+        # Calculate token change for the signer by iterating balances
+        found_change = False
+        for post in post_token_balances:
+            if post.get("mint") == token_mint:
+                owner = post.get("owner")
+                if owner == signer:
+                    # Retrieve pre-balance
+                    pre_bal = 0.0
+                    for pre in pre_token_balances:
+                        if pre.get("accountIndex") == post.get("accountIndex"):
+                            pre_bal = float(pre.get("uiTokenAmount", {}).get("uiAmount") or 0)
+                            break
+                    
+                    post_val = float(post.get("uiTokenAmount", {}).get("uiAmount") or 0)
+                    token_change = post_val - pre_bal
+                    found_change = True
+                    break 
 
-        pre_bal = get_token_balance(pre_token_balances, token_mint, signer)
-        post_bal = get_token_balance(post_token_balances, token_mint, signer)
-        token_change = post_bal - pre_bal
+        if not found_change or abs(token_change) < 1e-9:
+             # Fallback: check if we just missed the signer match (sometimes owner != signer if PDA involves)
+             # But for safety in realtime stream, return None rather than bad data
+             # logger.debug(f"No token balance change for signer {signer}")
+             return None
 
-        # Debugging info
-        if abs(token_change) < 1e-9:
-             # Heuristic: If signer didn't change balance, look for ANY account that changed balance
-             # excluding the known Pool addresses (if we had them, but we don't here effectively).
+        # 3. Check SOL Balance Changes (for Buy/Sell determination)
+        pre_sol_balances = meta.get("preBalances", [])
+        post_sol_balances = meta.get("postBalances", [])
+        
+        if not pre_sol_balances or not post_sol_balances:
+            return None
+
+        # SOL change for signer
+        sol_change_lamports = post_sol_balances[0] - pre_sol_balances[0]
+        fee = meta.get("fee", 5000)
+
+        # Adjust for fee
+        actual_sol_lamports = 0.0
+        
+        if sol_change_lamports < 0:
+            # BUY: Spent SOL
+            actual_sol_lamports = abs(sol_change_lamports) - fee
+        else:
+            # SELL: Received SOL
+            actual_sol_lamports = sol_change_lamports + fee
+            
+        if actual_sol_lamports <= 0:
+             return None
+
+        sol_change_adjusted = actual_sol_lamports / 1e9
+        
+        # 4. Determine Swap Direction and Amounts
+        swap_type = "unknown"
+        amount_in = 0.0
+        amount_out = 0.0
+        price_per_token = 0.0
+
+        if token_change > 0:
+            # Token balance increased -> BUY
+            if sol_change_lamports > 0: return None # Invalid state
+            
+            swap_type = "buy"
+            amount_out = token_change       # Tokens Received
+            amount_in = sol_change_adjusted # SOL Spent
+            
+            price_per_token = abs(amount_in / amount_out)
+
+        elif token_change < 0:
+            # Token balance decreased -> SELL
+            if sol_change_lamports < 0: return None # Invalid state
+            
+            swap_type = "sell"
+            amount_in = abs(token_change)   # Tokens Sold
+            amount_out = sol_change_adjusted # SOL Received
+            
+            price_per_token = abs(amount_out / amount_in)
+        
+        else:
+            return None
+
+        # Sanity Filter
+        if price_per_token <= 0:
+            return None
+
+        block_time = tx_data.get("blockTime")
+        timestamp = block_time if block_time else int(time.time())
+
+        return {
+            "timestamp": timestamp,
+            "type": swap_type,
+            "price_per_token": price_per_token,
+            "amount_in": amount_in,
+            "amount_out": amount_out,
+            "signature": transaction.get("signatures", [""])[0]
+        }
              # We look for a non-program account that gained/lost tokens.
              
              potential_swap = None
