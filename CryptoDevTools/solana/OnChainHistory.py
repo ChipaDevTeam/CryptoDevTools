@@ -189,16 +189,43 @@ class OnChainHistory:
                 return None
                 
             # SOL change for signer
-            sol_change_lamports = post_sol_balances[0] - pre_sol_balances[0]
-            
-            # We use strict balance change (Effective Price) to avoid fee logic errors
-            # This means Price includes the fee impact (Buy=Higher, Sell=Lower)
-            actual_sol_lamports = abs(sol_change_lamports)
+            if len(post_sol_balances) < 1 or len(pre_sol_balances) < 1:
+                return None
                 
-            if actual_sol_lamports <= 0:
+            # Check Wrapped SOL (WSOL) adjustments if needed
+            # WSOL Mint: So11111111111111111111111111111111111111112
+            wsol_mint = "So11111111111111111111111111111111111111112"
+            wsol_change = 0.0
+
+            if token_mint != wsol_mint:
+                for post in post_token_balances:
+                    if post.get("mint") == wsol_mint:
+                        owner = post.get("owner")
+                        if owner == signer:
+                            pre_bal_wsol = 0.0
+                            for pre in pre_token_balances:
+                                if pre.get("accountIndex") == post.get("accountIndex"):
+                                    val = pre.get("uiTokenAmount", {}).get("uiAmount")
+                                    if val is not None:
+                                        pre_bal_wsol = float(val)
+                                    break
+                            val = post.get("uiTokenAmount", {}).get("uiAmount")
+                            post_val_wsol = float(val) if val is not None else 0.0
+                            wsol_change = post_val_wsol - pre_bal_wsol
+                            break
+
+            sol_change_lamports = post_sol_balances[0] - pre_sol_balances[0]
+            native_change_sol = sol_change_lamports / 1e9
+            
+            # Combine Native and WSOL changes
+            # Note: WSOL change is in SOL (uiAmount), Native is converted above.
+            total_sol_change = native_change_sol + wsol_change
+            
+            # If total change is effectively zero, skip
+            if abs(total_sol_change) < 1e-9:
                  return None
 
-            sol_change_adjusted = actual_sol_lamports / 1e9
+            sol_change_adjusted = abs(total_sol_change)
 
             # Determine Price
             price_per_token = 0.0
