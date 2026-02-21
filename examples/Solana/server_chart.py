@@ -20,7 +20,7 @@ connected_clients = set()
 # Helper constants
 RPC_URL = "https://greer-651y13-fast-mainnet.helius-rpc.com"
 WSS_URL = "wss://greer-651y13-fast-mainnet.helius-rpc.com"
-TOKEN_MINT = "4du67Lp42navoc7zvh42689yz1CRjzWycjp1qsRDpump" 
+TOKEN_MINT = "Be1FLsZBPPkDi5yjtS9g9rLwPtWua4hrGuC9QyPNpump" 
 
 async def broadcast_update(candle):
     """Broadcasts a candle update to all connected WebSocket clients."""
