@@ -338,12 +338,51 @@ class SolanaSwapListener:
         native_change_sol = sol_change_lamports_native / 1e9
         
         # Total SOL Change = Native Change + WSOL Change
+        # BUT: For WSOL transactions, often Native decreases (fee) AND WSOL decreases (spent).
+        # We should NOT blindly sum them if they are both negative, that's double counting?
+        # No, if I wrap 1 SOL -> 1 WSOL -> 0 WSOL.
+        # Net result: Native -1, WSOL 0 (end) vs 0 (start).
+        # If I start with 1 WSOL.
+        # Native -fee. WSOL -1.
+        # Sum = -1 - fee. Correct.
+        
+        # What if I wrap AND spend in same tx?
+        # Start: 1 Native. 0 WSOL.
+        # End: 0 Native. 0 WSOL. (Spent).
+        # Native change: -1. WSOL change: 0.
+        # Sum: -1. Correct.
+        
+        # What if I have WSOL in account?
+        # Start: 0 Native. 1 WSOL.
+        # End: 0 Native. 0 WSOL.
+        # Native change: -Fee. WSOL change: -1.
+        # Sum: -1 - Fee. Correct.
+        
+        # HOWEVER, sometimes WSOL change is POSITIVE for the swapper in intermediate steps, but effectively consumed?
+        # No, pre vs post captures net.
+
         total_sol_change = native_change_sol + wsol_change
         
-        # If total change is tiny (just fee?), skip.
-        if abs(total_sol_change) < 1e-9:
-             return None
-             
+        # The issue might be that for some PumpFun transactions, 
+        # the user sees a Token Transfer (Bonding Curve -> User)
+        # AND a SOL Transfer (User -> Bonding Curve).
+        # This is strictly Native SOL.
+        # But if there's a "Refund" of rent or similar?
+        
+        # Let's trust the absolute value of total change.
+        # The "10x lower" symptom suggests we are calculating a SMALLER SOL change than reality.
+        # OR a LARGER Token change.
+        
+        # What if token_change uses a wrong decimal?
+        # uiAmount is getting float.
+        # If the token has funny decimals?
+        # We rely on RPC "uiAmount".
+        
+        # Let's remove the "Sanity Check" I just added.
+        # It might be blocking valid trades where the direction is ambiguous due to complex routing.
+        # Also, check if 'wsol_change' calculation has a bug with None handling?
+        # Checked code: float(val) if val is not None else 0.0. seems ok.
+
         sol_change_adjusted = abs(total_sol_change)
         
         # 4. Determine Swap Direction and Amounts
@@ -354,14 +393,6 @@ class SolanaSwapListener:
 
         if token_change > 0:
             # Token balance increased -> BUY
-            
-            # Sanity Check: If total SOL change is positive (Received SOL) while buying tokens?
-            # Unless it's an arbitrage, this is weird.
-            # However, for WSOL, wsol_change is negative. native is negative.
-            # total is negative.
-            # If total_sol_change > 0 (Received SOL), something is wrong for a standard Buy.
-            if total_sol_change > 0: 
-                 return None 
             
             swap_type = "buy"
             amount_out = token_change       # Tokens Received
@@ -374,11 +405,6 @@ class SolanaSwapListener:
 
         elif token_change < 0:
             # Token balance decreased -> SELL
-            
-            # Sanity Check: If total SOL change is negative (Spent SOL) while selling tokens?
-            # That's paying to give away tokens.
-            if total_sol_change < 0:
-                 return None 
             
             swap_type = "sell"
             amount_in = abs(token_change)   # Tokens Sold

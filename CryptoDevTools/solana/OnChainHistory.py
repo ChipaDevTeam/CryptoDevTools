@@ -238,9 +238,9 @@ class OnChainHistory:
             if token_change > 0:
                  # Buy: We expect user spent SOL. (Negative change)
                  # We check total_sol_change (includes WSOL)
-                 if total_sol_change > 0: 
-                     return None
-                     
+                 # REMOVED strict polarity check as some valid trades (Arb/Fee refunds) can look odd.
+                 # Let the absolute value speak for the volume.
+                 
                  # Additional check for Account Rent (creation fee):
                  # If pre_bal was 0 and SOL spent is close to ~0.002, 
                  # it might be mostly rent.
@@ -256,8 +256,7 @@ class OnChainHistory:
                  
             elif token_change < 0:
                  # Sell: We expect user received SOL. (Positive change)
-                 if total_sol_change < 0:
-                     return None
+                 
                  price_per_token = abs(sol_change_adjusted / token_change)
 
                  
