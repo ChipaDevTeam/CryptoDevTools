@@ -1,2 +1,2 @@
-from .LamportsToSol import lamports_to_sol
+from .LamportsToSol import LamportsToSol
 from .CandleAggregator import CandleAggregator
