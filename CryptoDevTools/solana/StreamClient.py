@@ -55,6 +55,10 @@ class SolanaSwapListener:
                 async for message in websocket:
                     try:
                         data = json.loads(message)
+                        if "params" not in data:
+                             logger.debug(f"Received non-param message: {str(data)[:200]}")
+                             continue
+
                         if "params" in data:
                             # Process the notification
                             value = data["params"]["result"]["value"]
@@ -62,6 +66,7 @@ class SolanaSwapListener:
                             
                             # Fire and forget (or rather, run in background) so we don't block the websocket loop
                             if signature:
+                                logger.info(f"Detected Transaction: {signature}")
                                 asyncio.create_task(self._process_signature(signature, token_mint, callback))
 
                     except json.JSONDecodeError:
@@ -77,16 +82,21 @@ class SolanaSwapListener:
 
     async def _process_signature(self, signature: str, token_mint: str, callback: Callable):
         """Process a single signature with rate limiting."""
-        logger.debug(f"Received notification for signature: {signature}")
+        logger.debug(f"Processing signature: {signature}")
         # Fetch full transaction details to parse swap
         tx_details = await self.get_transaction_details(signature)
         if tx_details:
             swap_data = self.parse_swap(tx_details, token_mint)
             if swap_data:
+                logger.info(f"Swap confirmed: {signature}")
                 if asyncio.iscoroutinefunction(callback):
                     await callback(swap_data)
                 else:
                     callback(swap_data)
+            else:
+                logger.debug(f"Transaction {signature} was not a valid swap for {token_mint}")
+        else:
+             logger.warning(f"Failed to fetch details for {signature}")
 
     async def get_transaction_details(self, signature: str) -> Optional[Dict]:
         """Fetches full transaction details using RPC."""
