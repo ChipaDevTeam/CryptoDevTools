@@ -313,44 +313,34 @@ class SolanaSwapListener:
              return None
              
         # Check if Wrapped SOL (WSOL) was involved in the swap
-        # WSOL Mint: So11111111111111111111111111111111111111112
         wsol_mint = "So11111111111111111111111111111111111111112"
         wsol_change = 0.0
         
-        # Check if signer had WSOL balance changes
-        for post in post_token_balances:
-            if post.get("mint") == wsol_mint:
-                owner = post.get("owner")
-                if owner == signer:
-                    pre_bal_wsol = 0.0
-                    for pre in pre_token_balances:
-                        if pre.get("accountIndex") == post.get("accountIndex"):
-                            pre_bal_wsol = float(pre.get("uiTokenAmount", {}).get("uiAmount") or 0)
-                            break
-                    post_val_wsol = float(post.get("uiTokenAmount", {}).get("uiAmount") or 0)
-                    wsol_change = post_val_wsol - pre_bal_wsol
-                    break
+        # Check WSOL balance changes (if token_mint is not WSOL itself)
+        if token_mint != wsol_mint:
+            for post in post_token_balances:
+                if post.get("mint") == wsol_mint:
+                    owner = post.get("owner")
+                    if owner == signer:
+                        pre_bal_wsol = 0.0
+                        for pre in pre_token_balances:
+                            if pre.get("accountIndex") == post.get("accountIndex"):
+                                val = pre.get("uiTokenAmount", {}).get("uiAmount")
+                                if val is not None:
+                                    pre_bal_wsol = float(val)
+                                break
+                        val = post.get("uiTokenAmount", {}).get("uiAmount")
+                        post_val_wsol = float(val) if val is not None else 0.0
+                        wsol_change = post_val_wsol - pre_bal_wsol
+                        break
 
         sol_change_lamports_native = post_sol_balances[0] - pre_sol_balances[0]
-        
-        # Total SOL Change = Native Change + WSOL Change
-        # Note: Native is in Lamports, WSOL is in UI Amount (SOL).
-        # We need to convert native to SOL first.
-        
         native_change_sol = sol_change_lamports_native / 1e9
         
-        # If WSOL was used, the native change is likely just fee (small negative).
-        # The real value moved via WSOL.
-        # But wait, did they Unwrap? Or just Transfer?
-        # A Swap usually involves: -WSOL, +Token.
-        # So wsol_change is negative.
-        # native_change_sol is -fee.
-        # Total Sol Spent = abs(wsol_change + native_change_sol) approx?
-        
-        # Let's combine them mathematically for Net SOL change.
+        # Total SOL Change = Native Change + WSOL Change
         total_sol_change = native_change_sol + wsol_change
         
-        # If total change is effectively zero (just fee? or wash trade?), skip.
+        # If total change is tiny (just fee?), skip.
         if abs(total_sol_change) < 1e-9:
              return None
              
