@@ -24,43 +24,41 @@ class SolanaDataClient:
             mint_pubkey = Pubkey.from_string(token_address)
             
             # 1. Derive Metadata PDA
-            metadata_pda = MetadataDecoder.get_metadata_pda(mint_pubkey, MetadataDecoder.METADATA_PROGRAM_ID) # Passed as implicit or fixed in decoder
-             # Correction: MetadataDecoder.get_metadata_pda(mint_pubkey) is static method I wrote
-            
-            seeds = [
-                b"metadata",
-                bytes(Pubkey.from_string("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s")),
-                bytes(mint_pubkey)
-            ]
-            pda, _ = Pubkey.find_program_address(seeds, Pubkey.from_string("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"))
+            pda = MetadataDecoder.get_metadata_pda(mint_pubkey)
 
             # 2. Get Account Info via RPC
-            account_info = self.solana_client.getAccountInfo(str(pda))
+            account_info_response = self.solana_client.getAccountInfo(str(pda))
             
-            if "error" in account_info:
-                print(f"Error fetching metadata account: {account_info['error']}")
+            if not account_info_response or "error" in account_info_response:
+                print(f"Error fetching metadata account: {account_info_response.get('error', 'Unknown Error')}")
                 return None
-                
-            result = account_info.get("result", {}).get("value")
+            
+            result = account_info_response.get("result", {}).get("value")
+            
             if not result:
-                print("No metadata account found for this token.")
+                print(f"No metadata account found for {token_address} at {pda}")
                 return None
                 
             data_base64 = result.get("data", ["", "base64"])[0]
+            if not data_base64:
+                return None
+                
             data_bytes = base64.b64decode(data_base64)
             
             # 3. Decode Metadata
-            metadata = MetadataDecoder.decode_metadata(data_bytes)
+            try:
+                metadata = MetadataDecoder.decode_metadata(data_bytes)
+            except Exception as e:
+                print(f"Error decoding metadata: {e}")
+                return None
             
             # 4. (Optional) Fetch JSON from URI if available
-            # This is technically an HTTP call but to the source of truth (Arweave/IPFS), not an aggregator API.
-            # Populating the TokenMetadata object format as best as possible.
-            
             content = {
                 "json_uri": metadata["data"]["uri"],
                 "metadata": {
                     "name": metadata["data"]["name"],
                     "symbol": metadata["data"]["symbol"],
+                    "uri": metadata["data"]["uri"]
                 }
             }
             
@@ -74,37 +72,39 @@ class SolanaDataClient:
                         "verified": c["verified"]
                     })
 
+            # Check Mint Supply separate call? Or just return partial if not critical.
+            # The original API call likely returned full asset data. Here we have Metadata.
+            
             return TokenMetadata(
-                last_indexed_slot=0, # Not applicable without indexer
-                interface="MplTokenMetadata", # Standard
+                last_indexed_slot=0, # Not applicable
+                interface="MplTokenMetadata", 
                 id=token_address,
                 content=content,
                 authorities={
                     "update_authority": metadata["update_authority"]
                 },
-                compression={"compressed": False}, # Standard
-                collection=None, # TODO: Parse collection if needed
+                compression={"compressed": False}, 
+                collection=metadata.get("collection"), 
                 royalty={
-                    "percent": metadata["data"]["seller_fee_basis_points"] / 100.0,
+                    "percent": (metadata["data"]["seller_fee_basis_points"] or 0) / 100.0,
                     "basis_points": metadata["data"]["seller_fee_basis_points"],
                     "primary_sale_happened": metadata["primary_sale_happened"],
                     "locked": False 
                 },
                 creators=creators,
                 ownership={
-                    "frozen": False, # Would need to check MintAccount for freeze authority
+                    "frozen": False, 
                     "delegated": False,
                     "ownership_model": "token"
                 },
-                supply={}, # Would need to check MintAccount for supply
+                supply={}, 
                 mutable=metadata["is_mutable"],
-                burnt=False, 
+                burnt=False,
                 token_info={}
             )
 
         except Exception as e:
-            print(f"Error processing on-chain metadata: {e}")
-            # Fallback or re-raise?
+            print(f"Error in on-chain metadata fetch: {e}")
             return None
 
     def getNewTokensByExchange(self, exchange_name="PumpFun"):
