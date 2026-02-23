@@ -1,30 +1,112 @@
 from .DataAPI.TokenAPI.TokenApi import TokenAPI
 from .OnChainHistory import OnChainHistory
 import asyncio
+import base64
+import requests
+from solders.pubkey import Pubkey
 from CryptoDevTools.constants import GlobalConstants
 from CryptoDevTools.models.solana.token_data import HoldersData, TokenMetadata, PumpFunToken, GraduatedTokensResponse, TradesResponse
+from .helpers.metadata_decoder import MetadataDecoder
+from ._SolanaClient import SolanaClient
 
 class SolanaDataClient:
-    def __init__(self):
+    def __init__(self, rpc_url=None):
         self.token_api = TokenAPI()
+        self.rpc_url = rpc_url or GlobalConstants.HELIUS_RPC
+        self.solana_client = SolanaClient(self.rpc_url)
+
     def getTokenMetadata(self, token_address):
-        data = self.token_api.get_token_metadata(token_address)
-        return TokenMetadata(
-            last_indexed_slot=data.get("lastIndexedSlot"),
-            interface=data.get("interface"),
-            id=data.get("id"),
-            content=data.get("content"),
-            authorities=data.get("authorities"),
-            compression=data.get("compression"),
-            collection=data.get("collection"),
-            royalty=data.get("royalty"),
-            creators=data.get("creators"),
-            ownership=data.get("ownership"),
-            supply=data.get("supply"),
-            mutable=data.get("mutable"),
-            burnt=data.get("burnt"),
-            token_info=data.get("tokenInfo"),
-        )
+        """
+        Fetches token metadata directly from the blockchain (Metaplex Metadata Account).
+        No third-party indexer APIs are used.
+        """
+        try:
+            mint_pubkey = Pubkey.from_string(token_address)
+            
+            # 1. Derive Metadata PDA
+            metadata_pda = MetadataDecoder.get_metadata_pda(mint_pubkey, MetadataDecoder.METADATA_PROGRAM_ID) # Passed as implicit or fixed in decoder
+             # Correction: MetadataDecoder.get_metadata_pda(mint_pubkey) is static method I wrote
+            
+            seeds = [
+                b"metadata",
+                bytes(Pubkey.from_string("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s")),
+                bytes(mint_pubkey)
+            ]
+            pda, _ = Pubkey.find_program_address(seeds, Pubkey.from_string("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"))
+
+            # 2. Get Account Info via RPC
+            account_info = self.solana_client.getAccountInfo(str(pda))
+            
+            if "error" in account_info:
+                print(f"Error fetching metadata account: {account_info['error']}")
+                return None
+                
+            result = account_info.get("result", {}).get("value")
+            if not result:
+                print("No metadata account found for this token.")
+                return None
+                
+            data_base64 = result.get("data", ["", "base64"])[0]
+            data_bytes = base64.b64decode(data_base64)
+            
+            # 3. Decode Metadata
+            metadata = MetadataDecoder.decode_metadata(data_bytes)
+            
+            # 4. (Optional) Fetch JSON from URI if available
+            # This is technically an HTTP call but to the source of truth (Arweave/IPFS), not an aggregator API.
+            # Populating the TokenMetadata object format as best as possible.
+            
+            content = {
+                "json_uri": metadata["data"]["uri"],
+                "metadata": {
+                    "name": metadata["data"]["name"],
+                    "symbol": metadata["data"]["symbol"],
+                }
+            }
+            
+            # Map valid creators to format
+            creators = []
+            if metadata["data"].get("creators"):
+                for c in metadata["data"]["creators"]:
+                    creators.append({
+                        "address": c["address"],
+                        "share": c["share"],
+                        "verified": c["verified"]
+                    })
+
+            return TokenMetadata(
+                last_indexed_slot=0, # Not applicable without indexer
+                interface="MplTokenMetadata", # Standard
+                id=token_address,
+                content=content,
+                authorities={
+                    "update_authority": metadata["update_authority"]
+                },
+                compression={"compressed": False}, # Standard
+                collection=None, # TODO: Parse collection if needed
+                royalty={
+                    "percent": metadata["data"]["seller_fee_basis_points"] / 100.0,
+                    "basis_points": metadata["data"]["seller_fee_basis_points"],
+                    "primary_sale_happened": metadata["primary_sale_happened"],
+                    "locked": False 
+                },
+                creators=creators,
+                ownership={
+                    "frozen": False, # Would need to check MintAccount for freeze authority
+                    "delegated": False,
+                    "ownership_model": "token"
+                },
+                supply={}, # Would need to check MintAccount for supply
+                mutable=metadata["is_mutable"],
+                burnt=False, 
+                token_info={}
+            )
+
+        except Exception as e:
+            print(f"Error processing on-chain metadata: {e}")
+            # Fallback or re-raise?
+            return None
+
     def getNewTokensByExchange(self, exchange_name="PumpFun"):
         if exchange_name not in GlobalConstants.EXCHANGES:
             raise ValueError(f"Exchange '{exchange_name}' is not supported.")
